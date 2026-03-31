@@ -1,0 +1,19 @@
+.hero-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+}
+
+.sidebar-thumb {
+  border-left: 2px solid transparent;
+}
+
+.sidebar-thumb-active {
+  border-left: 2px solid white;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.mute-btn {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.4);
+}
