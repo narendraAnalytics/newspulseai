@@ -21,3 +21,16 @@ body {
 * {
   box-sizing: border-box;
 }
+
+/* Shift Clerk modal slightly upward so it doesn't clip at the bottom */
+.cl-modalBackdrop {
+  align-items: flex-start !important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 0.5rem !important;
+  overflow-y: auto !important;
+}
+
+.cl-modalContent {
+  margin-top: 0.5rem !important;
+  margin-bottom: 1rem !important;
+}
