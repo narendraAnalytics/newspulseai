@@ -36,7 +36,7 @@ export default function Navbar() {
       {/* CTA */}
       <a
         href="#"
-        className="nav-cta flex items-center gap-2 rounded-full border border-white/20 px-5 py-2.5 text-xs uppercase tracking-widest text-white transition-all duration-200 hover:bg-white/15"
+        className="flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400 px-5 py-2.5 text-xs uppercase tracking-widest text-black font-semibold transition-all duration-200 hover:opacity-90"
       >
         GET STARTED
         <span className="text-[10px]">▶</span>

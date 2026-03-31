@@ -136,14 +136,14 @@ export default function Hero() {
         <div className="mt-8 flex items-center justify-center gap-4">
           <a
             href="#"
-            className="flex items-center gap-3 rounded-full border border-white/40 px-8 py-3 text-sm uppercase tracking-widest text-white transition-all duration-200 hover:bg-white/10 font-sans"
+            className="flex items-center gap-3 rounded-full border border-cyan-400 px-8 py-3 text-sm uppercase tracking-widest text-cyan-400 transition-all duration-200 hover:bg-cyan-400/10 font-sans"
           >
             <span className="text-xs">▶</span>
             WATCH DEMO
           </a>
           <a
             href="#"
-            className="flex items-center gap-2 rounded-full bg-white px-8 py-3 text-sm uppercase tracking-widest text-black font-semibold transition-all duration-200 hover:bg-white/90 font-sans"
+            className="flex items-center gap-2 rounded-full bg-linear-to-r from-orange-500 to-rose-500 px-8 py-3 text-sm uppercase tracking-widest text-white font-semibold transition-all duration-200 hover:opacity-90 font-sans"
           >
             START FREE
           </a>
