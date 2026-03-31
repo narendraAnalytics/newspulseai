@@ -1,0 +1,36 @@
+[   46201ms] [WARNING] The resource https://secretlevel-co.vercel.app/_next/static/chunks/e2fb3142530a36a4.css?dpl=dpl_8Q855NuCxnrSZrw2DNAsiCNYHJLz was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://secretlevel-co.vercel.app/:0
+[   49934ms] [WARNING] The resource https://secretlevel-co.vercel.app/_next/static/chunks/e2fb3142530a36a4.css?dpl=dpl_8Q855NuCxnrSZrw2DNAsiCNYHJLz was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://secretlevel-co.vercel.app/:0
+[   65901ms] [WARNING] The resource https://secretlevel-co.vercel.app/_next/static/chunks/e2fb3142530a36a4.css?dpl=dpl_8Q855NuCxnrSZrw2DNAsiCNYHJLz was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://secretlevel-co.vercel.app/:0
+[   91857ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://inferred.litix.io/:0
+[   91859ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://inferred.litix.io/:0
+[   91868ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://inferred.litix.io/:0
+[   91869ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://inferred.litix.io/:0
+[   92647ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://inferred.litix.io/:0
+[   92648ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://inferred.litix.io/:0
+[   95663ms] [WARNING] The resource https://secretlevel-co.vercel.app/_next/static/chunks/e2fb3142530a36a4.css?dpl=dpl_8Q855NuCxnrSZrw2DNAsiCNYHJLz was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://secretlevel-co.vercel.app/:0
+[  107756ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://inferred.litix.io/:0
+[  110179ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://ttkr69ly.api.sanity.io/v2025-12-16/data/live/events/production?tag=next-loader.live:0
+[  111874ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://ttkr69ly.api.sanity.io/v2025-12-16/data/live/events/production?tag=next-loader.live:0
+[  111879ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://inferred.litix.io/:0
+[  111885ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://ttkr69ly.api.sanity.io/v2025-12-16/data/live/events/production?tag=next-loader.live:0
+[  111895ms] [WARNING] Sanity Live is unable to connect to the Sanity API as the current origin - https://secretlevel-co.vercel.app - is not in the list of allowed CORS origins for this Sanity Project. Add it here: https://sanity.io/manage/project/ttkr69ly/api?cors=add&origin=https%3A%2F%2Fsecretlevel-co.vercel.app @ https://secretlevel-co.vercel.app/_next/static/chunks/2b933ce15448caad.js?dpl=dpl_8Q855NuCxnrSZrw2DNAsiCNYHJLz:0
+[  111897ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://inferred.litix.io/:0
+[  112655ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://inferred.litix.io/:0
+[  115692ms] [WARNING] The resource https://secretlevel-co.vercel.app/_next/static/chunks/e2fb3142530a36a4.css?dpl=dpl_8Q855NuCxnrSZrw2DNAsiCNYHJLz was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://secretlevel-co.vercel.app/:0
+[  117813ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ https://inferred.litix.io/:0
+[  117857ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ https://secretlevel-co.vercel.app/?_rsc=10p9o:0
+[  117861ms] [ERROR] Failed to fetch RSC payload for https://secretlevel-co.vercel.app/. Falling back to browser navigation. TypeError: Failed to fetch
+    at v (https://secretlevel-co.vercel.app/_next/static/chunks/b901f5a5c6254ca4.js?dpl=dpl_8Q855NuCxnrSZrw2DNAsiCNYHJLz:1:16554)
+    at P (https://secretlevel-co.vercel.app/_next/static/chunks/b901f5a5c6254ca4.js?dpl=dpl_8Q855NuCxnrSZrw2DNAsiCNYHJLz:1:15364)
+    at U (https://secretlevel-co.vercel.app/_next/static/chunks/b901f5a5c6254ca4.js?dpl=dpl_8Q855NuCxnrSZrw2DNAsiCNYHJLz:1:24510)
+    at j (https://secretlevel-co.vercel.app/_next/static/chunks/b901f5a5c6254ca4.js?dpl=dpl_8Q855NuCxnrSZrw2DNAsiCNYHJLz:1:23391)
+    at h (https://secretlevel-co.vercel.app/_next/static/chunks/b901f5a5c6254ca4.js?dpl=dpl_8Q855NuCxnrSZrw2DNAsiCNYHJLz:1:62671)
+    at f (https://secretlevel-co.vercel.app/_next/static/chunks/b901f5a5c6254ca4.js?dpl=dpl_8Q855NuCxnrSZrw2DNAsiCNYHJLz:1:69232)
+    at s (https://secretlevel-co.vercel.app/_next/static/chunks/b901f5a5c6254ca4.js?dpl=dpl_8Q855NuCxnrSZrw2DNAsiCNYHJLz:1:68925)
+    at s (https://secretlevel-co.vercel.app/_next/static/chunks/b901f5a5c6254ca4.js?dpl=dpl_8Q855NuCxnrSZrw2DNAsiCNYHJLz:2:3817)
+    at Object.action (https://secretlevel-co.vercel.app/_next/static/chunks/b901f5a5c6254ca4.js?dpl=dpl_8Q855NuCxnrSZrw2DNAsiCNYHJLz:2:6522)
+    at g (https://secretlevel-co.vercel.app/_next/static/chunks/b901f5a5c6254ca4.js?dpl=dpl_8Q855NuCxnrSZrw2DNAsiCNYHJLz:2:5717) @ https://secretlevel-co.vercel.app/_next/static/chunks/b901f5a5c6254ca4.js?dpl=dpl_8Q855NuCxnrSZrw2DNAsiCNYHJLz:0
+[  117864ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://secretlevel-co.vercel.app/news?_rsc=1r34m:0
+[  117891ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://secretlevel-co.vercel.app/get-in-touch?_rsc=1r34m:0
+[  117991ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://secretlevel-co.vercel.app/about?_rsc=1r34m:0
+[  118004ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://secretlevel-co.vercel.app/brand/stitched-together?_rsc=1r34m:0

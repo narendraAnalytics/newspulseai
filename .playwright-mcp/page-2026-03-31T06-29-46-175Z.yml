@@ -1,0 +1,141 @@
+- generic [active]:
+  - banner:
+    - link "Secret Level logotype, link to start page" [ref=e2] [cursor=pointer]:
+      - /url: /
+      - img "Secret Level logotype, link to start page" [ref=e3]
+    - navigation [ref=e14]:
+      - list [ref=e17]:
+        - listitem [ref=e18]:
+          - link "Brand" [ref=e19] [cursor=pointer]:
+            - /url: /brand
+        - listitem [ref=e20]:
+          - link "Narrative" [ref=e21] [cursor=pointer]:
+            - /url: /narrative
+        - listitem [ref=e22]:
+          - link "Liquid Engine" [ref=e23] [cursor=pointer]:
+            - /url: /liquid-engine
+        - listitem [ref=e24]:
+          - link "Academy" [ref=e25] [cursor=pointer]:
+            - /url: https://academy.secretlevel.co
+        - listitem [ref=e26]:
+          - link "About" [ref=e27] [cursor=pointer]:
+            - /url: /about
+        - listitem [ref=e28]:
+          - link "News" [ref=e29] [cursor=pointer]:
+            - /url: /news
+        - img [ref=e31]
+    - link "Get In Touch" [ref=e36] [cursor=pointer]:
+      - /url: /get-in-touch
+      - text: Get In Touch
+      - generic [ref=e37]:
+        - img
+  - main [ref=e40]:
+    - generic [ref=e41]:
+      - article [ref=e47]:
+        - generic [ref=e48]:
+          - heading "An Entertainment Studio Powered by AI" [level=1] [ref=e49]
+          - paragraph [ref=e50]: Secret Level Is an AI-Native Entertainment Studio Creating Films, Series, and Brand Worlds With Hollywood Craftsmanship, at the Speed of Culture.
+          - link "Watch Showreel" [ref=e54] [cursor=pointer]:
+            - /url: /about
+            - text: Watch Showreel
+            - generic [ref=e55]:
+              - img
+      - article [ref=e61]:
+        - generic [ref=e62]:
+          - text: Coca-Cola
+          - heading "Stitched Together" [level=2] [ref=e63]
+          - generic [ref=e64]:
+            - link "Watch Project" [ref=e67] [cursor=pointer]:
+              - /url: /brand/stitched-together
+              - text: Watch Project
+              - generic [ref=e68]:
+                - img
+            - link "See All Brand work" [ref=e69] [cursor=pointer]:
+              - /url: /brand
+              - text: See All Brand work
+              - generic [ref=e70]:
+                - img
+      - article [ref=e76]:
+        - generic [ref=e77]:
+          - text: Kalshi
+          - heading "The Whole Darn Rock" [level=2] [ref=e78]
+          - generic [ref=e79]:
+            - link "Watch Project" [ref=e82] [cursor=pointer]:
+              - /url: /brand/the-whole-darn-rock
+              - text: Watch Project
+              - generic [ref=e83]:
+                - img
+            - link "See All Brand work" [ref=e84] [cursor=pointer]:
+              - /url: /brand
+              - text: See All Brand work
+              - generic [ref=e85]:
+                - img
+      - article [ref=e91]:
+        - generic [ref=e92]:
+          - text: Secret Level Originals
+          - heading "Imperfectly Perfect" [level=2] [ref=e93]
+          - generic [ref=e94]:
+            - link "Watch Project" [ref=e97] [cursor=pointer]:
+              - /url: /narrative/imperfectly-perfect
+              - text: Watch Project
+              - generic [ref=e98]:
+                - img
+            - link "See All Narrative work" [ref=e99] [cursor=pointer]:
+              - /url: /narrative
+              - text: See All Narrative work
+              - generic [ref=e100]:
+                - img
+      - article [ref=e106]:
+        - generic [ref=e107]:
+          - text: Taboo and will.i.am
+          - heading "East LA" [level=2] [ref=e108]
+          - generic [ref=e109]:
+            - link "Watch Project" [ref=e112] [cursor=pointer]:
+              - /url: /brand/east-la
+              - text: Watch Project
+              - generic [ref=e113]:
+                - img
+            - link "See All Brand work" [ref=e114] [cursor=pointer]:
+              - /url: /brand
+              - text: See All Brand work
+              - generic [ref=e115]:
+                - img
+      - article [ref=e121]:
+        - generic [ref=e122]:
+          - text: Coca-Cola
+          - heading "Holidays Are Coming 2025" [level=2] [ref=e123]
+          - generic [ref=e124]:
+            - link "Watch Project" [ref=e127] [cursor=pointer]:
+              - /url: /brand/holidays-are-coming-2025
+              - text: Watch Project
+              - generic [ref=e128]:
+                - img
+            - link "See All Brand work" [ref=e129] [cursor=pointer]:
+              - /url: /brand
+              - text: See All Brand work
+              - generic [ref=e130]:
+                - img
+      - article [ref=e136]:
+        - generic [ref=e137]:
+          - text: Wu-Tang Clan
+          - heading "Mandingo" [level=2] [ref=e138]
+          - generic [ref=e139]:
+            - link "Watch Project" [ref=e142] [cursor=pointer]:
+              - /url: /brand/mandingo
+              - text: Watch Project
+              - generic [ref=e143]:
+                - img
+            - link "See All Brand work" [ref=e144] [cursor=pointer]:
+              - /url: /brand
+              - text: See All Brand work
+              - generic [ref=e145]:
+                - img
+      - article [ref=e151]:
+        - generic [ref=e152]:
+          - heading "An Entertainment Studio Powered by AI" [level=2] [ref=e153]
+          - paragraph [ref=e154]: Secret Level Is an AI-Native Entertainment Studio Creating Films, Series, and Brand Worlds With Hollywood Craftsmanship, at the Speed of Culture.
+          - link "Watch Showreel" [ref=e158] [cursor=pointer]:
+            - /url: /about
+            - text: Watch Showreel
+            - generic [ref=e159]:
+              - img
