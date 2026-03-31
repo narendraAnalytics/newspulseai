@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const VIDEOS = [
   {
@@ -34,14 +35,43 @@ const NAV_LINKS = ["CHANNELS", "FEATURES", "HOW IT WORKS", "PRICING"];
 
 export default function Home() {
   const [activeVideo, setActiveVideo] = useState(0);
+  const [muted, setMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const scrollLockRef = useRef(false);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
+    video.muted = true;
     video.load();
     video.play().catch(() => {});
   }, [activeVideo]);
+
+  useEffect(() => {
+    function handleWheel(e: WheelEvent) {
+      e.preventDefault();
+      if (scrollLockRef.current) return;
+      scrollLockRef.current = true;
+
+      if (e.deltaY > 0) {
+        setActiveVideo(prev => Math.min(prev + 1, VIDEOS.length - 1));
+      } else {
+        setActiveVideo(prev => Math.max(prev - 1, 0));
+      }
+
+      setTimeout(() => { scrollLockRef.current = false; }, 800);
+    }
+
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    return () => window.removeEventListener("wheel", handleWheel);
+  }, []);
+
+  function toggleMute() {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = !video.muted;
+    setMuted(video.muted);
+  }
 
   return (
     <div className="bg-black min-h-screen">
@@ -106,23 +136,50 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
         {/* Hero Content */}
-        <div className="absolute left-16 bottom-24 max-w-2xl">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8">
           <p className="text-xs uppercase tracking-[0.3em] text-white/50 mb-4 font-sans">
             AI-Powered News Automation
           </p>
           <h1
-            className="text-[80px] xl:text-[110px] leading-none text-white uppercase"
+            className="text-[80px] xl:text-[110px] leading-none text-white uppercase overflow-hidden"
             style={{ fontFamily: "var(--font-heading)", letterSpacing: "-0.01em" }}
           >
-            YOUR DAILY NEWS.
-            <br />
-            POWERED BY AI.
+            <motion.div
+              key={`line1-${activeVideo}`}
+              animate={{
+                x: [300, 0, 0, 0],
+                opacity: [0, 1, 1, 0],
+              }}
+              transition={{
+                duration: 5.2,
+                times: [0, 0.13, 0.72, 1],
+                delay: 1.5,
+                ease: "easeOut",
+              }}
+            >
+              YOUR DAILY NEWS.
+            </motion.div>
+            <motion.div
+              key={`line2-${activeVideo}`}
+              animate={{
+                x: [300, 0, 0, 0],
+                opacity: [0, 1, 1, 0],
+              }}
+              transition={{
+                duration: 5.2,
+                times: [0, 0.13, 0.72, 1],
+                delay: 1.65,
+                ease: "easeOut",
+              }}
+            >
+              POWERED BY AI.
+            </motion.div>
           </h1>
-          <p className="mt-6 text-lg text-white/60 max-w-md leading-relaxed font-sans">
+          <p className="mt-6 text-lg text-white/60 max-w-md leading-relaxed font-sans mx-auto">
             NewsPulseAI monitors your YouTube channels and delivers AI-written
             video summaries straight to your inbox every morning.
           </p>
-          <div className="mt-8 flex items-center gap-4">
+          <div className="mt-8 flex items-center justify-center gap-4">
             <a
               href="#"
               className="flex items-center gap-3 rounded-full border border-white/40 px-8 py-3 text-sm uppercase tracking-widest text-white transition-all duration-200 hover:bg-white/10 font-sans"
@@ -142,13 +199,12 @@ export default function Home() {
         {/* Sidebar Thumbnail Navigation */}
         <div className="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-10">
           {VIDEOS.map((video, i) => (
-            <button
+            <div
               key={i}
-              onClick={() => setActiveVideo(i)}
-              className={`relative w-14 h-20 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 ${
+              className={`relative w-24 h-20 rounded-lg overflow-hidden transition-all duration-300 ${
                 activeVideo === i
                   ? "opacity-100 scale-105"
-                  : "opacity-40 hover:opacity-70 hover:scale-105"
+                  : "opacity-40"
               }`}
               style={{
                 borderLeft: activeVideo === i ? "2px solid white" : "2px solid transparent",
@@ -162,20 +218,36 @@ export default function Home() {
                   {video.title}
                 </span>
               </div>
-            </button>
+            </div>
           ))}
         </div>
+
+        {/* Mute / Unmute Toggle */}
+        <button
+          onClick={toggleMute}
+          className="absolute bottom-8 right-8 z-10 flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-xs uppercase tracking-widest text-white transition-all duration-200 hover:bg-white/10 font-sans"
+          style={{ backdropFilter: "blur(8px)", background: "rgba(0,0,0,0.4)" }}
+        >
+          {muted ? (
+            <>
+              <span className="text-base">🔇</span> UNMUTE
+            </>
+          ) : (
+            <>
+              <span className="text-base">🔊</span> MUTE
+            </>
+          )}
+        </button>
 
         {/* Bottom progress indicator */}
         <div className="absolute bottom-8 left-16 flex items-center gap-2">
           {VIDEOS.map((_, i) => (
-            <button
+            <div
               key={i}
-              onClick={() => setActiveVideo(i)}
               className={`transition-all duration-300 rounded-full ${
                 activeVideo === i
                   ? "w-8 h-1 bg-white"
-                  : "w-1 h-1 bg-white/30 hover:bg-white/60"
+                  : "w-1 h-1 bg-white/30"
               }`}
             />
           ))}
