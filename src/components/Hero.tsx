@@ -141,12 +141,6 @@ export default function Hero() {
             <span className="text-xs">▶</span>
             WATCH DEMO
           </a>
-          <a
-            href="#"
-            className="flex items-center gap-2 rounded-full bg-linear-to-r from-orange-500 to-rose-500 px-8 py-3 text-sm uppercase tracking-widest text-white font-semibold transition-all duration-200 hover:opacity-90 font-sans"
-          >
-            START FREE
-          </a>
         </div>
       </div>
 
