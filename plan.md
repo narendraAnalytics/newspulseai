@@ -15,5 +15,3 @@
 
   So to answer your question directly: yes, the user info will appear in Neon once we build the /channels dashboard page — that's where the
   sync happens.
-
-claude mcp add clerk --transport http https://mcp.clerk.com/mcp
