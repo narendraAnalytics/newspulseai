@@ -55,7 +55,11 @@ npx tsc --noEmit  # Type-check without building
 - `page.tsx` — home page, composes `<Navbar>` and `<Hero>`
 - `layout.tsx` — root layout; fonts are **Space Grotesk** (`--font-sans`) + **Bebas Neue** (`--font-heading`) via `next/font/google`
 - `globals.css` — Tailwind v4 via `@import "tailwindcss"`, dark theme (`#000` background), `@theme inline` maps both font CSS variables
-- `api/inngest/route.ts` — Inngest webhook endpoint; `functions: []` is currently empty — register functions here when built
+- `api/inngest/route.ts` — Inngest webhook endpoint; registers `dailyDigest` from `@/inngest/functions`
+- `api/channels/route.ts` — GET/POST/DELETE channels; Zod-validated input, auth required
+- `channels/page.tsx` — server component; auth check + lazy user upsert (`onConflictDoNothing`) on first visit
+- `channels/ChannelsList.tsx` — `"use client"`; Framer Motion animated grid + remove channel
+- `channels/AddChannelModal.tsx` — `"use client"`; parses `@handle`, full URLs, or bare IDs into channel ID via `resolveChannelId()`
 - `sign-in/[[...sign-in]]/page.tsx` — Clerk `<SignIn />` component, centered on black background
 - `sign-up/[[...sign-up]]/page.tsx` — Clerk `<SignUp />` component, same layout
 
@@ -72,22 +76,27 @@ npx tsc --noEmit  # Type-check without building
 **Auth / Proxy (`src/proxy.ts`)**
 - Clerk middleware exported as `proxy` (Next.js 16 convention); protects all non-static routes
 
-**Inngest Client (`src/inngest/client.ts`)**
-- Single shared `Inngest` instance: `new Inngest({ id: 'newspulseai' })`
+**Inngest (`src/inngest/`)**
+- `client.ts` — single shared `Inngest` instance: `new Inngest({ id: 'newspulseai' })`
+- `functions.ts` — `dailyDigest`: cron `15 12 * * *` (noon UTC for dev; change to `0 6 * * *` for prod); fetches all users → channels → new YouTube videos → Gemini summaries → sends digest email
 
-### Not yet built
-- `src/lib/` — YouTube, Gemini, email helpers
-- `src/app/(dashboard)/` — protected pages (channels list, add channel, etc.)
+**Lib Layer (`src/lib/`)**
+- `youtube.ts` — `resolveChannelId(handle)` converts `@handle`/URL/bare ID to channel ID; `fetchNewVideos(channelId, publishedAfter)` queries YouTube Data API v3
+- `gemini.ts` — `summarizeVideos(videos)` batches up to 10 YouTube URLs per request to Gemini Flash; returns `Map<youtubeVideoId, summary>`
+- `email.tsx` — `DigestEmail` React Email template (dark theme, emerald/cyan accents); `sendDigest(to, items)` sends via Resend
 
 ---
 
 ## Key Patterns
 
-**Auth in Server Components (when auth is added):**
+**Auth + lazy user sync in Server Components:**
 ```typescript
-import { auth } from '@clerk/nextjs/server'
+import { auth, currentUser } from '@clerk/nextjs/server'
 const { userId } = await auth()
 if (!userId) redirect('/sign-in')
+// Upsert user on first dashboard visit (lazy sync — no webhook needed)
+const clerkUser = await currentUser()
+await db.insert(users).values({ clerkId: userId, email: clerkUser.emailAddresses[0].emailAddress, name: clerkUser.fullName ?? '' }).onConflictDoNothing()
 ```
 
 **DB client (import from `@/db`):**
@@ -100,21 +109,19 @@ const rows = await db.select().from(channels).where(eq(channels.clerkId, userId)
 
 **Inngest function (register in `api/inngest/route.ts` functions array):**
 ```typescript
-export const dailyDigest = inngest.createFunction(
-  { id: 'daily-digest' },
+export const myFn = inngest.createFunction(
+  { id: 'my-fn' },
   { cron: '0 6 * * *' },
   async ({ step }) => {
-    const users = await step.run('fetch-users', async () => db.select().from(usersTable))
-    // fan-out via step.invoke() per user
+    const result = await step.run('step-name', async () => { /* heavy work */ })
   }
 )
 ```
 
-**Email:**
+**Email (use the `sendDigest` helper):**
 ```typescript
-import { Resend } from 'resend'
-const resend = new Resend(process.env.RESEND_API_KEY)
-await resend.emails.send({ from: process.env.RESEND_FROM_EMAIL, to, react: <DigestTemplate /> })
+import { sendDigest } from '@/lib/email'
+await sendDigest(userEmail, digestItems) // DigestItem: { channelName, title, summary, url }
 ```
 
 ---

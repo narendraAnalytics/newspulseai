@@ -10,7 +10,7 @@ export const dailyDigest = inngest.createFunction(
   {
     id: 'daily-digest',
     name: 'Daily News Digest',
-    triggers: [{ cron: '15 12 * * *' }], // 12:15 PM UTC — change to '0 6 * * *' for production
+    triggers: [{ cron: '0 6 * * *' }], // 6:00 AM UTC daily
   },
   async ({ step, logger }) => {
     // 1. Fetch all users
@@ -30,8 +30,7 @@ export const dailyDigest = inngest.createFunction(
 
         if (!userChannels.length) return
 
-        // 72h for testing (catches plenty of videos on first run); change to 25h for production
-        const publishedAfter = new Date(Date.now() - 72 * 60 * 60 * 1000)
+        const publishedAfter = new Date(Date.now() - 25 * 60 * 60 * 1000)
 
         // Collect all newly inserted videos across all channels
         const newlyInserted: {
