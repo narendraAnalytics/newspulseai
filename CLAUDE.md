@@ -56,6 +56,8 @@ npx tsc --noEmit  # Type-check without building
 - `layout.tsx` — root layout; fonts are **Space Grotesk** (`--font-sans`) + **Bebas Neue** (`--font-heading`) via `next/font/google`
 - `globals.css` — Tailwind v4 via `@import "tailwindcss"`, dark theme (`#000` background), `@theme inline` maps both font CSS variables
 - `api/inngest/route.ts` — Inngest webhook endpoint; `functions: []` is currently empty — register functions here when built
+- `sign-in/[[...sign-in]]/page.tsx` — Clerk `<SignIn />` component, centered on black background
+- `sign-up/[[...sign-up]]/page.tsx` — Clerk `<SignUp />` component, same layout
 
 **Components Layer (`src/components/`)**
 - `Navbar.tsx` — fixed glassmorphism pill nav; no state, no `"use client"`
@@ -63,15 +65,19 @@ npx tsc --noEmit  # Type-check without building
 - `Hero.tsx` — `"use client"`; scroll-driven video switcher (4 videos in `public/videos/`), Framer Motion text animation, mute toggle
 - `hero.css` — `.hero-heading`, `.sidebar-thumb`, `.sidebar-thumb-active`, `.mute-btn`
 
+**DB Layer (`src/db/`)**
+- `index.ts` — exports `db` (Drizzle + Neon HTTP driver); uses `loadEnvConfig` so it works outside Next.js (e.g. in migration scripts)
+- `schema.ts` — three tables: `users` (PK: `clerk_id`), `channels` (FK → users, cascade delete), `videos` (FK → channels, `youtube_video_id` UNIQUE for `onConflictDoNothing`)
+
+**Auth / Proxy (`src/proxy.ts`)**
+- Clerk middleware exported as `proxy` (Next.js 16 convention); protects all non-static routes
+
 **Inngest Client (`src/inngest/client.ts`)**
 - Single shared `Inngest` instance: `new Inngest({ id: 'newspulseai' })`
 
-### Planned but not yet built
-The following are described in this file as future architecture — the directories do not exist yet:
-- `src/db/` — Drizzle schema + Neon client
+### Not yet built
 - `src/lib/` — YouTube, Gemini, email helpers
-- `src/app/(auth)/` — Clerk sign-in/sign-up route group
-- `src/app/(dashboard)/` — protected pages route group
+- `src/app/(dashboard)/` — protected pages (channels list, add channel, etc.)
 
 ---
 
@@ -84,11 +90,12 @@ const { userId } = await auth()
 if (!userId) redirect('/sign-in')
 ```
 
-**DB client (when db layer is added):**
+**DB client (import from `@/db`):**
 ```typescript
-import { neon } from '@neondatabase/serverless'
-import { drizzle } from 'drizzle-orm/neon-http'
-export const db = drizzle(neon(process.env.DATABASE_URL!))
+import { db } from '@/db'
+import { channels } from '@/db/schema'
+// e.g.
+const rows = await db.select().from(channels).where(eq(channels.clerkId, userId))
 ```
 
 **Inngest function (register in `api/inngest/route.ts` functions array):**

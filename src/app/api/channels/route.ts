@@ -1,0 +1,59 @@
+import { auth } from '@clerk/nextjs/server'
+import { NextRequest, NextResponse } from 'next/server'
+import { db } from '@/db'
+import { channels, users } from '@/db/schema'
+import { eq, and } from 'drizzle-orm'
+import { z } from 'zod'
+
+const AddChannelSchema = z.object({
+  youtubeChannelId: z.string().min(1),
+  channelName: z.string().min(1),
+})
+
+export async function GET() {
+  const { userId } = await auth()
+  if (!userId) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+
+  const rows = await db.select().from(channels).where(eq(channels.clerkId, userId))
+  return NextResponse.json(rows)
+}
+
+export async function POST(req: NextRequest) {
+  const { userId } = await auth()
+  if (!userId) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+
+  const body = await req.json()
+  const parsed = AddChannelSchema.safeParse(body)
+  if (!parsed.success) {
+    return NextResponse.json({ error: parsed.error.flatten() }, { status: 400 })
+  }
+
+  // Ensure user row exists (upsert)
+  await db
+    .insert(users)
+    .values({ clerkId: userId, email: '', name: '' })
+    .onConflictDoNothing()
+
+  const [row] = await db
+    .insert(channels)
+    .values({
+      clerkId: userId,
+      youtubeChannelId: parsed.data.youtubeChannelId,
+      channelName: parsed.data.channelName,
+    })
+    .returning()
+
+  return NextResponse.json(row, { status: 201 })
+}
+
+export async function DELETE(req: NextRequest) {
+  const { userId } = await auth()
+  if (!userId) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+
+  const { searchParams } = new URL(req.url)
+  const id = Number(searchParams.get('id'))
+  if (!id) return NextResponse.json({ error: 'Missing id' }, { status: 400 })
+
+  await db.delete(channels).where(and(eq(channels.id, id), eq(channels.clerkId, userId)))
+  return NextResponse.json({ success: true })
+}

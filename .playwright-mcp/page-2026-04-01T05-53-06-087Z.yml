@@ -1,0 +1,260 @@
+- generic [ref=e163]:
+  - banner:
+    - link "Secret Level logotype, link to start page" [ref=e2] [cursor=pointer]:
+      - /url: /
+      - img "Secret Level logotype, link to start page" [ref=e3]
+    - navigation [ref=e14]:
+      - list [ref=e17]:
+        - listitem [ref=e18]:
+          - link "Brand" [ref=e19] [cursor=pointer]:
+            - /url: /brand
+        - listitem [ref=e20]:
+          - link "Narrative" [ref=e21] [cursor=pointer]:
+            - /url: /narrative
+        - listitem [ref=e22]:
+          - link "Liquid Engine" [ref=e23] [cursor=pointer]:
+            - /url: /liquid-engine
+        - listitem [ref=e24]:
+          - link "Academy" [ref=e25] [cursor=pointer]:
+            - /url: https://academy.secretlevel.co
+        - listitem [ref=e26]:
+          - link "About" [ref=e27] [cursor=pointer]:
+            - /url: /about
+        - listitem [ref=e28]:
+          - link "News" [ref=e29] [cursor=pointer]:
+            - /url: /news
+        - img [ref=e31]
+    - link "Get In Touch" [ref=e36] [cursor=pointer]:
+      - /url: /get-in-touch
+      - text: Get In Touch
+      - generic [ref=e37]:
+        - img
+  - main [ref=e40]:
+    - generic [ref=e188]:
+      - generic [ref=e189]:
+        - heading "Brand" [level=1] [ref=e190]
+        - paragraph [ref=e191]: We’ve created some of the biggest, most iconic AI-native projects in the world—partnering with brands, artists, celebrities, record labels, and movie studios to shape what’s next. Whether it’s fully generative or a blend of AI and live action, we build unforgettable work that moves culture.
+      - separator [ref=e192]
+    - generic [ref=e193]:
+      - generic [ref=e196]:
+        - generic [ref=e198]:
+          - img "Black Eyed Peas logotype" [ref=e200]
+          - img "Intel logotype" [ref=e202]
+          - img "Meta logotype" [ref=e204]
+          - img "eToro logotype" [ref=e206]
+          - img "Coca-Cola logotype" [ref=e208]
+          - img "Google logotype" [ref=e210]
+          - img "Wu-Tang Clan logotype" [ref=e212]
+          - img "Kalshi logotype" [ref=e214]
+        - generic [ref=e216]:
+          - img [ref=e218]
+          - img [ref=e220]
+          - img [ref=e222]
+          - img [ref=e224]
+          - img [ref=e226]
+          - img [ref=e228]
+          - img [ref=e230]
+          - img [ref=e232]
+      - separator [ref=e233]
+    - generic [ref=e235]:
+      - tablist [ref=e236]:
+        - tab "Grid" [selected] [ref=e237] [cursor=pointer]
+        - tab "Carousel" [ref=e238] [cursor=pointer]
+        - tab "List" [ref=e239] [cursor=pointer]
+      - tabpanel "Grid" [ref=e241]:
+        - generic [ref=e242]:
+          - article [ref=e245]:
+            - link "LG Xboom":
+              - /url: /brand/lg-xboom
+              - generic [ref=e250] [cursor=pointer]:
+                - generic [ref=e251]: LG
+                - heading "Xboom" [level=2] [ref=e252]
+          - article [ref=e255]:
+            - link "Amazon Small Business":
+              - /url: /brand/amazon-small-business
+              - generic [ref=e260] [cursor=pointer]:
+                - generic [ref=e261]: Amazon
+                - heading "Small Business" [level=2] [ref=e262]
+          - article [ref=e265]:
+            - link "Coca-Cola Stitched Together":
+              - /url: /brand/stitched-together
+              - generic [ref=e270] [cursor=pointer]:
+                - generic [ref=e271]: Coca-Cola
+                - heading "Stitched Together" [level=2] [ref=e272]
+          - article [ref=e275]:
+            - link "Coca-Cola Holidays Are Coming 2025":
+              - /url: /brand/holidays-are-coming-2025
+              - generic [ref=e280] [cursor=pointer]:
+                - generic [ref=e281]: Coca-Cola
+                - heading "Holidays Are Coming 2025" [level=2] [ref=e282]
+          - article [ref=e285]:
+            - link "Kalshi The Whole Darn Rock":
+              - /url: /brand/the-whole-darn-rock
+              - generic [ref=e290] [cursor=pointer]:
+                - generic [ref=e291]: Kalshi
+                - heading "The Whole Darn Rock" [level=2] [ref=e292]
+          - article [ref=e295]:
+            - link "eToro eToro is Everywhere":
+              - /url: /brand/etoro-is-everywhere
+              - generic [ref=e300] [cursor=pointer]:
+                - generic [ref=e301]: eToro
+                - heading "eToro is Everywhere" [level=2] [ref=e302]
+          - article [ref=e305]:
+            - link "eToro Elevate (UAE)":
+              - /url: /brand/elevate-uae
+              - generic [ref=e310] [cursor=pointer]:
+                - generic [ref=e311]: eToro
+                - heading "Elevate (UAE)" [level=2] [ref=e312]
+          - article [ref=e315]:
+            - link "Wu-Tang Clan Mandingo":
+              - /url: /brand/mandingo
+              - generic [ref=e320] [cursor=pointer]:
+                - generic [ref=e321]: Wu-Tang Clan
+                - heading "Mandingo" [level=2] [ref=e322]
+          - article [ref=e325]:
+            - link "Coca-Cola Holidays are Coming":
+              - /url: /brand/holidays-are-coming
+              - generic [ref=e330] [cursor=pointer]:
+                - generic [ref=e331]: Coca-Cola
+                - heading "Holidays are Coming" [level=2] [ref=e332]
+          - article [ref=e335]:
+            - link "Taboo and will.i.am East LA":
+              - /url: /brand/east-la
+              - generic [ref=e340] [cursor=pointer]:
+                - generic [ref=e341]: Taboo and will.i.am
+                - heading "East LA" [level=2] [ref=e342]
+          - article [ref=e345]:
+            - link "Black Eyed Peas Las Vegas Residency":
+              - /url: /brand/las-vegas-residency
+              - generic [ref=e350] [cursor=pointer]:
+                - generic [ref=e351]: Black Eyed Peas
+                - heading "Las Vegas Residency" [level=2] [ref=e352]
+          - article [ref=e355]:
+            - link "Black Eyed Peas Concert Visuals":
+              - /url: /brand/concert-visuals
+              - generic [ref=e360] [cursor=pointer]:
+                - generic [ref=e361]: Black Eyed Peas
+                - heading "Concert Visuals" [level=2] [ref=e362]
+          - article [ref=e365]:
+            - link "Ghost Satanizer":
+              - /url: /brand/satanizer
+              - generic [ref=e370] [cursor=pointer]:
+                - generic [ref=e371]: Ghost
+                - heading "Satanizer" [level=2] [ref=e372]
+          - article [ref=e375]:
+            - link "Mercedes FYI Radio":
+              - /url: /brand/fyi-radio
+              - generic [ref=e380] [cursor=pointer]:
+                - generic [ref=e381]: Mercedes
+                - heading "FYI Radio" [level=2] [ref=e382]
+          - article [ref=e385]:
+            - link "Snapchat Phantom House":
+              - /url: /brand/phantom-house
+              - generic [ref=e390] [cursor=pointer]:
+                - generic [ref=e391]: Snapchat
+                - heading "Phantom House" [level=2] [ref=e392]
+          - article [ref=e395]:
+            - link "Intel Intel Vision 2024":
+              - /url: /brand/intel-vision-2024
+              - generic [ref=e400] [cursor=pointer]:
+                - generic [ref=e401]: Intel
+                - heading "Intel Vision 2024" [level=2] [ref=e402]
+          - article [ref=e405]:
+            - link "Washington Lottery Squad Up":
+              - /url: /brand/squad-up
+              - generic [ref=e410] [cursor=pointer]:
+                - generic [ref=e411]: Washington Lottery
+                - heading "Squad Up" [level=2] [ref=e412]
+          - article [ref=e415]:
+            - link "Girls, Inc. Give Her Wings":
+              - /url: /brand/give-her-wings
+              - generic [ref=e420] [cursor=pointer]:
+                - generic [ref=e421]: Girls, Inc.
+                - heading "Give Her Wings" [level=2] [ref=e422]
+    - link "Continue to Narrative" [ref=e424] [cursor=pointer]:
+      - /url: /narrative
+      - generic [ref=e425]: Continue to Narrative
+      - img [ref=e427]
+    - generic [ref=e429]:
+      - generic [ref=e430]:
+        - img "Secret Level logotype" [ref=e431]
+        - paragraph [ref=e442]: Secret Level Is an AI-Native Entertainment Studio Creating Films, Series, and Brand Worlds With Hollywood Craftsmanship, at the Speed of Culture.
+        - generic [ref=e443]:
+          - generic [ref=e444]: Follow
+          - list [ref=e445]:
+            - listitem [ref=e446]:
+              - link "Instagram" [ref=e447] [cursor=pointer]:
+                - /url: https://www.instagram.com/secret____level/
+            - listitem [ref=e448]:
+              - link "X" [ref=e449] [cursor=pointer]:
+                - /url: https://x.com/secret__level
+            - listitem [ref=e450]:
+              - link "LinkedIn" [ref=e451] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/secretlevel/
+      - navigation [ref=e452]:
+        - list [ref=e453]:
+          - listitem [ref=e454]:
+            - link "Home" [ref=e455] [cursor=pointer]:
+              - /url: /
+              - text: Home
+              - img [ref=e457]
+          - listitem [ref=e459]:
+            - link "Brand" [ref=e460] [cursor=pointer]:
+              - /url: /brand
+              - text: Brand
+              - img [ref=e462]
+          - listitem [ref=e464]:
+            - link "Narrative" [ref=e465] [cursor=pointer]:
+              - /url: /narrative
+              - text: Narrative
+              - img [ref=e467]
+          - listitem [ref=e469]:
+            - link "Liquid Engine" [ref=e470] [cursor=pointer]:
+              - /url: /liquid-engine
+              - text: Liquid Engine
+              - img [ref=e472]
+          - listitem [ref=e474]:
+            - link "Academy" [ref=e475] [cursor=pointer]:
+              - /url: https://academy.secretlevel.co
+              - text: Academy
+              - img [ref=e477]
+          - listitem [ref=e479]:
+            - link "About" [ref=e480] [cursor=pointer]:
+              - /url: /about
+              - text: About
+              - img [ref=e482]
+          - listitem [ref=e484]:
+            - link "News" [ref=e485] [cursor=pointer]:
+              - /url: /news
+              - text: News
+              - img [ref=e487]
+      - generic [ref=e490]:
+        - list [ref=e491]:
+          - listitem [ref=e492]:
+            - generic [ref=e494]: New Business
+            - button "projects@secretlevel.co" [ref=e495] [cursor=pointer]
+          - listitem [ref=e496]:
+            - generic [ref=e498]: General Inquiries
+            - button "info@secretlevel.co" [ref=e499] [cursor=pointer]
+        - generic [ref=e500]:
+          - generic [ref=e501]: Newsletter
+          - paragraph [ref=e502]: Stay up to date and never miss out.
+          - group [ref=e505]:
+            - group [ref=e506]:
+              - generic [ref=e507]: Email
+            - textbox [ref=e508]
+            - group [ref=e509]:
+              - button "Subscribe" [ref=e510] [cursor=pointer]:
+                - generic [ref=e511]: Subscribe
+      - generic [ref=e512]:
+        - generic [ref=e513]: © 2026 Secret Level, Inc. All rights reserved.
+        - navigation [ref=e514]:
+          - list [ref=e515]:
+            - listitem [ref=e516]:
+              - link "Privacy Policy" [ref=e517] [cursor=pointer]:
+                - /url: /legal/privacy-policy
+            - listitem [ref=e518]:
+              - link "Terms of Service" [ref=e519] [cursor=pointer]:
+                - /url: /legal/terms-of-service
+  - alert [ref=e187]: Brand – Secret Level
+  - img "Scene" [ref=e522]
