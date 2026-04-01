@@ -4,6 +4,7 @@ import { db } from '@/db'
 import { channels, users } from '@/db/schema'
 import { eq, and } from 'drizzle-orm'
 import { z } from 'zod'
+import { resolveChannelId } from '@/lib/youtube'
 
 const AddChannelSchema = z.object({
   youtubeChannelId: z.string().min(1),
@@ -28,6 +29,14 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: parsed.error.flatten() }, { status: 400 })
   }
 
+  // Resolve @handle / URL to real UCxxx channel ID
+  let resolvedChannelId: string
+  try {
+    resolvedChannelId = await resolveChannelId(parsed.data.youtubeChannelId)
+  } catch {
+    return NextResponse.json({ error: 'YouTube channel not found. Check the handle or URL.' }, { status: 400 })
+  }
+
   // Ensure user row exists (upsert)
   await db
     .insert(users)
@@ -38,7 +47,7 @@ export async function POST(req: NextRequest) {
     .insert(channels)
     .values({
       clerkId: userId,
-      youtubeChannelId: parsed.data.youtubeChannelId,
+      youtubeChannelId: resolvedChannelId,
       channelName: parsed.data.channelName,
     })
     .returning()

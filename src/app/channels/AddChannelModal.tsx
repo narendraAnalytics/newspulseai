@@ -18,12 +18,17 @@ export default function AddChannelModal({ open, onClose, onAdded }: Props) {
   const [error, setError] = useState("");
 
   function parseChannelId(raw: string): string {
-    // Accept full URL like https://youtube.com/@handle or https://youtube.com/channel/UCxxx
-    // or bare @handle / channel ID
+    // Accepts: https://youtube.com/@handle, https://youtube.com/@handle/videos,
+    //          https://youtube.com/channel/UCxxx, bare @handle, or bare UCxxx
     try {
       const url = new URL(raw);
       const parts = url.pathname.split("/").filter(Boolean);
-      // /channel/UCxxx  or  /@handle
+      // Find @handle segment (may have /videos /about etc after it)
+      const handlePart = parts.find((p) => p.startsWith("@"));
+      if (handlePart) return handlePart.replace(/^@/, "");
+      // /channel/UCxxx format
+      const channelIdx = parts.indexOf("channel");
+      if (channelIdx !== -1 && parts[channelIdx + 1]) return parts[channelIdx + 1];
       return parts[parts.length - 1].replace(/^@/, "");
     } catch {
       return raw.trim().replace(/^@/, "");

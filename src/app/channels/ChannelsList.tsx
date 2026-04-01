@@ -25,7 +25,14 @@ export default function ChannelsList({ initialChannels }: Props) {
 
   return (
     <>
-      <div className="min-h-screen pt-28 pb-16 px-6">
+      {/* Background glows */}
+      <div className="pointer-events-none fixed inset-0 z-0">
+        <div className="absolute -top-32 -left-32 w-150 h-150 rounded-full bg-emerald-500/10 blur-[120px]" />
+        <div className="absolute top-1/2 -right-40 w-125 h-125 rounded-full bg-cyan-500/8 blur-[120px]" />
+        <div className="absolute bottom-0 left-1/3 w-100 h-100 rounded-full bg-emerald-600/6 blur-[100px]" />
+      </div>
+
+      <div className="relative z-10 min-h-screen pt-28 pb-16 px-6">
         <div className="max-w-5xl mx-auto">
           {/* Page header */}
           <motion.div
@@ -35,7 +42,7 @@ export default function ChannelsList({ initialChannels }: Props) {
             className="flex items-end justify-between mb-10"
           >
             <div>
-              <h1 className="font-heading text-5xl md:text-7xl tracking-wider text-white leading-none">
+              <h1 className="font-heading text-5xl md:text-7xl tracking-wider leading-none bg-linear-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                 YOUR CHANNELS
               </h1>
               <p className="mt-2 text-sm text-white/50 font-sans uppercase tracking-widest">

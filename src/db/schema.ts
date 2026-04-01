@@ -22,6 +22,7 @@ export const videos = pgTable('videos', {
   youtubeVideoId: text('youtube_video_id').notNull().unique(),
   title:          text('title').notNull(),
   publishedAt:    timestamp('published_at').notNull(),
+  description:    text('description'),
   summary:        text('summary'),
   fetchedAt:      timestamp('fetched_at').defaultNow().notNull(),
 })
