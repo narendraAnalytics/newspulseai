@@ -1,0 +1,1107 @@
+- generic [ref=e1]:
+  - dialog "Cookie Consent Banner" [ref=e2]:
+    - button "Close this dialog" [active] [ref=e3] [cursor=pointer]:
+      - img "Close this dialog" [ref=e4]
+    - generic [ref=e6]: ㅤ We and our partners may process our data through the use of cookies (and other tracking technologies). Some cookies are necessary to make our website work, so they can't be turned off. Others are not strictly necessary but are useful to optimize the performance of this site, help us assess site usage, and give you the best user experience.You can consent to the use of such cookies by clicking "Accept", you can reject our use of such cookies by clicking "Reject", or you can make individualized decisions by clicking "Manage Cookies" To learn more about cookies and why we use them, please refer to our Privacy Notice and/or Cookie Notice
+    - generic [ref=e7]:
+      - button "Manage Cookies" [ref=e8] [cursor=pointer]
+      - button "Accept" [ref=e9] [cursor=pointer]
+      - button "Reject Non-Essential" [ref=e10] [cursor=pointer]
+  - main:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - button [ref=e16] [cursor=pointer]
+            - generic [ref=e19]:
+              - generic [ref=e20]:
+                - generic [ref=e21]: Table of Contents
+                - generic [ref=e22] [cursor=pointer]:
+                  - text: Close
+                  - img "close table of contents" [ref=e23]
+              - list [ref=e25]:
+                - listitem [ref=e26]:
+                  - generic [ref=e27] [cursor=pointer]:
+                    - generic [ref=e28]: Cover
+                    - generic [ref=e29]: "1"
+                - listitem [ref=e30]:
+                  - generic [ref=e31] [cursor=pointer]:
+                    - generic [ref=e32]: Executive Summary And Acknowledgements
+                    - generic [ref=e33]: "2"
+                - listitem [ref=e34]:
+                  - generic [ref=e35] [cursor=pointer]:
+                    - generic [ref=e36]: Introduction
+                    - generic [ref=e37]: "3"
+                - listitem [ref=e38]:
+                  - generic [ref=e39] [cursor=pointer]:
+                    - generic [ref=e40]: Why Study AI In Mobility
+                    - generic [ref=e41]: "4"
+                - listitem [ref=e42]:
+                  - generic [ref=e43] [cursor=pointer]:
+                    - generic [ref=e44]: Mobility’s Key Principles For AI Adoption
+                    - generic [ref=e45]: "5"
+                - listitem [ref=e46]:
+                  - generic [ref=e47] [cursor=pointer]:
+                    - generic [ref=e48]: How Other Industries Can Put Mobility’s AI Principles Into Practice
+                    - generic [ref=e49]: "6"
+                - listitem [ref=e50]:
+                  - generic [ref=e51] [cursor=pointer]:
+                    - generic [ref=e52]: For Businesses Looking To Adopt AI, Follow Mobility’s Signal
+                    - generic [ref=e53]: "7"
+                - listitem [ref=e54]:
+                  - generic [ref=e55] [cursor=pointer]:
+                    - generic [ref=e56]: References
+                    - generic [ref=e57]: "8"
+              - generic [ref=e58]:
+                - link "Download report" [ref=e60] [cursor=pointer]:
+                  - /url: /content/dam/oliver-wyman/ow-forum/template-scripts/ai-mobility/OWF-AI-for-Mobility.pdf
+                  - generic [ref=e61]: Download report
+                  - img [ref=e63]
+                - generic [ref=e66]:
+                  - list:
+                    - listitem:
+                      - link "Terms of Use" [ref=e67] [cursor=pointer]:
+                        - /url: https://www.oliverwyman.com/terms-of-use.html
+                    - listitem:
+                      - link "Privacy Notice" [ref=e68] [cursor=pointer]:
+                        - /url: https://www.oliverwyman.com/policies/privacy-notice.html
+                    - listitem:
+                      - link "Cookie Notice" [ref=e69] [cursor=pointer]:
+                        - /url: https://www.oliverwyman.com/policies/cookie-notice.html
+                    - listitem:
+                      - button "Manage Cookies" [ref=e70] [cursor=pointer]
+            - generic:
+              - generic [ref=e72]:
+                - generic [ref=e73]:
+                  - generic [ref=e74]:
+                    - link "Oliver Wyman Forum Logo" [ref=e76] [cursor=pointer]:
+                      - /url: https://www.oliverwymanforum.com/index.html
+                      - img "Oliver Wyman Forum Logo" [ref=e77]
+                    - generic [ref=e79] [cursor=pointer]:
+                      - generic [ref=e81]: Share
+                      - img [ref=e83]
+                  - generic [ref=e86]:
+                    - generic [ref=e87]:
+                      - generic [ref=e88]: Share
+                      - generic [ref=e89] [cursor=pointer]:
+                        - text: Close
+                        - img "close share dropdown" [ref=e90]
+                    - list [ref=e92]:
+                      - listitem [ref=e93]:
+                        - button "Copy link" [ref=e94] [cursor=pointer]:
+                          - generic [ref=e95]: Copy link
+                          - img [ref=e97]
+                      - listitem [ref=e101]:
+                        - link "LinkedIn" [ref=e102] [cursor=pointer]:
+                          - /url: https://www.linkedin.com/shareArticle?mini=true&url=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e103]: LinkedIn
+                          - img [ref=e105]
+                      - listitem [ref=e109]:
+                        - link "Twitter / X" [ref=e110] [cursor=pointer]:
+                          - /url: https://twitter.com/intent/tweet?url=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e111]: Twitter / X
+                          - img [ref=e113]
+                      - listitem [ref=e117]:
+                        - link "Facebook" [ref=e118] [cursor=pointer]:
+                          - /url: https://www.facebook.com/sharer/sharer.php?u=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e119]: Facebook
+                          - img [ref=e121]
+                - generic [ref=e125]:
+                  - generic [ref=e126]:
+                    - heading "What Businesses Can Learn From Mobility’s Early AI Adoption" [level=1] [ref=e128]
+                    - paragraph [ref=e129]: Using AI to overcome business challenges hinges on a consumer-first approach, fueled by the right data, organizational structure, and partnerships.
+                    - img "AI is deeply entrenched in transportation, from autonomous vehicles and trains to aviation and traffic management." [ref=e130]
+                  - generic [ref=e135]:
+                    - paragraph [ref=e136]: © 2026 Oliver Wyman Forum.
+                    - paragraph [ref=e137]: All Rights Reserved.
+              - generic [ref=e139] [cursor=pointer]:
+                - generic [ref=e140]:
+                  - link "Oliver Wyman Forum Logo" [ref=e143]:
+                    - /url: https://www.oliverwymanforum.com/index.html
+                    - img "Oliver Wyman Forum Logo" [ref=e144]
+                  - generic [ref=e145]:
+                    - generic [ref=e146]:
+                      - generic [ref=e147]: Share
+                      - generic [ref=e148]:
+                        - text: Close
+                        - img "close share dropdown" [ref=e149]
+                    - list [ref=e151]:
+                      - listitem [ref=e152]:
+                        - button "Copy link" [ref=e153]:
+                          - generic [ref=e154]: Copy link
+                          - img [ref=e156]
+                      - listitem [ref=e160]:
+                        - link "LinkedIn" [ref=e161]:
+                          - /url: https://www.linkedin.com/shareArticle?mini=true&url=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e162]: LinkedIn
+                          - img [ref=e164]
+                      - listitem [ref=e168]:
+                        - link "Twitter / X" [ref=e169]:
+                          - /url: https://twitter.com/intent/tweet?url=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e170]: Twitter / X
+                          - img [ref=e172]
+                      - listitem [ref=e176]:
+                        - link "Facebook" [ref=e177]:
+                          - /url: https://www.facebook.com/sharer/sharer.php?u=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e178]: Facebook
+                          - img [ref=e180]
+                - generic [ref=e184]:
+                  - paragraph [ref=e186]: Executive summary
+                  - generic [ref=e187]:
+                    - heading "Executive Summary" [level=2] [ref=e188]
+                    - generic [ref=e189]:
+                      - generic [ref=e190]:
+                        - paragraph [ref=e191]: The mobility sector pioneered the application of artificial intelligence to make its products and services safer, more efficient, and of greater use for consumers. Now, as business leaders in other sectors embrace the technology, many can learn from mobility’s experience.
+                        - paragraph [ref=e192]:
+                          - text: Most leaders are optimistic about AI’s potential but haven’t yet decided how best to use it or to reskill their employees. Ninety-five percent of surveyed executives at companies that leverage AI capabilities expect the technology to have a significant impact on their businesses over the next three years, but only 45% report fully implemented AI solutions, according to the Oliver Wyman 2024 Performance Transformation Global Executive Survey
+                          - generic [ref=e193]: "1"
+                          - text: .
+                        - paragraph [ref=e194]: Industries can learn from mobility’s meticulous and risk-based approach, which historically has focused on safety. For example, the aviation industry has been developing and deploying autopilot systems for more than 50 years. As these systems have advanced, new developments have been deployed commercially while increasing the safety and efficiency of commercial air travel. Self-driving cars, similarly, have been in development for decades and undergo thorough testing before being deployed. This has led to autonomous vehicles on streets today with impressive safety records compared to human drivers, even if public perception has not yet fully accepted the safety of these technologies.
+                        - paragraph [ref=e195]: This report is based on interviews with 20 mobility industry leaders, global Oliver Wyman Forum survey data, and an Oliver Wyman Forum survey of NYSE-listed companies from across the economy. The research identifies ways the mobility industry has used AI that may be relevant to other industries as they develop their own strategies.
+                        - paragraph [ref=e196]: One takeaway is an extreme focus on the individual customer. In mobility, people demand safety — but they also want convenience and personalization. AI can serve those needs through assisted driving technologies that help drivers operate their cars more safely and comfortably, AI-powered entertainment systems based on consumer preferences, and systems that improve the operations of commercial travel and transit to reduce delays and inconveniences.
+                        - paragraph [ref=e197]: Data is the driver behind the mobility industry’s ability to focus on consumer needs with AI, and many providers can obtain large quantities of data, whether from drivers or flight records. Mobility has taken innovative approaches to utilizing this data that extend beyond the consumer experience — such as improving autonomous driving through simulating rare road scenarios or training large language models (LLMs) on technical maintenance information to support airplane mechanics — but barriers remain, highlighting the opportunities and challenges in unlocking data.
+                        - paragraph [ref=e198]: Forging partnerships with public and private organizations can help businesses use that data optimally for AI adoption and explore new ways of working. And in many cases, it will be easier to form partnerships than to develop new software in-house to power new AI solutions, as the principles of software development often differ from those of other businesses.
+                        - paragraph [ref=e199]: A clear and predictable regulatory framework can support these different aspects of AI adoption, from consumer applications to data collection and collaborations. This approach has been particularly effective in aviation, where thoughtful and rigorous oversight developed in recent decades has nurtured public confidence in flying.
+                        - paragraph [ref=e200]: These approaches can bolster consumer anxieties about AI products. Nearly half of consumers worry about AI’s role in autonomous driving, and nearly a third find organizations using AI to be untrustworthy, according to global Oliver Wyman Forum surveys. Boosting confidence with holistic plans and safe, worthwhile products can encourage consumer uptake of AI-based products.
+                      - generic [ref=e201]:
+                        - paragraph [ref=e202]: Acknowledgements
+                        - paragraph [ref=e203]: Thank you to the mobility industry leaders who provided their perspectives for this report
+                        - generic [ref=e204]:
+                          - generic [ref=e205]:
+                            - text: David De Almeida
+                            - paragraph [ref=e206]: Head of Research, SNCF
+                          - generic [ref=e207]:
+                            - text: Alexandre Bayen
+                            - paragraph [ref=e208]: Associate Provost and Professor EECS, UC Berkeley
+                          - generic [ref=e209]:
+                            - text: Alice Belcher
+                            - paragraph [ref=e210]: Director of Predictive Tech Engineering, Delta Tech Ops
+                          - generic [ref=e211]:
+                            - text: Lennaert de Boer
+                            - paragraph [ref=e212]: Director of Product Operations, Cruise
+                          - generic [ref=e213]:
+                            - text: Yann Cabaret
+                            - paragraph [ref=e214]: CEO, SITA for Aircraft
+                          - generic [ref=e215]:
+                            - text: Tilly Chang
+                            - paragraph [ref=e216]: Executive Director, San Francisco County Transportation Authority
+                          - generic [ref=e217]:
+                            - text: Pascal Croce
+                            - paragraph [ref=e218]: Director of Cross-Functional Strategic Projects, SNCF
+                          - generic [ref=e219]:
+                            - text: Fabien Cros
+                            - paragraph [ref=e220]: Data and AI Lead for Manufacturing, Google Cloud France
+                          - generic [ref=e221]:
+                            - text: Laurent Dufour
+                            - paragraph [ref=e222]: Corporate Strategy Director, Alstom
+                          - generic [ref=e223]:
+                            - text: Paolo Forchielli
+                            - paragraph [ref=e224]: Head of R&D, Valvoline
+                          - generic [ref=e225]:
+                            - text: Marco Goergmaier
+                            - paragraph [ref=e226]: VP of Enterprise Platforms, Data, and Artificial Intelligence, BMW
+                          - generic [ref=e227]:
+                            - text: Michael Hayes
+                            - paragraph [ref=e228]: Academy Director, NADA
+                          - generic [ref=e229]:
+                            - text: Jennifer Henke
+                            - paragraph [ref=e230]: Head of Sustainability, BraunAbility
+                          - generic [ref=e231]:
+                            - text: Matt Hennigan
+                            - paragraph [ref=e232]: Senior Ventures Associate, Plug and Play
+                          - generic [ref=e233]:
+                            - text: Alexandre de Juniac
+                            - paragraph [ref=e234]: Former CEO of Air France-KLM and IATA
+                          - generic [ref=e235]:
+                            - text: Chin Kian Keong
+                            - paragraph [ref=e236]: Senior Consultant, ST Engineering
+                          - generic [ref=e237]:
+                            - text: Jens Langenberg
+                            - paragraph [ref=e238]: Senior Manager, Autonomous Driving Center of Excellence, Volkswagen
+                          - generic [ref=e239]:
+                            - text: Dario Menichetti
+                            - paragraph [ref=e240]: Director of Mobility IMEA, PTV (part of Umovity)
+                          - generic [ref=e241]:
+                            - text: Christel Pujol
+                            - paragraph [ref=e242]: Director of Strategy and Performance, SNCF
+                          - generic [ref=e243]:
+                            - text: Elliot Shaw
+                            - paragraph [ref=e244]: Chief Customer and Strategy Officer, National Highways
+                          - generic [ref=e245]:
+                            - text: David Shmoys
+                            - paragraph [ref=e246]: Director, Center for Data Science for Enterprise and Society, Cornell University
+                    - generic [ref=e247]:
+                      - paragraph [ref=e248]: Executive Summary
+                      - paragraph [ref=e249]: Page 2
+              - generic [ref=e251] [cursor=pointer]:
+                - generic [ref=e252]:
+                  - link "Oliver Wyman Forum Logo" [ref=e255]:
+                    - /url: https://www.oliverwymanforum.com/index.html
+                    - img "Oliver Wyman Forum Logo" [ref=e256]
+                  - generic [ref=e257]:
+                    - generic [ref=e258]:
+                      - generic [ref=e259]: Share
+                      - generic [ref=e260]:
+                        - text: Close
+                        - img "close share dropdown" [ref=e261]
+                    - list [ref=e263]:
+                      - listitem [ref=e264]:
+                        - button "Copy link" [ref=e265]:
+                          - generic [ref=e266]: Copy link
+                          - img [ref=e268]
+                      - listitem [ref=e272]:
+                        - link "LinkedIn" [ref=e273]:
+                          - /url: https://www.linkedin.com/shareArticle?mini=true&url=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e274]: LinkedIn
+                          - img [ref=e276]
+                      - listitem [ref=e280]:
+                        - link "Twitter / X" [ref=e281]:
+                          - /url: https://twitter.com/intent/tweet?url=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e282]: Twitter / X
+                          - img [ref=e284]
+                      - listitem [ref=e288]:
+                        - link "Facebook" [ref=e289]:
+                          - /url: https://www.facebook.com/sharer/sharer.php?u=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e290]: Facebook
+                          - img [ref=e292]
+                - generic [ref=e296]:
+                  - paragraph [ref=e298]: Introduction
+                  - generic [ref=e299]:
+                    - heading "Introduction" [level=2] [ref=e300]
+                    - img "Cars and airplanes both can use AI tech to improve safety and consumer experience" [ref=e301]
+                    - generic [ref=e303]:
+                      - paragraph [ref=e306]:
+                        - text: Flying was a dangerous way to travel — until it became one of the safest. Airlines have adopted a wide range of AI-based technologies that have helped drive huge safety gains, from intelligent weather prediction to advanced risk detection and maintenance systems. The accident rate per 100,000 flight hours declined by nearly 60% from 1994 to 2022
+                        - generic [ref=e307]: "2"
+                        - text: . The industry’s implementation of leading-edge technologies has greatly improved its safety record. Aviation is not always the fastest mover in adopting new technology, but the industry’s methodical and incremental approach helps foster successful outcomes.
+                      - generic [ref=e309]:
+                        - generic [ref=e310]:
+                          - paragraph [ref=e311]: These innovative systems are an example of how the mobility sector has pioneered the application of technology based on AI. Control, maintenance, and entertainment systems have made mobility modes safer and more enjoyable, from lane assist systems for drivers to improved fuel efficiency and advanced pricing for airlines.
+                          - paragraph [ref=e312]:
+                            - text: Generative AI has seized the world’s attention since ChatGPT was introduced in late 2022, but many companies are still at a loss when it comes to applying it. Less than half of companies have fully implemented AI solutions
+                            - generic [ref=e313]: "3"
+                            - text: ", while 95% of leaders at companies that leverage AI capabilities expect the technology to have significant impact on their business over the next three years"
+                            - generic [ref=e314]: "4"
+                            - text: ", according to Oliver Wyman survey data. And nearly a third of executives see rising AI and tech developments as a top market challenge"
+                            - generic [ref=e315]: "5"
+                            - text: — the second-highest response after inflation. Mobility’s many use cases of AI provide a roadmap for other industries.
+                        - img "Lottie animation" [ref=e319]:
+                          - img [ref=e321]:
+                            - generic "Decline in the accident rate per 100,000 flight hours from 1994 to 2022" [ref=e323]
+                      - generic [ref=e568]:
+                        - paragraph [ref=e569]: For this report, AI is considered any technology that enables computers and machines to simulate human intelligence and actions, make decisions like a human operator, and show problem-solving capabilities. An airplane’s autopilot is AI because it makes humanlike decisions, but a train that runs back and forth on a track without responding to outside conditions or events is simply automated. However, if the train can stop after using sensors to spot an object on the track, that would be considered AI.
+                        - paragraph [ref=e570]: While traditional AI is trained to perform specific tasks, such as analyzing weather data and choosing a plane’s flight path, generative AI can create new content. It trains on massive datasets to create new material. In mobility, one example of a generative AI solution might be a large language model chatbot to help vehicle maintenance workers resolve problems.
+                        - generic [ref=e571]:
+                          - paragraph [ref=e573]: The mobility industry has long been at the forefront of adopting innovative AI technologies
+                          - img "A timeline history of the transportation industry's use of AI, from autopilot flights in 1947 to self-driving taxis 2018." [ref=e574]
+                    - generic [ref=e575]:
+                      - paragraph [ref=e576]: Introduction
+                      - paragraph [ref=e577]: Page 3
+              - generic [ref=e579] [cursor=pointer]:
+                - generic [ref=e580]:
+                  - link "Oliver Wyman Forum Logo" [ref=e583]:
+                    - /url: https://www.oliverwymanforum.com/index.html
+                    - img "Oliver Wyman Forum Logo" [ref=e584]
+                  - generic [ref=e585]:
+                    - generic [ref=e586]:
+                      - generic [ref=e587]: Share
+                      - generic [ref=e588]:
+                        - text: Close
+                        - img "close share dropdown" [ref=e589]
+                    - list [ref=e591]:
+                      - listitem [ref=e592]:
+                        - button "Copy link" [ref=e593]:
+                          - generic [ref=e594]: Copy link
+                          - img [ref=e596]
+                      - listitem [ref=e600]:
+                        - link "LinkedIn" [ref=e601]:
+                          - /url: https://www.linkedin.com/shareArticle?mini=true&url=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e602]: LinkedIn
+                          - img [ref=e604]
+                      - listitem [ref=e608]:
+                        - link "Twitter / X" [ref=e609]:
+                          - /url: https://twitter.com/intent/tweet?url=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e610]: Twitter / X
+                          - img [ref=e612]
+                      - listitem [ref=e616]:
+                        - link "Facebook" [ref=e617]:
+                          - /url: https://www.facebook.com/sharer/sharer.php?u=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e618]: Facebook
+                          - img [ref=e620]
+                - generic [ref=e624]:
+                  - paragraph [ref=e626]: Chapter 1
+                  - generic [ref=e627]:
+                    - heading "Why Study AI In Mobility" [level=2] [ref=e628]
+                    - img "Al solutions help rail, traffic systems, and aviation to be more efficient and safe for travelers." [ref=e629]
+                    - generic [ref=e631]:
+                      - heading "AI addresses pivotal challenges for the mobility industry" [level=3] [ref=e634]
+                      - generic [ref=e636]:
+                        - paragraph [ref=e637]: AI helps mobility providers navigate a wide range of stressors. Transportation combines the heavy, physical world of rail tracks, airplanes, and car engines with the IT necessary to manage fleets and infrastructure in highly complex operations — all while in the service of customers who must be kept safe, and who demand personalized treatment. AI solutions provide a powerful tool to help address and balance the mobility industry’s need to create a top-notch, safe travel experience.
+                        - paragraph [ref=e638]:
+                          - text: This need for tech-powered solutions is driving above-average investments in AI, particularly in the auto industry. The value of the AI market in the global automotive industry was $8 billion in 2024, according to Towards Automotive
+                          - generic [ref=e639]: "6"
+                          - text: . The automotive sector is currently investing an average of 3.5% of revenues in AI, compared to 2.2% for all industries, according to an Oliver Wyman analysis.
+                      - generic [ref=e641]:
+                        - paragraph [ref=e643]:
+                          - text: That investment can help the mobility industry accommodate swelling consumer demand for travel. Airports Council International World predicts an average annual growth of 5.8% in passenger traffic between 2022 and 2040, with more than 19 billion airline passengers by 2040. The worldwide number of rail passengers
+                          - generic [ref=e644]: "7"
+                          - text: is expected to increase from 970 million in 2023 to 1.08 billion in 2028, while the number of car-sharing users worldwide
+                          - generic [ref=e645]: "8"
+                          - text: is expected to grow 26%, from 50 million in 2022 to 63 million in 2027. Nearly 70% of recent generative AI users say they plan to use a travel booking channel because it has generative AI capabilities, according to an Oliver Wyman survey
+                          - generic [ref=e646]: "9"
+                          - text: .
+                        - img "Lottie animation" [ref=e650]:
+                          - img [ref=e652]:
+                            - generic "Value of the AI market in the global automotive industry in 2024" [ref=e654]
+                      - heading "Made for mobility, useful elsewhere" [level=3] [ref=e871]
+                      - generic [ref=e873]:
+                        - paragraph [ref=e874]: Transportation and mobility have long been the source of advances in society and the economy, from standardizing US time zones to developing “agile” and “scrum” working methods that are now the standard for tech development workflows. More recently, airlines developed yield management techniques under which they sell tickets for different prices based on factors such as how close the sale is to the flight date and how many tickets remain. These systems are now widely used in hotels to sell rooms at differing price points to different customers.
+                        - paragraph [ref=e875]: Transportation’s role as a pioneer in technology and standards-setting continues today, and it will be especially strong as AI powers transformative changes in safety, customer interaction, and activities from vehicle design to driving or piloting. Mobility’s unique history of innovation means the sector’s experiences will be applicable to a range of other industries, especially those that deliver safety-critical services.
+                    - generic [ref=e876]:
+                      - paragraph [ref=e877]: Why Study AI In Mobility
+                      - paragraph [ref=e878]: Page 4
+              - generic [ref=e880] [cursor=pointer]:
+                - generic [ref=e881]:
+                  - link "Oliver Wyman Forum Logo" [ref=e884]:
+                    - /url: https://www.oliverwymanforum.com/index.html
+                    - img "Oliver Wyman Forum Logo" [ref=e885]
+                  - generic [ref=e886]:
+                    - generic [ref=e887]:
+                      - generic [ref=e888]: Share
+                      - generic [ref=e889]:
+                        - text: Close
+                        - img "close share dropdown" [ref=e890]
+                    - list [ref=e892]:
+                      - listitem [ref=e893]:
+                        - button "Copy link" [ref=e894]:
+                          - generic [ref=e895]: Copy link
+                          - img [ref=e897]
+                      - listitem [ref=e901]:
+                        - link "LinkedIn" [ref=e902]:
+                          - /url: https://www.linkedin.com/shareArticle?mini=true&url=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e903]: LinkedIn
+                          - img [ref=e905]
+                      - listitem [ref=e909]:
+                        - link "Twitter / X" [ref=e910]:
+                          - /url: https://twitter.com/intent/tweet?url=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e911]: Twitter / X
+                          - img [ref=e913]
+                      - listitem [ref=e917]:
+                        - link "Facebook" [ref=e918]:
+                          - /url: https://www.facebook.com/sharer/sharer.php?u=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e919]: Facebook
+                          - img [ref=e921]
+                - generic [ref=e925]:
+                  - paragraph [ref=e927]: Chapter 2
+                  - generic [ref=e928]:
+                    - heading "Mobility’s Key Principles For AI Adoption" [level=2] [ref=e929]
+                    - img "Al solutions are transforming air traffic control and public transit systems by powering autonomous shuttles." [ref=e930]
+                    - generic [ref=e932]:
+                      - heading "Prioritize the right use cases" [level=3] [ref=e935]
+                      - generic [ref=e937]:
+                        - paragraph [ref=e938]: "Customer needs serve as the North Star for mobility providers in deploying AI solutions. Many AI applications in aviation systems, for example, are focused on limiting negative impacts on travelers, such as delays and cancelations. Predictive technologies give automatic alerts when an engine needs servicing, and airlines can then route the plane to an airport where the repair can be performed without resulting in delays or cancelations. To further increase maintenance efficiency, airlines have implemented large language models to give mechanics access to the information they need to make repairs as quickly as possible. These models can maintain traceability back to source documentation for maintenance instructions, helping ensure that information is accurate. While these applications may not be overtly consumer-facing, they are ultimately geared toward improving the travel experience and have accordingly been prioritized. The automotive industry has a similar focus on consumers: Infotainment systems that improve the driver experience and assisted driving safety features that support human operators are being developed with AI."
+                        - heading "Measure impact" [level=3] [ref=e939]
+                        - paragraph [ref=e940]: To justify funding for AI and to develop consumer trust, companies need to be able to identify the benefits of the technology for customers and investors. These benefits come in the form of efficiency, sustainability, safety, and customer service metrics.
+                        - paragraph [ref=e941]: The mobility industry, like others, still struggles with measuring impact. For autonomous driving, the importance of measuring impact is related to public trust, and companies need to showcase and communicate the safety advantages of AI in driving that may run contrary to widely held perceptions and fears. “Showing the added value of AI is critical for clients to adopt new solutions. Having the right metrics can just help do that,” says Yann Cabaret, CEO of SITA for Aircraft, an air transport communications and IT firm.
+                      - generic [ref=e942]:
+                        - generic:
+                          - heading "“Showing the added value of AI is critical for clients to adopt new solutions. Having the right metrics can just help do that.”" [level=3]:
+                            - generic: “Showing
+                            - generic: the
+                            - generic: added
+                            - generic: value
+                            - generic: of
+                            - generic: AI
+                            - generic: is
+                            - generic: critical
+                            - generic: for
+                            - generic: clients
+                            - generic: to
+                            - generic: adopt
+                            - generic: new
+                            - generic: solutions.
+                            - generic: Having
+                            - generic: the
+                            - generic: right
+                            - generic: metrics
+                            - generic: can
+                            - generic: just
+                            - generic: help
+                            - generic: do
+                            - generic: that.”
+                          - generic:
+                            - paragraph:
+                              - generic:
+                                - generic: —
+                                - generic: Yann
+                                - generic: Cabaret
+                              - generic: CEO,
+                              - generic: SITA
+                              - generic: for
+                              - generic: Aircraft
+                      - heading "Develop standards and collaborate with other companies" [level=3] [ref=e945]
+                      - generic [ref=e947]:
+                        - paragraph [ref=e948]: Even as airlines compete for customers, they collaborate to develop technologies and effective procedures to prevent repeated incidents and improve safety. This industry-wide approach provides learning opportunities when adopting new technologies. With the right approach, incremental adoption of new technologies does not disrupt safety or pose a threat to public trust. In other parts of the mobility industry, too, thorough testing and experimentation have ensured that consumers are not put at risk.
+                        - paragraph [ref=e949]: This sometimes leads to a cautious approach that slows down technology deployment, as when accidents involving autonomous cars lead to a pause in their use. While this can hinder rollout of new technologies, it ensures technologies are deployed safely and with the interests of consumers in mind. Further, through extensive testing and collaboration with other industry players and regulators, these pauses and other barriers to deployment can be reduced, avoiding unnecessary restrictions while still protecting consumers.
+                    - generic [ref=e950]:
+                      - paragraph [ref=e951]: Mobility’s Key Principles For AI Adoption
+                      - paragraph [ref=e952]: Page 5
+              - generic [ref=e954] [cursor=pointer]:
+                - generic [ref=e955]:
+                  - link "Oliver Wyman Forum Logo" [ref=e958]:
+                    - /url: https://www.oliverwymanforum.com/index.html
+                    - img "Oliver Wyman Forum Logo" [ref=e959]
+                  - generic [ref=e960]:
+                    - generic [ref=e961]:
+                      - generic [ref=e962]: Share
+                      - generic [ref=e963]:
+                        - text: Close
+                        - img "close share dropdown" [ref=e964]
+                    - list [ref=e966]:
+                      - listitem [ref=e967]:
+                        - button "Copy link" [ref=e968]:
+                          - generic [ref=e969]: Copy link
+                          - img [ref=e971]
+                      - listitem [ref=e975]:
+                        - link "LinkedIn" [ref=e976]:
+                          - /url: https://www.linkedin.com/shareArticle?mini=true&url=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e977]: LinkedIn
+                          - img [ref=e979]
+                      - listitem [ref=e983]:
+                        - link "Twitter / X" [ref=e984]:
+                          - /url: https://twitter.com/intent/tweet?url=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e985]: Twitter / X
+                          - img [ref=e987]
+                      - listitem [ref=e991]:
+                        - link "Facebook" [ref=e992]:
+                          - /url: https://www.facebook.com/sharer/sharer.php?u=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e993]: Facebook
+                          - img [ref=e995]
+                - generic [ref=e999]:
+                  - paragraph [ref=e1001]: Chapter 3
+                  - generic [ref=e1002]:
+                    - heading "How Other Industries Can Put Mobility’s AI Principles Into Practice" [level=2] [ref=e1003]
+                    - img "Al solutions can enable more seamless air travel with predictive maintenance and weather analysis systems." [ref=e1004]
+                    - generic [ref=e1006]:
+                      - heading "Use AI for customer-centric solutions" [level=3] [ref=e1009]
+                      - paragraph [ref=e1012]: The mobility industry has strongly emphasized the safety of passengers and the quality of service in its AI deployment.
+                      - generic [ref=e1014]:
+                        - generic [ref=e1015]:
+                          - heading "Aviation" [level=4] [ref=e1016]
+                          - paragraph [ref=e1017]:
+                            - text: AI is improving the experience of flying while reducing delays and inconveniences. AI systems have increased the accuracy of weather prediction up to 40%
+                            - generic [ref=e1018]: "10"
+                            - text: ", offering faster routes, fewer weather-related delays, and better anticipation of dangerous climate hazards. And new flight path analysis can provide real-time updates based on weather patterns, air traffic, and location, improving ETA prediction by 30% to 50%"
+                            - generic [ref=e1019]: "11"
+                            - text: . This helps to manage delays, air traffic flow, runway and gate assignment, coordination of ground personnel and equipment, and arrival sequences.
+                        - img "Lottie animation" [ref=e1023]:
+                          - img [ref=e1025]:
+                            - generic "Increase in accuracy of weather prediction by AI systems" [ref=e1038]
+                      - generic [ref=e1232]:
+                        - heading "Autos" [level=4] [ref=e1233]
+                        - paragraph [ref=e1234]:
+                          - text: Driving is also becoming more enjoyable because of AI applications, as navigation apps, infotainment, and driver assistance all improve the experience of riding in and operating a car. Investment in AI tech for car ecosystems rose 400% between 2021 and 2023 to reach $1.6 billion
+                          - generic [ref=e1235]: "12"
+                          - text: ", according to Oliver Wyman analysis. Drivers can enjoy hands-free operation of some car functions through voice assistants, facial recognition, and gesture control."
+                        - paragraph [ref=e1236]:
+                          - text: More than 40,000 people lost their lives in auto accidents in the US in 2023
+                          - generic [ref=e1237]: "13"
+                          - text: ", and there is significant opportunity to improve safety outcomes. In 2022, nearly 300,000 people were injured or killed in crashes involving distracted driving in the US"
+                          - generic [ref=e1238]: "14"
+                          - text: ", suggesting that AI technology could play a major role in making roadways safer in the future."
+                      - generic [ref=e1240]:
+                        - paragraph [ref=e1241]:
+                          - text: AI already has made some kinds of crashes less likely. Driver assistance systems brake automatically in case of danger and correct lane departures — in each case, reacting to an outside stimulus to protect the driver and passengers. Autonomous cars — in which an in-car AI system makes all driving decisions — are involved in 76% fewer accidents than human drivers in the areas where they are permitted, according to one study.
+                          - generic [ref=e1242]: "15"
+                        - paragraph [ref=e1243]:
+                          - text: And AI-powered traffic monitoring in dense urban areas can help prevent road accidents. In Melbourne, for example, one company deployed a technology that uses AI to analyze images
+                          - generic [ref=e1244]: "16"
+                          - text: of risky driver behavior inside a vehicle, such as texting, which are then given to the authorities to determine the likelihood of a traffic offense. In the first two years of deployment since 2019, the software firm reported a 22% reduction in fatalities and an 80% reduction in phone use.
+                      - generic [ref=e1246]:
+                        - generic [ref=e1247]:
+                          - generic [ref=e1248]:
+                            - paragraph [ref=e1249]: Global funding in generative AI mobility startups, 2021-2023
+                            - paragraph [ref=e1250]: In $ millions
+                          - iframe [ref=e1251]:
+                            - table "Table with 2 columns and 2 rows." [ref=f3e8]:
+                              - caption [ref=f3e9]: Table with 2 columns and 2 rows.
+                              - rowgroup [ref=f3e10]:
+                                - row [ref=f3e11]:
+                                  - columnheader [ref=f3e12]
+                                  - columnheader [ref=f3e13]
+                                - row "Consumer-facing" [ref=f3e14]:
+                                  - columnheader "Consumer-facing" [ref=f3e15] [cursor=pointer]:
+                                    - button "Consumer-facing" [ref=f3e16]:
+                                      - generic [ref=f3e17]: Consumer-facing
+                                  - columnheader [ref=f3e18]
+                              - rowgroup [ref=f3e19]:
+                                - row "Car and ecosystem usage Enhances in-car personalized services and experiences 1,600" [ref=f3e20]:
+                                  - rowheader "Car and ecosystem usage Enhances in-car personalized services and experiences" [ref=f3e21]:
+                                    - text: Car and ecosystem usage
+                                    - generic [ref=f3e22]: Enhances in-car personalized services and experiences
+                                  - cell "1,600" [ref=f3e23]:
+                                    - generic [ref=f3e24]: 1,600
+                                    - generic [ref=f3e26]:
+                                      - generic: 1,600
+                                      - generic [ref=f3e27]: 1,600
+                                - row "Sales and aftersales Personalizes the customer journey and creates more meaningful customer engagement 330" [ref=f3e28]:
+                                  - rowheader "Sales and aftersales Personalizes the customer journey and creates more meaningful customer engagement" [ref=f3e29]:
+                                    - text: Sales and aftersales
+                                    - generic [ref=f3e30]: Personalizes the customer journey and creates more meaningful customer engagement
+                                  - cell "330" [ref=f3e31]:
+                                    - generic [ref=f3e32]: "330"
+                                    - generic [ref=f3e34]:
+                                      - generic: "330"
+                                      - generic [ref=f3e35]: "330"
+                          - iframe [ref=e1253]:
+                            - table "Table with 2 columns and 2 rows." [ref=f4e8]:
+                              - caption [ref=f4e9]: Table with 2 columns and 2 rows.
+                              - rowgroup [ref=f4e10]:
+                                - row [ref=f4e11]:
+                                  - columnheader [ref=f4e12]
+                                  - columnheader [ref=f4e13]
+                                - row "Not consumer-facing" [ref=f4e14]:
+                                  - columnheader "Not consumer-facing" [ref=f4e15] [cursor=pointer]:
+                                    - button "Not consumer-facing" [ref=f4e16]:
+                                      - generic [ref=f4e17]: Not consumer-facing
+                                  - columnheader [ref=f4e18]
+                              - rowgroup [ref=f4e19]:
+                                - row "Supply chain and production process optimization Improves R&D, supply chain and process efficiencies 220" [ref=f4e20]:
+                                  - rowheader "Supply chain and production process optimization Improves R&D, supply chain and process efficiencies" [ref=f4e21]:
+                                    - text: Supply chain and production process optimization
+                                    - generic [ref=f4e22]: Improves R&D, supply chain and process efficiencies
+                                  - cell "220" [ref=f4e23]:
+                                    - generic [ref=f4e24]: "220"
+                                    - generic [ref=f4e26]:
+                                      - generic: "220"
+                                      - generic [ref=f4e27]: "220"
+                                - row "Autonomous driving Trains autonomous vehicles by reflecting real-word circumstances 708" [ref=f4e28]:
+                                  - rowheader "Autonomous driving Trains autonomous vehicles by reflecting real-word circumstances" [ref=f4e29]:
+                                    - text: Autonomous driving
+                                    - generic [ref=f4e30]: Trains autonomous vehicles by reflecting real-word circumstances
+                                  - cell "708" [ref=f4e31]:
+                                    - generic [ref=f4e32]: "708"
+                                    - generic [ref=f4e34]:
+                                      - generic: "708"
+                                      - generic [ref=f4e35]: "708"
+                          - paragraph [ref=e1254]: "Source: Forbes, Crunchbase, Oliver Wyman"
+                        - heading "Fuel AI systems with the right data" [level=3] [ref=e1255]
+                        - paragraph [ref=e1256]: Effective AI implementation requires access to underlying data to train and operate the AI systems. The mobility industry has had several successes in data utilization — such as predictive aircraft maintenance, insurance premiums informed with driver data, and autonomous driving systems and large language models — thanks to its ability to generate vast, unprecedented amounts of data. But some significant barriers still exist, such as effectively gathering, cleaning, and structuring data to be used by AI systems. Other industries facing their own data access challenges can inform their approaches based on mobility’s experience.
+                      - generic [ref=e1258]:
+                        - generic [ref=e1259]:
+                          - heading "Autos" [level=4] [ref=e1260]
+                          - paragraph [ref=e1261]: An increasing number of connected vehicles enables automakers to gather large amounts of data that can be utilized externally, such as by selling driver behavior data to insurance providers that then use the data to offer lower premiums to safer drivers.
+                          - paragraph [ref=e1262]:
+                            - text: Data collection also has improved autonomous driving. To reduce steering jerks, improper stops, and human takeovers, AI is modeling crucial edge cases — extremely rare driving scenarios in which autonomous cars still need to be able to respond the way a human would. Learning to respond to such rare situations requires the collection and analysis of a massive amount of data. Automakers are investing in supercomputers to analyze the up to 19 terabytes of data collected per day by each autonomous vehicle.
+                            - generic [ref=e1263]: "17"
+                        - img "Lottie animation" [ref=e1267]:
+                          - img [ref=e1269]:
+                            - generic "Automakers are investing in supercomputers to analyze the up to 19 terabytes of data collected per day by each autonomous vehicle" [ref=e1295]
+                      - generic [ref=e1736]:
+                        - heading "Aviation" [level=4] [ref=e1737]
+                        - paragraph [ref=e1738]: For decades, aviation has utilized predictive data — such as sensor alerts from the airframe or engines predicting aircraft health issues — to proactively schedule maintenance operations. That data informs engineers and maintenance teams if and where an aircraft has a problem. This can be paired with information about when and where replacement parts are available, allowing maintenance teams to reduce delays, service impacts, human error, and administrative time — all while keeping planes in use for longer.
+                        - paragraph [ref=e1739]: Historical maintenance and safety data also is used to train large language models that support maintenance technicians. These AI tools help maintenance crews obtain the information and manuals they need, making them more efficient and potentially helping airlines to expand without increasing headcount.
+                        - heading "Making data AI-friendly" [level=4] [ref=e1740]
+                        - paragraph [ref=e1741]:
+                          - text: Despite major successes in utilizing data, mobility still isn’t taking full advantage of the enormous amounts of data it has available. Airlines, for example, often receive information from suppliers and aircraft manufacturers in the form of PDFs. These PDFs, from several third parties in several formats, can be difficult to input into systems and use effectively, requiring time-consuming manual entry to ensure accuracy. Similar processes can be highly time-consuming for IT teams across all transportation providers. “Ninety percent of our work is data cleaning and data structuring,” Jatish Patel, founder and CEO of Flow Labs, a transportation technology company that works to build integrated transportation systems, told SmartBrief in a recent interview.
+                          - generic [ref=e1742]: "18"
+                          - text: “In transportation, that’s the problem that’s been plaguing the industry for so long.”
+                      - generic [ref=e1743]:
+                        - generic:
+                          - heading "“Ninety percent of our work is data cleaning and data structuring. In transportation, that’s the problem that’s been plaguing the industry for so long.”" [level=3]:
+                            - generic: “Ninety
+                            - generic: percent
+                            - generic: of
+                            - generic: our
+                            - generic: work
+                            - generic: is
+                            - generic: data
+                            - generic: cleaning
+                            - generic: and
+                            - generic: data
+                            - generic: structuring.
+                            - generic: In
+                            - generic: transportation,
+                            - generic: that’s
+                            - generic: the
+                            - generic: problem
+                            - generic: that’s
+                            - generic: been
+                            - generic: plaguing
+                            - generic: the
+                            - generic: industry
+                            - generic: for
+                            - generic: so
+                            - generic: long.”
+                          - generic:
+                            - paragraph:
+                              - generic:
+                                - generic: —
+                                - generic: Jatish
+                                - generic: Patel
+                              - generic: Founder
+                              - generic: and
+                              - generic: CEO,
+                              - generic: Flow
+                              - generic: Labs
+                      - generic [ref=e1745]:
+                        - paragraph [ref=e1746]: All industries face the challenge of converting data into a form that AI systems can digest, so organizations should implement centralized digital processes. AI can help clean and structure inputs so that they flow into a central system and are stored in digital form. The data is then available to train AI systems to carry out and assist in company operations. The challenge of unclean data highlights the need for companies to develop true digital capabilities to capture the power of their data.
+                        - paragraph [ref=e1747]:
+                          - text: Data accessibility challenges for rail providers highlight a barrier for all industries. Train performance data is essential to driving greater efficiencies and unleashing the potential of AI in rail, but low technology integration along the value chain makes it hard for train operators and shippers to share data. There is also a lack of data transparency in the rail sector. Many datasets are held by different players, and they are incorrectly considered commercially sensitive, thus restricting access
+                          - generic [ref=e1748]: "19"
+                          - text: for other partners. Removing these kinds of barriers will be essential to opening data access and unlocking the full potential of AI adoption.
+                        - heading "Other industries" [level=4] [ref=e1749]
+                        - paragraph [ref=e1750]: Many other industries will need to break down barriers to take advantage of AI. In the heavy equipment industry, for example, customers usually assemble fleets of machines from a range of equipment manufacturers, but their data is often stuck in silos that have trouble interfacing between different technology systems. Further complications arise when different equipment is used in tandem, such as a tractor manufactured by one company and a planting or chemical application attachment produced by another.
+                        - paragraph [ref=e1751]: How can these systems better communicate to enhance fleet management? One potential solution is using several AI models as translators between different systems to aggregate and standardize data, allowing previously disconnected systems to communicate and work together through AI. Mobility’s successes — and failures — in data utilization can help the heavy equipment industry and beyond.
+                        - heading "Organize and form partnerships for AI" [level=3] [ref=e1752]
+                        - paragraph [ref=e1753]: AI operating models require a different approach from traditional technologies, and companies in both mobility and other industries have not yet made the transition to a new way of working. “There is still a lot of confusion about what AI is at the management level,” says Chin Kian Keong, senior consultant at ST Engineering and former chief engineer at Singapore’s Land Transport Authority.
+                      - generic [ref=e1754]:
+                        - generic:
+                          - heading "“There is still a lot of confusion about what AI is at the management level.”" [level=3]:
+                            - generic: “There
+                            - generic: is
+                            - generic: still
+                            - generic: a
+                            - generic: lot
+                            - generic: of
+                            - generic: confusion
+                            - generic: about
+                            - generic: what
+                            - generic: AI
+                            - generic: is
+                            - generic: at
+                            - generic: the
+                            - generic: management
+                            - generic: level.”
+                          - generic:
+                            - paragraph:
+                              - generic:
+                                - generic: —
+                                - generic: Chin
+                                - generic: Kian
+                                - generic: Keong
+                              - generic: Senior
+                              - generic: Consultant,
+                              - generic: ST
+                              - generic: Engineering
+                      - generic [ref=e1756]:
+                        - paragraph [ref=e1757]:
+                          - text: The main challenge is how to harness AI expertise. Fully 96% of employees say that generative AI can benefit their jobs, according to an Oliver Wyman Forum study.
+                          - generic [ref=e1758]: "20"
+                          - text: But finding exactly how to capture this benefit is not easy, and 57% of employees report receiving insufficient generative AI training from their employer. By 2027, 60% of employees in the wider economy will need reskilling or upskilling on AI
+                          - generic [ref=e1759]: "21"
+                          - text: ", so companies need to prepare effective training."
+                        - paragraph [ref=e1760]: "While these challenges are significant, the potential is enormous: Generative AI can save 300 billion hours of work globally each year, the equivalent of roughly two hours per"
+                      - generic [ref=e1762]:
+                        - generic [ref=e1763]:
+                          - paragraph [ref=e1764]: person per week, according to an Oliver Wyman Forum analysis. Across developed countries, these technologies could drive a 40% increase in labor productivity by 2035.
+                          - paragraph [ref=e1765]: In some cases, an internal solution will be best — such as when a unique system is needed that is not available elsewhere, or when an organization has experience developing software solutions. Indeed, some automakers have tried to construct their own ecosystems based on the data they gather.
+                          - paragraph [ref=e1766]: But building internal solutions often creates significant challenges and isn’t always successful. Software development requires a particular organizational structure and experienced staff, and many non-tech companies simply do not have in-house expertise.
+                          - paragraph [ref=e1767]: The accelerating rate of technological development poses a risk to mobility companies that could fall behind competitors as their
+                        - img "Lottie animation" [ref=e1771]:
+                          - img [ref=e1773]:
+                            - generic "of employees in the wider economy will need reskilling or upskilling on AI by 2027" [ref=e1782]
+                      - generic [ref=e2056]:
+                        - paragraph [ref=e2057]: internal solutions become outdated. The growing complexity of consumer demands has forced many mobility providers to include players from other sectors with technological know-how. Declining rates of car ownership, for example, have encouraged automakers to combine the capabilities of a tech company, an energy company, and a service company to provide alternatives.
+                        - heading "Find the right partners" [level=4] [ref=e2058]
+                        - paragraph [ref=e2059]: Partnering with an AI company is an efficient way to obtain leading-edge AI technology. For example, if an aviation company is developing an AI-based system to recognize aircraft hull damage using cameras, a partnership might ensure that it always has the latest AI visual identification tech. “With the pace at which tools are being developed, companies risk being left in the dust by not having an external source,” says David Shmoys, director of the Center for Data Science for Enterprise and Society at Cornell University.
+                      - generic [ref=e2060]:
+                        - generic:
+                          - heading "“With the pace at which tools are being developed, companies risk being left in the dust by not having an external source.”" [level=3]:
+                            - generic: “With
+                            - generic: the
+                            - generic: pace
+                            - generic: at
+                            - generic: which
+                            - generic: tools
+                            - generic: are
+                            - generic: being
+                            - generic: developed,
+                            - generic: companies
+                            - generic: risk
+                            - generic: being
+                            - generic: left
+                            - generic: in
+                            - generic: the
+                            - generic: dust
+                            - generic: by
+                            - generic: not
+                            - generic: having
+                            - generic: an
+                            - generic: external
+                            - generic: source.”
+                          - generic:
+                            - paragraph:
+                              - generic:
+                                - generic: —
+                                - generic: David
+                                - generic: Shmoys
+                              - generic: Director,
+                              - generic: Center
+                              - generic: for
+                              - generic: Data
+                              - generic: Science
+                              - generic: for
+                              - generic: Enterprise
+                              - generic: and
+                              - generic: Society,
+                              - generic: Cornell
+                              - generic: University
+                      - generic [ref=e2062]:
+                        - paragraph [ref=e2063]: The auto industry has in recent years relied on partnerships to blend its expertise with that of tech companies to deliver new generations of voice and navigation technologies. The best and most widespread examples of in-car software are smartphone connection systems, which work with a variety of infotainment systems in many car models.
+                        - paragraph [ref=e2064]: For companies in other industries, the decision of whether to develop internal solutions or access outside expertise will depend on available resources, system requirements, data privacy, costs, and potential boosts to safety and consumer benefits.
+                        - paragraph [ref=e2065]:
+                          - text: Educational institutions also provide access to the latest research into the integration of technology and mobility systems. One example is battery experiments carried out at Stanford University
+                          - generic [ref=e2066]: "22"
+                          - text: through a collaboration with the Massachusetts Institute of Technology and the Toyota Research Institute. Scientists trained a machine learning model on several hundred million points of battery charging and discharging data. Their algorithm predicted the number of cycles that each battery would last and thus whether it was suitable for electric vehicles — a process that normally takes a lengthy analysis and slows down development.
+                        - heading "Increase organizational efficiency" [level=4] [ref=e2067]
+                        - paragraph [ref=e2068]: The rise of AI will also transform operations and the types of skills needed by the workforce. In the case of airport operations, required skills will become more specialized as AI use expands. Passenger-facing employees will need to upgrade customer service skills and operations teams will need new technology skills to interface with AI systems. The industry also will need to think about how to attract talent into this AI-transformed workplace. Collaborating with academic institutions will be an important way to facilitate interest in aviation and recruitment to meet future industry demands and ensure that workers have future-proofed skills.
+                        - heading "Other industries" [level=4] [ref=e2069]
+                        - paragraph [ref=e2070]: Other industries can learn from the mobility sector’s experience with partnerships to drive AI deployment. Similar to mobility, the integration of advanced AI systems into construction and agriculture equipment could increase efficiency, from fleet management and harvest project planning to weather forecasting. However, most companies in these industries are not set up to develop complex AI systems internally.
+                        - paragraph [ref=e2071]: Major construction and agriculture equipment players have begun partnering with tech companies for cloud connected services, but direct AI partnerships (particularly with newer companies) are still nascent. As in the mobility industry, these partnerships have significant potential in automation, AI-powered analytics, and advanced digital twins. Companies in this space should start assessing how to forge partnerships with AI leaders, as has been done in the mobility space, to capture the latest technology in their products.
+                        - paragraph [ref=e2072]: Expanding the role of partnerships will require companies to undergo a fundamental shift from controlling everything in their system to allowing “black boxes” in which they may not fully understand everything that happens in an algorithm. They will have to learn to trust partners and their systems, and to relinquish control over some of the technology.
+                        - paragraph [ref=e2073]: Other industries also will benefit from the use of AI recommendations to increase workplace efficiency. In industrial sectors, AI can streamline the process of assigning service technicians to repairs by analyzing their history and the nature of the required repair. Equipment recommendation engines can optimize resource utilization and increase customer satisfaction by recommending the most suitable equipment for a given job. Additionally, text digitization tools can distill extensive repair manual collections and schematics into clear walkthroughs for technicians and format email quotes and service reports into succinct and intelligible summaries, improving communication channels, expediting decision-making processes, and making technicians more efficient and effective.
+                        - heading "Work with regulators" [level=3] [ref=e2074]
+                        - paragraph [ref=e2075]: Aviation in particular shows how regulation can ensure safety while fostering innovation. In the US, aviation incidents are investigated by a range of agencies, including the Federal Aviation Administration. After serious near-misses and accidents, the FAA conducts scene investigations, data analysis, interviews with people involved, and regulatory compliance checks. Based on its findings, the agency then makes safety recommendations or takes legal action.
+                        - paragraph [ref=e2076]: While regulation is often viewed as cumbersome, a clear regulatory environment supports innovation by giving companies a framework to test, certify, and deploy new technologies. Even for new AI-supported technologies that may not yet have published rules, such as air taxis, the stability of the regulatory environment gives companies the confidence to innovate and build trust, and provides a guide for working with regulators to bring new applications to market.
+                        - paragraph [ref=e2077]: One area in need of improved regulation is autonomous driving, where 45% of consumers report anxieties about the related technology, according to a global Oliver Wyman Forum survey. Aviation’s clear framework for implementing new tech solutions may provide a model.
+                        - paragraph [ref=e2078]:
+                          - text: While some autonomous vehicles may be safer than human drivers, they haven’t yet met the level of safety achieved in the aviation or rail industries. After several high-profile safety incidents, some self-driving cars have been pulled off the road, potentially slowing innovation. “There’s been progress, but there remain some real procedural, data, and regulatory gaps,” explained Tilly Chang, executive director of the San Francisco County Transportation Authority, on how to ensure autonomous vehicles
+                          - generic [ref=e2079]: "23"
+                          - text: serve the public interest.
+                      - generic [ref=e2080]:
+                        - generic:
+                          - heading "“There’s been progress, but there remain some real procedural, data, and regulatory gaps”" [level=3]:
+                            - generic: “There’s
+                            - generic: been
+                            - generic: progress,
+                            - generic: but
+                            - generic: there
+                            - generic: remain
+                            - generic: some
+                            - generic: real
+                            - generic: procedural,
+                            - generic: data,
+                            - generic: and
+                            - generic: regulatory
+                            - generic: gaps”
+                          - generic:
+                            - paragraph:
+                              - generic:
+                                - generic: —
+                                - generic: Tilly
+                                - generic: Chang
+                              - generic: ","
+                              - generic: executive
+                              - generic: director
+                              - generic: of
+                              - generic: the
+                              - generic: San
+                              - generic: Francisco
+                              - generic: County
+                              - generic: Transportation
+                              - generic: Authority
+                      - generic [ref=e2082]:
+                        - generic [ref=e2083]:
+                          - generic [ref=e2084]:
+                            - paragraph [ref=e2085]: Consumers are not fully onboard with intelligent cars
+                            - paragraph [ref=e2086]: "\"How do you perceive the potential of automated vehicles?\""
+                            - paragraph [ref=e2087]: "% of respondents"
+                          - iframe [ref=e2088]:
+                            - generic [ref=f5e8]:
+                              - img [ref=f5e10]
+                              - img
+                              - generic [ref=f5e16]: Scary, we need more time to understand the impact of technology (45%)
+                              - generic [ref=f5e17]: Exciting, AI will make my trips easier (55%)
+                          - paragraph [ref=e2089]: "Source: Oliver Wyman Forum Global Consumer Sentiment Survey (N=8,777), April 2023"
+                        - paragraph [ref=e2090]: Mobility providers must do more to assuage consumer safety concerns, and stricter regulation can help. Less than 20% of consumers said they would definitely use automated cars, shuttles, or land and air taxis, according to a 17-nation Oliver Wyman Forum survey conducted in June 2024, while 64% said that stricter safety protocols would make them more likely to use autonomous vehicles. Without clear rules for experimentation, companies face risks from costly lawsuits due to data privacy concerns and technology glitches. Yet the regulatory landscape has not been fully developed.
+                        - paragraph [ref=e2091]: In San Francisco, for instance, autonomous vehicle companies are regulated by the state, not the city. There is also no way to give an autonomous vehicle a traffic ticket without a human driver. The California legislature is considering bills to address these accountability and transparency gaps, highlighting the importance of an improved regulatory framework to allow autonomous vehicles to progress safely.
+                        - paragraph [ref=e2092]: The absence of a harmonized regulatory framework for collaborative automation in the US leads “most companies to prioritize local safety — which they should — even if it is at the cost of optimizing overall mobility, traffic fluidity, and energy efficiency,” said Alexandre Bayen, professor of engineering and computer science at the University of California, Berkeley.
+                      - generic [ref=e2093]:
+                        - generic:
+                          - heading "“Most companies ... prioritize local safety — which they should — even if it is at the cost of optimizing overall mobility, traffic fluidity, and energy efficiency.”" [level=3]:
+                            - generic: “Most
+                            - generic: companies
+                            - generic: ...
+                            - generic: prioritize
+                            - generic: local
+                            - generic: safety
+                            - generic: —
+                            - generic: which
+                            - generic: they
+                            - generic: should
+                            - generic: —
+                            - generic: even
+                            - generic: if
+                            - generic: it
+                            - generic: is
+                            - generic: at
+                            - generic: the
+                            - generic: cost
+                            - generic: of
+                            - generic: optimizing
+                            - generic: overall
+                            - generic: mobility,
+                            - generic: traffic
+                            - generic: fluidity,
+                            - generic: and
+                            - generic: energy
+                            - generic: efficiency.”
+                          - generic:
+                            - paragraph:
+                              - generic:
+                                - generic: —
+                                - generic: Alexandre
+                                - generic: Bayen
+                              - generic: Associate
+                              - generic: Provost
+                              - generic: and
+                              - generic: Professor
+                              - generic: EECS,
+                              - generic: UC
+                              - generic: Berkeley
+                      - generic [ref=e2095]:
+                        - paragraph [ref=e2096]: Regulation — for autonomous driving and other areas — also can ensure that innovation serves the public good. AI technologies employed by mobility companies can help cities and countries achieve their sustainability goals and make mobility services more affordable. As governments work toward hitting their climate targets, AI systems can help make transit systems more efficient through route optimization and traffic management, thereby reducing fuel consumption and emissions from cars. Shared mobility, like ride-hailing or bike-sharing, can benefit from improved efficiencies from AI models, thus resulting in fewer cars on the road.
+                        - paragraph [ref=e2097]: Businesses and governments should take note of the profitability potential of AI-powered, safe mobility, as 43% of consumers said they would pay a premium for autonomous transit, according to an Oliver Wyman Forum survey.
+                        - generic [ref=e2098]:
+                          - generic [ref=e2099]:
+                            - paragraph [ref=e2100]: Stricter safety standards could lead to greater autonomous vehicle adoption
+                            - paragraph [ref=e2101]: “What are the most important factors that would make you more likely to use autonomous vehicles?”
+                            - paragraph [ref=e2102]: "% of respondents"
+                          - iframe [ref=e2103]:
+                            - generic [ref=f6e9]:
+                              - generic [ref=f6e10]:
+                                - generic [ref=f6e11]: Stricter safety standards
+                                - generic [ref=f6e16]: 64%
+                              - generic [ref=f6e17]:
+                                - generic [ref=f6e18]: Clearer insurance coverage rules
+                                - generic [ref=f6e23]: 43%
+                              - generic [ref=f6e24]:
+                                - generic [ref=f6e25]: Limits on operating locations/conditions
+                                - generic [ref=f6e30]: 42%
+                              - generic [ref=f6e31]:
+                                - generic [ref=f6e32]: Decreased cost
+                                - generic [ref=f6e37]: 40%
+                              - generic [ref=f6e38]:
+                                - generic [ref=f6e39]: Broader use
+                                - generic [ref=f6e44]: 18%
+                          - paragraph [ref=e2104]: "Note: Numbers will not sum to 100% as respondents could select up to 3 factors"
+                          - paragraph [ref=e2105]: "Source: Oliver Wyman Forum Global Consumer Sentiment Survey (N=16,916), June 2024"
+                        - generic [ref=e2106]:
+                          - generic [ref=e2107]:
+                            - paragraph [ref=e2108]: Consumers see public transit efficiency and traffic management as top areas for data use in cities
+                            - paragraph [ref=e2109]: “Where do you see the largest potential for data to make mobility more efficient in cities?”
+                            - paragraph [ref=e2110]: "% of respondents"
+                          - iframe [ref=e2111]:
+                            - generic [ref=f7e9]:
+                              - generic [ref=f7e10]:
+                                - generic [ref=f7e11]: Public transit efficiency
+                                - generic [ref=f7e16]: 28%
+                              - generic [ref=f7e17]:
+                                - generic [ref=f7e18]: Traffic management
+                                - generic [ref=f7e23]: 20%
+                              - generic [ref=f7e24]:
+                                - generic [ref=f7e25]: Trip planning
+                                - generic [ref=f7e30]: 13%
+                              - generic [ref=f7e31]:
+                                - generic [ref=f7e32]: Expanding mobility services to underserved areas
+                                - generic [ref=f7e37]: 13%
+                              - generic [ref=f7e38]:
+                                - generic [ref=f7e39]: Infrastructure management
+                                - generic [ref=f7e44]: 12%
+                              - generic [ref=f7e45]:
+                                - generic [ref=f7e46]: Energy management services
+                                - generic [ref=f7e51]: 11%
+                              - generic [ref=f7e52]:
+                                - generic [ref=f7e53]: Robotaxis
+                                - generic [ref=f7e58]: 3%
+                          - paragraph [ref=e2112]: "Note: Numbers will not sum to 100% as respondents could select up to 3 factors"
+                          - paragraph [ref=e2113]: "Source: Oliver Wyman Forum Global Consumer Sentiment Survey (N=9,007), October 2023"
+                        - heading "Other industries" [level=4] [ref=e2114]
+                      - generic [ref=e2116]:
+                        - generic [ref=e2117]:
+                          - paragraph [ref=e2118]: Mobility’s mixed experience with regulation — from established aviation protocols to developing autonomous vehicle regulation — foreshadows a need for more comprehensive guardrails across all industries to help make AI solutions more trustworthy and improve public perception. Aviation’s long-standing and highly structured regulatory environment has successfully supported innovation and provides an example for other industries, while regulation around autonomous vehicles underscores the pitfalls of less comprehensive regulation for public perception and technology deployment.
+                          - paragraph [ref=e2119]: Clearer guidelines for AI use can help consumers become more willing to purchase AI-fueled goods and services. Nearly 30% of consumers believe that organizations using AI are untrustworthy, according to an Oliver Wyman Forum report.
+                          - paragraph [ref=e2120]:
+                            - text: Beyond the US, there are further examples of forward-looking AI regulation. The EU’s Artificial Intelligence Act
+                            - generic [ref=e2121]: "24"
+                            - text: was approved in May 2024, setting guardrails and thus making it easier for companies to test AI use cases. Similarly, China recently enacted regulations to address risks and introduce compliance obligations. This approach allows more transparency and encourages mobility industries to experiment and scale.
+                        - img "Lottie animation" [ref=e2125]:
+                          - img [ref=e2127]:
+                            - generic "of consumers believe that organizations using AI are untrustworthy, according to an Oliver Wyman Forum report" [ref=e2137]
+                      - paragraph [ref=e2553]: Just as autonomous driving could benefit from a more established regulatory environment, the construction and engineering sectors would benefit from clear rules around safety and standards for AI systems. Currently, the maturity of regulation varies widely among different authorities. European regulators provide more prescriptive rules, but US agencies have been less involved. Uncertain regulatory environments have led industry groups to step in, but clear frameworks are still not in place. The current lack of clarity creates barriers for businesses seeking to unlock the full potential of AI, and improved regulation could help alleviate these challenges.
+                    - generic [ref=e2554]:
+                      - paragraph [ref=e2555]: How Other Industries Can Put Mobility’s AI Principles Into Practice
+                      - paragraph [ref=e2556]: Page 6
+              - generic [ref=e2558] [cursor=pointer]:
+                - generic [ref=e2559]:
+                  - link "Oliver Wyman Forum Logo" [ref=e2562]:
+                    - /url: https://www.oliverwymanforum.com/index.html
+                    - img "Oliver Wyman Forum Logo" [ref=e2563]
+                  - generic [ref=e2564]:
+                    - generic [ref=e2565]:
+                      - generic [ref=e2566]: Share
+                      - generic [ref=e2567]:
+                        - text: Close
+                        - img "close share dropdown" [ref=e2568]
+                    - list [ref=e2570]:
+                      - listitem [ref=e2571]:
+                        - button "Copy link" [ref=e2572]:
+                          - generic [ref=e2573]: Copy link
+                          - img [ref=e2575]
+                      - listitem [ref=e2579]:
+                        - link "LinkedIn" [ref=e2580]:
+                          - /url: https://www.linkedin.com/shareArticle?mini=true&url=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e2581]: LinkedIn
+                          - img [ref=e2583]
+                      - listitem [ref=e2587]:
+                        - link "Twitter / X" [ref=e2588]:
+                          - /url: https://twitter.com/intent/tweet?url=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e2589]: Twitter / X
+                          - img [ref=e2591]
+                      - listitem [ref=e2595]:
+                        - link "Facebook" [ref=e2596]:
+                          - /url: https://www.facebook.com/sharer/sharer.php?u=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e2597]: Facebook
+                          - img [ref=e2599]
+                - generic [ref=e2603]:
+                  - paragraph [ref=e2605]: Chapter 4
+                  - generic [ref=e2606]:
+                    - heading "For Businesses Looking To Adopt AI, Follow Mobility’s Signal" [level=2] [ref=e2607]
+                    - img "Al solutions can make traffic management systems more efficient and safe for travelers." [ref=e2608]
+                    - paragraph [ref=e2613]: Mobility has a long history of AI adoption. The industry has embraced new technology while facing stringent demands for performance in safety, cost, and convenience, which have forced the industry to use any means possible to innovate. These factors turned mobility into a technology leader — even in areas where it is not native, such as AI. Other industries — some with smaller scales or fewer direct participants — share many challenges with mobility. If a company faces a challenge in how to approach AI, there is likely an example to be found somewhere in the mobility industry.
+                    - generic [ref=e2614]:
+                      - paragraph [ref=e2615]: For Businesses Looking To Adopt AI, Follow Mobility’s Signal
+                      - paragraph [ref=e2616]: Page 7
+              - generic [ref=e2618] [cursor=pointer]:
+                - generic [ref=e2619]:
+                  - link "Oliver Wyman Forum Logo" [ref=e2622]:
+                    - /url: https://www.oliverwymanforum.com/index.html
+                    - img "Oliver Wyman Forum Logo" [ref=e2623]
+                  - generic [ref=e2624]:
+                    - generic [ref=e2625]:
+                      - generic [ref=e2626]: Share
+                      - generic [ref=e2627]:
+                        - text: Close
+                        - img "close share dropdown" [ref=e2628]
+                    - list [ref=e2630]:
+                      - listitem [ref=e2631]:
+                        - button "Copy link" [ref=e2632]:
+                          - generic [ref=e2633]: Copy link
+                          - img [ref=e2635]
+                      - listitem [ref=e2639]:
+                        - link "LinkedIn" [ref=e2640]:
+                          - /url: https://www.linkedin.com/shareArticle?mini=true&url=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e2641]: LinkedIn
+                          - img [ref=e2643]
+                      - listitem [ref=e2647]:
+                        - link "Twitter / X" [ref=e2648]:
+                          - /url: https://twitter.com/intent/tweet?url=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e2649]: Twitter / X
+                          - img [ref=e2651]
+                      - listitem [ref=e2655]:
+                        - link "Facebook" [ref=e2656]:
+                          - /url: https://www.facebook.com/sharer/sharer.php?u=https://www.oliverwymanforum.com/mobility/what-business-can-learn-from-mobilitys-early-ai-adoption.html
+                          - generic [ref=e2657]: Facebook
+                          - img [ref=e2659]
+                - generic [ref=e2663]:
+                  - paragraph [ref=e2665]: References
+                  - generic [ref=e2666]:
+                    - heading "References" [level=2] [ref=e2667]
+                    - generic [ref=e2668]:
+                      - list [ref=e2670]:
+                        - listitem [ref=e2671]:
+                          - link "Connected Aviation Today. 2023. “Three ways AI Revolutionizing Air Travel Today.”" [ref=e2672]:
+                            - /url: https://connectedaviationtoday.com/three-ways-ai-is-already-revolutionizing-air-travel-today/
+                            - generic [ref=e2673]: Connected Aviation Today. 2023. “Three ways AI Revolutionizing Air Travel Today.”
+                            - img [ref=e2674]
+                        - listitem [ref=e2677]:
+                          - link "CPO Magazine. 2023. “Data Flowing From Connected Vehicles May Cause Manufacturers to Run Afoul of California Privacy Law.”" [ref=e2678]:
+                            - /url: https://www.cpomagazine.com/data-protection/data-flowing-from-connected-vehicles-may-cause-manufacturers-to-run-afoul-of-california-privacy-law/#:~:text=The%20most%20connected%20of%20these,its%20vehicles%20are%20constantly%20collecting
+                            - generic [ref=e2679]: CPO Magazine. 2023. “Data Flowing From Connected Vehicles May Cause Manufacturers to Run Afoul of California Privacy Law.”
+                            - img [ref=e2680]
+                        - listitem [ref=e2683]:
+                          - link "Fortune. 2023. “How the airline industry is using A.I. to improve the entire experience of flying.”" [ref=e2684]:
+                            - /url: https://fortune.com/2023/01/31/tech-forward-everyday-ai-airline-industry-fuel-consumption-food-waste/
+                            - generic [ref=e2685]: Fortune. 2023. “How the airline industry is using A.I. to improve the entire experience of flying.”
+                            - img [ref=e2686]
+                        - listitem [ref=e2689]:
+                          - link "Grand View Research. 2024. “Automotive AI Market Size and Trends.”" [ref=e2690]:
+                            - /url: https://www.grandviewresearch.com/industry-analysis/automotive-artificial-intelligence-market-report
+                            - generic [ref=e2691]: Grand View Research. 2024. “Automotive AI Market Size and Trends.”
+                            - img [ref=e2692]
+                        - listitem [ref=e2695]:
+                          - link "National Highway Traffic Safety Administration. 2024. “NHTSA Launches Put the Phone Away or Pay Campaign; Releases 2023 Fatality Early Estimates.”" [ref=e2696]:
+                            - /url: https://www.nhtsa.gov/press-releases/2022-traffic-deaths-2023-early-estimates
+                            - generic [ref=e2697]: National Highway Traffic Safety Administration. 2024. “NHTSA Launches Put the Phone Away or Pay Campaign; Releases 2023 Fatality Early Estimates.”
+                            - img [ref=e2698]
+                        - listitem [ref=e2701]:
+                          - link "National Safety Council. 2024. “Airplane Crashes.”" [ref=e2702]:
+                            - /url: https://injuryfacts.nsc.org/home-and-community/safety-topics/airplane-crashes/
+                            - generic [ref=e2703]: National Safety Council. 2024. “Airplane Crashes.”
+                            - img [ref=e2704]
+                        - listitem [ref=e2707]:
+                          - link "New York Times. 2022. “Can A.I. All but End Car Crashes? The Potential Is There.”" [ref=e2708]:
+                            - /url: https://www.nytimes.com/2022/04/19/technology/ai-road-car-safety.html
+                            - generic [ref=e2709]: New York Times. 2022. “Can A.I. All but End Car Crashes? The Potential Is There.”
+                            - img [ref=e2710]
+                        - listitem [ref=e2713]:
+                          - link "SmartBrief. 2024. “How Big Data and AI are helping us get a handle on our traffic woes.”" [ref=e2714]:
+                            - /url: https://www.smartbrief.com/original/how-big-data-and-ai-is-helping-us-get-a-handle-on-our-traffic-woes
+                            - generic [ref=e2715]: SmartBrief. 2024. “How Big Data and AI are helping us get a handle on our traffic woes.”
+                            - img [ref=e2716]
+                        - listitem [ref=e2719]:
+                          - link "Stanford University. 2019. “AI accurately predicts the useful life of batteries, Stanford and MIT researchers find.”" [ref=e2720]:
+                            - /url: https://news.stanford.edu/stories/2019/03/ai-accurately-predicts-useful-life-batteries
+                            - generic [ref=e2721]: Stanford University. 2019. “AI accurately predicts the useful life of batteries, Stanford and MIT researchers find.”
+                            - img [ref=e2722]
+                        - listitem [ref=e2725]:
+                          - link "Statista. 2024. “Number of car sharing users worldwide from 2017 to 2022 with a forecast through 2027.”" [ref=e2726]:
+                            - /url: https://www.statista.com/statistics/415636/car-sharing-number-of-users-worldwide/
+                            - generic [ref=e2727]: Statista. 2024. “Number of car sharing users worldwide from 2017 to 2022 with a forecast through 2027.”
+                            - img [ref=e2728]
+                        - listitem [ref=e2731]:
+                          - link "Statista. 2024. “Worldwide number of passenger rail users from 2017 to 2023, with a forecast through 2028.”" [ref=e2732]:
+                            - /url: https://www.statista.com/statistics/1413730/global-passenger-rail-users-forecast/
+                            - generic [ref=e2733]: Statista. 2024. “Worldwide number of passenger rail users from 2017 to 2023, with a forecast through 2028.”
+                            - img [ref=e2734]
+                        - listitem [ref=e2737]:
+                          - link "Swiss Re. 2023. “First-of-its-kind study on autonomous vehicles’ safety.”" [ref=e2738]:
+                            - /url: https://www.swissre.com/reinsurance/property-and-casualty/solutions/automotive-solutions/study-autonomous-vehicles-safety-collaboration-with-waymo.html#:~:text=The%20results%20of%20the%20research,bodily%20injury%20claims%20in%20comparison
+                            - generic [ref=e2739]: Swiss Re. 2023. “First-of-its-kind study on autonomous vehicles’ safety.”
+                            - img [ref=e2740]
+                        - listitem [ref=e2743]:
+                          - 'link "Swiss Re: Towards Automotive. 2024. \"Automotive AI Market Size 2023 to 2032.\"" [ref=e2744]':
+                            - /url: https://finance.yahoo.com/news/automotive-ai-market-size-worth-150500275.html
+                            - generic [ref=e2745]: "Swiss Re: Towards Automotive. 2024. \"Automotive AI Market Size 2023 to 2032.\""
+                            - img [ref=e2746]
+                        - listitem [ref=e2749]:
+                          - 'link "United Kingdom Government. 2018. “Joint rail data action plan: addressing barriers to make better use of rail data.”" [ref=e2750]':
+                            - /url: https://www.gov.uk/government/publications/joint-rail-data-action-plan/joint-rail-data-action-plan-addressing-barriers-to-make-better-use-of-rail-data/
+                            - generic [ref=e2751]: "United Kingdom Government. 2018. “Joint rail data action plan: addressing barriers to make better use of rail data.”"
+                            - img [ref=e2752]
+                      - generic [ref=e2755]:
+                        - paragraph [ref=e2756]: Authors
+                        - generic [ref=e2757]:
+                          - generic [ref=e2758]:
+                            - link "Jeff Leavitt" [ref=e2759]:
+                              - /url: https://www.oliverwyman.com/our-culture/our-people/jeff-leavitt.html
+                              - text: Jeff Leavitt
+                              - img [ref=e2760]
+                            - paragraph [ref=e2763]: Partner
+                          - generic [ref=e2764]:
+                            - link "Andreas Nienhaus" [ref=e2765]:
+                              - /url: https://www.oliverwyman.com/our-culture/our-people/andreas-nienhaus.html
+                              - text: Andreas Nienhaus
+                              - img [ref=e2766]
+                            - paragraph [ref=e2769]: Partner
+                          - generic [ref=e2770]:
+                            - text: David Markey
+                            - paragraph [ref=e2771]: Engagement Manager
+                          - generic [ref=e2772]:
+                            - text: Ludovic Cartigny
+                            - paragraph [ref=e2773]: Mobility Lead
+                        - paragraph [ref=e2774]: This report would not have been possible without the contributions of Yoshi Arnaud, Adriene Bailey, Johannes Berking, Jerome Bouchard, Neil Campbell, Julia Chudzik, Jean-Pierre Cresci, Andrew Culver, Roman Daffner, Dan Darcy, Simon DeForni, Héloïse De Paulou Massat, Liliana Diaz, Stefan Dobler, Jean-Louis Dropsy, Hannes Engelstaedter, Victoria Evans, Jodie Gadd, Rainer Glaser, Thilo Grunwald-Henrich, Jad Haddad, Chris Hartman, Rory Heilakka, Claus Herbolzheimer, Wai Leong Hoh, Scot Hornick, Dustin Irwin, Jonas Junk, Dan Kleinman, Matthias Klinger, Alexandre Lefort, Nick Liptak, Andre Martins, Adam Mehring, Jilian Mincer, Sebastian Moffett, Augusto Mongrut, Christophe Mueller, Geoff Murray, Frederic Ozeir, Laetitia Plisson, Colson Santiago, Nate Savona, Simon Schnurrer, Michael Sharov, Lars Stolz, Mattias Sundell, Weronika Talaj, Ai Peng Thoo, Alessandro Tricamo, Pam Weiner, Jennifer Wong and Junyi Zhang.
+                    - generic [ref=e2775]:
+                      - paragraph [ref=e2776]: References
+                      - paragraph [ref=e2777]: Page 8

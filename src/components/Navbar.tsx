@@ -9,7 +9,7 @@ import "./navbar.css";
 
 const NAV_LINKS = [
   { label: "CHANNELS", href: "/channels" },
-  { label: "FEATURES",  href: "#features" },
+  { label: "FEATURES",  href: "/features" },
   { label: "HOW IT WORKS", href: "#how-it-works" },
   { label: "PRICING",   href: "#pricing" },
 ];
