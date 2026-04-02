@@ -268,7 +268,7 @@ export default function FeaturesSlider() {
           exit="exit"
           className="absolute inset-0 flex items-center justify-center"
         >
-          <div className="relative z-10 w-full max-w-7xl mx-auto px-8 md:px-16 pt-20 pb-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center h-full">
+          <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 md:px-16 pt-24 lg:pt-20 pb-8 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center h-full">
 
             {/* ── Left: Text ────────────────────────────────────────────────── */}
             <div className="flex flex-col justify-center">
@@ -278,7 +278,7 @@ export default function FeaturesSlider() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 0.22, y: 0 }}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className={`font-heading text-[9rem] md:text-[12rem] leading-none bg-linear-to-r ${f.gradient} bg-clip-text text-transparent select-none pointer-events-none -mb-6`}
+                className={`font-heading text-[5rem] sm:text-[9rem] md:text-[12rem] leading-none bg-linear-to-r ${f.gradient} bg-clip-text text-transparent select-none pointer-events-none -mb-6`}
               >
                 {f.number}
               </motion.span>
@@ -372,13 +372,14 @@ export default function FeaturesSlider() {
               transition={{ delay: 0.16, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
               onClick={() => !isLast && navigate(1)}
               whileHover={!isLast ? { scale: 1.018 } : {}}
-              className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/15 group shadow-[0_8px_40px_rgba(0,0,0,0.5)]"
+              className="relative w-full h-[160px] sm:h-[190px] lg:h-auto lg:aspect-[16/10] rounded-2xl overflow-hidden border border-white/15 group shadow-[0_8px_40px_rgba(0,0,0,0.5)]"
               style={{ cursor: isLast ? "default" : "pointer" }}
             >
               <Image
                 src={f.image}
                 alt={f.headline.replace(/\n/g, " ")}
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                 priority
               />

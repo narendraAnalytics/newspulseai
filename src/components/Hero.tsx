@@ -91,12 +91,12 @@ export default function Hero() {
       <div className="absolute inset-0 bg-linear-to-r from-black/60 via-transparent to-transparent" />
 
       {/* Hero Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-8">
         <p className="text-xs uppercase tracking-[0.3em] text-white/50 mb-4 font-sans">
           AI-Powered News Automation
         </p>
         <h1
-          className="hero-heading text-[80px] xl:text-[110px] leading-none text-white uppercase overflow-hidden"
+          className="hero-heading text-[42px] sm:text-[62px] md:text-[80px] xl:text-[110px] leading-none text-white uppercase overflow-hidden"
         >
           <motion.div
             key={`line1-${activeVideo}`}
@@ -145,7 +145,7 @@ export default function Hero() {
       </div>
 
       {/* Sidebar Thumbnail Navigation */}
-      <div className="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-10">
+      <div className="absolute left-6 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-3 z-10">
         {VIDEOS.map((video, i) => (
           <div
             key={i}
@@ -183,7 +183,7 @@ export default function Hero() {
       </button>
 
       {/* Bottom progress indicator */}
-      <div className="absolute bottom-8 left-16 flex items-center gap-2">
+      <div className="absolute bottom-8 left-6 lg:left-16 flex items-center gap-2">
         {VIDEOS.map((_, i) => (
           <div
             key={i}

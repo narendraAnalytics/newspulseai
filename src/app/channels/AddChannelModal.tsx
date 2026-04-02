@@ -92,7 +92,7 @@ export default function AddChannelModal({ open, onClose, onAdded }: Props) {
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="pointer-events-auto w-full md:max-w-md bg-[#0a0a0a] border border-white/10 rounded-t-3xl md:rounded-2xl p-8"
+              className="pointer-events-auto w-full md:max-w-md bg-[#0a0a0a] border border-white/10 rounded-t-3xl md:rounded-2xl p-5 md:p-8"
               initial={{ y: 80, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 80, opacity: 0 }}
