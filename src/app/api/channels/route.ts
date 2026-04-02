@@ -5,6 +5,7 @@ import { channels, users } from '@/db/schema'
 import { eq, and } from 'drizzle-orm'
 import { z } from 'zod'
 import { resolveChannelId } from '@/lib/youtube'
+import { inngest } from '@/inngest/client'
 
 const AddChannelSchema = z.object({
   youtubeChannelId: z.string().min(1),
@@ -51,6 +52,12 @@ export async function POST(req: NextRequest) {
       channelName: parsed.data.channelName,
     })
     .returning()
+
+  // Trigger immediate backfill so the user gets videos right away (don't wait for 6 AM)
+  await inngest.send({
+    name: 'channel/added',
+    data: { channelDbId: row.id, clerkId: userId },
+  })
 
   return NextResponse.json(row, { status: 201 })
 }

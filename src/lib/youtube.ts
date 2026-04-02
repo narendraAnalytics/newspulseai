@@ -28,6 +28,9 @@ export async function fetchNewVideos(channelId: string, publishedAfter: Date): P
   const res = await fetch(url)
   const data = await res.json()
 
+  if (data.error) {
+    throw new Error(`YouTube API error for channel ${channelId}: ${JSON.stringify(data.error)}`)
+  }
   if (!data.items) return []
 
   return data.items.map((item: { id: { videoId: string }; snippet: { title: string; description: string; publishedAt: string } }) => ({

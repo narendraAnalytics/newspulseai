@@ -1,8 +1,10 @@
 import { serve } from 'inngest/next'
 import { inngest } from '@/inngest/client'
-import { dailyDigest } from '@/inngest/functions'
+import { dailyDigest, channelBackfill } from '@/inngest/functions'
+
+export const maxDuration = 300
 
 export const { GET, POST, PUT } = serve({
   client: inngest,
-  functions: [dailyDigest],
+  functions: [dailyDigest, channelBackfill],
 })
