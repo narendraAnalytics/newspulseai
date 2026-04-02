@@ -1,0 +1,38 @@
+08:40:05.701 Running build in Washington, D.C., USA (East) – iad1
+08:40:05.701 Build machine configuration: 2 cores, 8 GB
+08:40:05.837 Cloning github.com/narendraAnalytics/newspulseai (Branch: main, Commit: 71f7c30)
+08:40:08.555 Cloning completed: 2.717s
+08:40:08.842 Restored build cache from previous deployment (AteY5BZZg1bWnqvkahtzfYjgTHrf)
+08:40:09.124 Running "vercel build"
+08:40:09.780 Vercel CLI 50.38.1
+08:40:10.009 Installing dependencies...
+08:40:11.251 
+08:40:11.252 up to date in 1s
+08:40:11.253 
+08:40:11.253 55 packages are looking for funding
+08:40:11.253   run `npm fund` for details
+08:40:11.280 Detected Next.js version: 16.2.1
+08:40:11.284 Running "npm run build"
+08:40:11.433 
+08:40:11.434 > newspulseai@0.1.0 build
+08:40:11.434 > next build
+08:40:11.434 
+08:40:12.979 ▲ Next.js 16.2.1 (Turbopack)
+08:40:12.981 
+08:40:13.019   Creating an optimized production build ...
+08:40:28.697 ✓ Compiled successfully in 15.3s
+08:40:28.702   Running TypeScript ...
+08:40:34.976 Failed to type check.
+08:40:34.977 
+08:40:34.977 ./src/inngest/functions.ts:129:3
+08:40:34.978 Type error: Expected 2 arguments, but got 3.
+08:40:34.978 
+08:40:34.978   [90m127 |[0m   { id: [32m'channel-backfill'[0m, name: [32m'Channel Backfill on Add'[0m },
+08:40:34.978   [90m128 |[0m   { event: [32m'channel/added'[0m },
+08:40:34.978 [31m[1m>[0m [90m129 |[0m   [36masync[0m ({ event, step, logger }) => {
+08:40:34.979   [90m    |[0m   [31m[1m^[0m
+08:40:34.979   [90m130 |[0m     [36mconst[0m { channelDbId, clerkId } = event.data [36mas[0m { channelDbId: number; clerkId: string }
+08:40:34.979   [90m131 |[0m
+08:40:34.979   [90m132 |[0m     [36mconst[0m user = [36mawait[0m step.run([32m'fetch-user'[0m, [36masync[0m () => {
+08:40:35.020 Next.js build worker exited with code: 1 and signal: null
+08:40:35.064 Error: Command "npm run build" exited with 1

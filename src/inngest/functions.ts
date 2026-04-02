@@ -124,8 +124,7 @@ export const dailyDigest = inngest.createFunction(
 )
 
 export const channelBackfill = inngest.createFunction(
-  { id: 'channel-backfill', name: 'Channel Backfill on Add' },
-  { event: 'channel/added' },
+  { id: 'channel-backfill', name: 'Channel Backfill on Add', triggers: [{ event: 'channel/added' }] },
   async ({ event, step, logger }) => {
     const { channelDbId, clerkId } = event.data as { channelDbId: number; clerkId: string }
 
