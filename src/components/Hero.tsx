@@ -87,8 +87,8 @@ export default function Hero() {
       </video>
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-linear-to-r from-black/85 via-black/50 to-black/20" />
-      <div className="absolute inset-0 bg-linear-to-r from-black/60 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-r from-black/50 via-black/20 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-r from-black/25 via-transparent to-transparent" />
 
       {/* Hero Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-8">
