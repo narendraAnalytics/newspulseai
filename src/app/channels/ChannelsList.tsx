@@ -115,8 +115,13 @@ export default function ChannelsList({ initialChannels }: Props) {
                 >
                   {/* YouTube icon accent */}
                   <div className="flex items-start justify-between mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
-                      <PlayCircle size={18} className="text-emerald-400" />
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                        <PlayCircle size={18} className="text-emerald-400" />
+                      </div>
+                      <span className="font-heading text-2xl tracking-wider text-white/20">
+                        #{i + 1}
+                      </span>
                     </div>
                     <button
                       type="button"

@@ -14,7 +14,7 @@ const FEATURES = [
     description:
       "Stop scrolling. Every morning your inbox holds a sharp, AI-written summary of everything new from the channels you follow — before your coffee gets cold.",
     problem: "Hours lost to YouTube rabbit holes just to stay informed",
-    image: "/features/feature1.png",
+    image: "https://res.cloudinary.com/dkqbzwicr/image/upload/f_auto,q_auto/feature1_rpfl8v",
     gradient: "from-emerald-400 to-cyan-400",
     glow: "bg-emerald-500",
   },

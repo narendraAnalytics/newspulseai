@@ -13,6 +13,8 @@ Project skills are in `skills/`. Load the relevant one before starting a task:
 - `skills/saas-backend.skill` — auth, DB, API patterns (Clerk, Drizzle, Neon)
 - `skills/3d-landing-page.skill` — landing page UI (Framer Motion, React — **not** Three.js/GSAP)
 
+> Note: The features page uses GSAP + Lenis (not covered by any skill). There is no test framework in this project.
+
 ---
 
 ## Project Overview
@@ -21,7 +23,7 @@ Project skills are in `skills/`. Load the relevant one before starting a task:
 
 ```
 User adds YouTube channel
-  → Inngest cron fires at 6am UTC
+  → Inngest cron fires at 6am IST (12:30 AM UTC)
   → Fetch new videos (YouTube Data API v3)
   → Gemini summarizes each video
   → Resend delivers a React Email digest
@@ -37,9 +39,9 @@ npm run dev       # Start dev server (Turbopack)
 npm run build     # Production build
 npm run start     # Start production server
 
-npx drizzle-kit generate   # Generate SQL migration from schema diff
-npx drizzle-kit migrate    # Apply migrations to Neon
-npx drizzle-kit studio     # Open visual DB browser
+npx drizzle-kit generate --config workflow/drizzle.config.ts   # Generate SQL migration from schema diff
+npx drizzle-kit migrate  --config workflow/drizzle.config.ts   # Apply migrations to Neon
+npx drizzle-kit studio   --config workflow/drizzle.config.ts   # Open visual DB browser
 
 npx eslint .      # Lint (next lint is removed in v16)
 npx tsc --noEmit  # Type-check without building
@@ -60,6 +62,8 @@ npx tsc --noEmit  # Type-check without building
 - `channels/page.tsx` — server component; auth check + lazy user upsert (`onConflictDoNothing`) on first visit
 - `channels/ChannelsList.tsx` — `"use client"`; Framer Motion animated grid + remove channel
 - `channels/AddChannelModal.tsx` — `"use client"`; parses `@handle`, full URLs, or bare IDs into channel ID via `resolveChannelId()`
+- `features/page.tsx` — server component; auth-protected marketing/features route
+- `features/FeaturesSlider.tsx` — `"use client"`; 7-card slider using GSAP sweep animations + Lenis smooth scroll; wheel/touch/keyboard navigation; assets in `public/features/`
 - `sign-in/[[...sign-in]]/page.tsx` — Clerk `<SignIn />` component, centered on black background
 - `sign-up/[[...sign-up]]/page.tsx` — Clerk `<SignUp />` component, same layout
 
@@ -78,12 +82,12 @@ npx tsc --noEmit  # Type-check without building
 
 **Inngest (`src/inngest/`)**
 - `client.ts` — single shared `Inngest` instance: `new Inngest({ id: 'newspulseai' })`
-- `functions.ts` — `dailyDigest`: cron `15 12 * * *` (noon UTC for dev; change to `0 6 * * *` for prod); fetches all users → channels → new YouTube videos → Gemini summaries → sends digest email
+- `functions.ts` — `dailyDigest`: cron `30 0 * * *` (12:30 AM UTC = 6:00 AM IST); fetches all users → channels → new YouTube videos → Gemini summaries → sends digest email
 
 **Lib Layer (`src/lib/`)**
 - `youtube.ts` — `resolveChannelId(handle)` converts `@handle`/URL/bare ID to channel ID; `fetchNewVideos(channelId, publishedAfter)` queries YouTube Data API v3
 - `gemini.ts` — `summarizeVideos(videos)` batches up to 10 YouTube URLs per request to Gemini Flash; returns `Map<youtubeVideoId, summary>`
-- `email.tsx` — `DigestEmail` React Email template (dark theme, emerald/cyan accents); `sendDigest(to, items)` sends via Resend
+- `email.tsx` — `DigestEmail` React Email template (dark theme, emerald/cyan accents); `sendDigest(to, name, items)` sends via Resend
 
 ---
 
@@ -121,7 +125,7 @@ export const myFn = inngest.createFunction(
 **Email (use the `sendDigest` helper):**
 ```typescript
 import { sendDigest } from '@/lib/email'
-await sendDigest(userEmail, digestItems) // DigestItem: { channelName, title, summary, url }
+await sendDigest(userEmail, userName, digestItems) // DigestItem: { channelName, title, summary, url }
 ```
 
 ---
@@ -142,6 +146,7 @@ RESEND_FROM_EMAIL=                   # e.g. digest@yourdomain.com
 INNGEST_EVENT_KEY=
 INNGEST_SIGNING_KEY=
 YOUTUBE_API_KEY=                     # Google Cloud YouTube Data API v3
+NEXT_PUBLIC_APP_URL=                 # App origin (fallback: https://newspulseai.vercel.app)
 ```
 
 ---
