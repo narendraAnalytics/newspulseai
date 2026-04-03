@@ -108,6 +108,9 @@ export default function Hero() {
 
   useEffect(() => {
     document.body.style.overflow = showDemo ? "hidden" : "";
+    const video = videoRef.current;
+    if (!video) return;
+    if (showDemo) video.pause(); else video.play().catch(() => {});
     return () => { document.body.style.overflow = ""; };
   }, [showDemo]);
 
