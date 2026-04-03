@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import "./hero.css";
 
 const VIDEOS = [
@@ -34,6 +34,7 @@ const VIDEOS = [
 export default function Hero() {
   const [activeVideo, setActiveVideo] = useState(0);
   const [muted, setMuted] = useState(true);
+  const [showDemo, setShowDemo] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const scrollLockRef = useRef(false);
   const touchStartX = useRef(0);
@@ -97,6 +98,18 @@ export default function Hero() {
     window.addEventListener("wheel", handleWheel, { passive: false });
     return () => window.removeEventListener("wheel", handleWheel);
   }, []);
+
+  useEffect(() => {
+    if (!showDemo) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setShowDemo(false); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [showDemo]);
+
+  useEffect(() => {
+    document.body.style.overflow = showDemo ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [showDemo]);
 
   function toggleMute() {
     const video = videoRef.current;
@@ -172,13 +185,40 @@ export default function Hero() {
           video summaries straight to your inbox every morning.
         </p>
         <div className="mt-8 flex items-center justify-center gap-4">
-          <a
-            href="#"
-            className="flex items-center gap-3 rounded-full border border-cyan-400 px-8 py-3 text-sm uppercase tracking-widest text-cyan-400 transition-all duration-200 hover:bg-cyan-400/10 font-sans"
+          <button
+            onClick={() => setShowDemo(true)}
+            className="flex items-center gap-3 rounded-full border border-cyan-400 px-8 py-3 text-sm uppercase tracking-widest text-cyan-400 transition-all duration-200 hover:bg-cyan-400/10 font-sans cursor-pointer"
           >
             <span className="text-xs">▶</span>
             WATCH DEMO
-          </a>
+          </button>
+
+          {/* Animated "click here" arrow hint */}
+          <motion.div
+            className="flex items-center gap-1.5 select-none pointer-events-none"
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: [0, 1, 1, 0], x: [-10, 0, 0, -10] }}
+            transition={{ duration: 2.5, delay: 2, times: [0, 0.2, 0.75, 1], repeat: Infinity, repeatDelay: 3 }}
+          >
+            {/* Arrow made of two bouncing chevrons */}
+            <motion.span
+              className="text-yellow-300 text-base leading-none drop-shadow-[0_0_6px_rgba(253,224,71,0.9)]"
+              animate={{ x: [0, 5, 0] }}
+              transition={{ duration: 0.7, repeat: Infinity, ease: "easeInOut" }}
+            >
+              ›
+            </motion.span>
+            <motion.span
+              className="text-yellow-300 text-base leading-none drop-shadow-[0_0_6px_rgba(253,224,71,0.9)]"
+              animate={{ x: [0, 5, 0] }}
+              transition={{ duration: 0.7, repeat: Infinity, ease: "easeInOut", delay: 0.15 }}
+            >
+              ›
+            </motion.span>
+            <span className="text-[10px] uppercase tracking-widest text-yellow-300 font-sans ml-0.5 drop-shadow-[0_0_6px_rgba(253,224,71,0.9)]">
+              click here
+            </span>
+          </motion.div>
         </div>
       </div>
 
@@ -220,6 +260,45 @@ export default function Hero() {
           </>
         )}
       </button>
+
+      {/* Demo Video Overlay */}
+      <AnimatePresence>
+        {showDemo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
+            onClick={() => setShowDemo(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.92, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.92, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="relative w-full max-w-4xl mx-4"
+              onClick={e => e.stopPropagation()}
+            >
+              <video
+                autoPlay
+                controls
+                playsInline
+                className="w-full rounded-xl shadow-2xl"
+              >
+                <source src="https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1775216673/videonewspulseai_xl48hl.webm" type="video/webm" />
+              </video>
+              <button
+                onClick={() => setShowDemo(false)}
+                className="absolute -top-4 -right-4 w-9 h-9 rounded-full bg-white/10 border border-white/20 text-white text-lg flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer"
+                aria-label="Close demo"
+              >
+                ×
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Bottom progress dots — tappable on mobile */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 md:left-6 md:translate-x-0 lg:left-16 flex items-center gap-3">
