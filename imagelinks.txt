@@ -1,11 +1,1 @@
-Ok for @public/features/feature2.png : https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1775188292/feature2_clesq5.png
-
-@public/features/feature3.png for https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1775188557/feature3_tstqn6.png
-
-feature4.png : https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1775188563/feature4_qrbmyo.png
-
-feature5.png : https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1775188564/feature5_qpimxg.png
-
-feature6.png : https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1775188566/feature6_itkima.png
-
-techstuff.png : https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1775188570/techstuff_i1wv2d.png
+video1 : https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1775189751/video1_fmvpdz.webm

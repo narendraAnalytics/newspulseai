@@ -6,7 +6,7 @@ import "./hero.css";
 
 const VIDEOS = [
   {
-    src: "/videos/video1.mp4",
+    src: "https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1775189751/video1_fmvpdz.webm",
     label: "01",
     title: "CHANNELS",
     gradient: "from-blue-900 to-blue-600",
