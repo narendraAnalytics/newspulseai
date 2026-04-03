@@ -26,11 +26,12 @@ interface DigestEmailProps {
   name: string
   items: DigestItem[]
   date: string
+  plan: 'free' | 'plus' | 'pro'
 }
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://newspulseai.vercel.app'
 
-export function DigestEmail({ name, items, date }: DigestEmailProps) {
+export function DigestEmail({ name, items, date, plan }: DigestEmailProps) {
   return (
     <Html>
       <Head />
@@ -93,6 +94,21 @@ export function DigestEmail({ name, items, date }: DigestEmailProps) {
           ))}
 
           <Hr style={divider} />
+
+          {/* ── Upgrade CTA (free plan only) ── */}
+          {plan === 'free' && (
+            <Section style={upgradeCta}>
+              <Text style={upgradeHeading}>✦ Want daily digests for more channels?</Text>
+              <Text style={upgradeBody}>
+                You&apos;re on the <strong>Free plan</strong> — 2 channels, 1 daily email.
+                Upgrade to <strong>Plus</strong> for 10 channels or <strong>Pro</strong> for
+                unlimited channels and deeper AI summaries.
+              </Text>
+              <Link href={`${APP_URL}/pricing`} style={upgradeButton}>
+                View Plans &amp; Upgrade →
+              </Link>
+            </Section>
+          )}
 
           {/* ── Footer ── */}
           <Section style={{ padding: '8px 0 24px' }}>
@@ -235,6 +251,41 @@ const divider: React.CSSProperties = {
   margin: '16px 0',
 }
 
+const upgradeCta: React.CSSProperties = {
+  backgroundColor: '#fffbeb',
+  borderRadius: '12px',
+  border: '1px solid #fde68a',
+  padding: '24px',
+  marginBottom: '16px',
+  textAlign: 'center',
+}
+
+const upgradeHeading: React.CSSProperties = {
+  color: '#92400e',
+  fontSize: '16px',
+  fontWeight: '800',
+  margin: '0 0 10px 0',
+  letterSpacing: '0.3px',
+}
+
+const upgradeBody: React.CSSProperties = {
+  color: '#78350f',
+  fontSize: '13px',
+  lineHeight: '1.7',
+  margin: '0 0 16px 0',
+}
+
+const upgradeButton: React.CSSProperties = {
+  display: 'inline-block',
+  backgroundColor: '#f59e0b',
+  color: '#ffffff',
+  fontSize: '13px',
+  fontWeight: '700',
+  textDecoration: 'none',
+  padding: '10px 22px',
+  borderRadius: '8px',
+}
+
 const footerText: React.CSSProperties = {
   color: '#9ca3af',
   fontSize: '12px',
@@ -247,7 +298,12 @@ const footerText: React.CSSProperties = {
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-export async function sendDigest(to: string, name: string, items: DigestItem[]): Promise<void> {
+export async function sendDigest(
+  to: string,
+  name: string,
+  items: DigestItem[],
+  plan: 'free' | 'plus' | 'pro' = 'free',
+): Promise<void> {
   const date = new Date().toLocaleDateString('en-US', {
     weekday: 'long',
     month: 'long',
@@ -258,6 +314,6 @@ export async function sendDigest(to: string, name: string, items: DigestItem[]):
     from: process.env.RESEND_FROM_EMAIL!,
     to,
     subject: `☀️ Your Morning Digest – ${date}`,
-    react: <DigestEmail name={name} items={items} date={date} />,
+    react: <DigestEmail name={name} items={items} date={date} plan={plan} />,
   })
 }

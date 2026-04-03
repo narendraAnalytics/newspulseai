@@ -11,19 +11,24 @@ export const metadata = {
 }
 
 export default async function ChannelsPage() {
-  const { userId } = await auth()
+  const { userId, has } = await auth()
   if (!userId) redirect('/sign-in')
 
-  // Lazy sync: upsert Clerk user into Neon on first dashboard visit
+  // Determine current Clerk plan
+  const currentPlan = has({ plan: 'pro' }) ? 'pro' : has({ plan: 'plus' }) ? 'plus' : 'free'
+
+  // Upsert user AND sync plan on every visit (lazy plan sync for Inngest)
   const clerkUser = await currentUser()
+  const email = clerkUser?.emailAddresses[0]?.emailAddress ?? ''
+  const name  = `${clerkUser?.firstName ?? ''} ${clerkUser?.lastName ?? ''}`.trim()
+
   await db
     .insert(users)
-    .values({
-      clerkId: userId,
-      email: clerkUser?.emailAddresses[0]?.emailAddress ?? '',
-      name: `${clerkUser?.firstName ?? ''} ${clerkUser?.lastName ?? ''}`.trim(),
+    .values({ clerkId: userId, email, name, plan: currentPlan })
+    .onConflictDoUpdate({
+      target: users.clerkId,
+      set: { email, name, plan: currentPlan },
     })
-    .onConflictDoNothing()
 
   const userChannels = await db
     .select()
@@ -33,7 +38,7 @@ export default async function ChannelsPage() {
   return (
     <div className="relative min-h-screen bg-[#080c14] overflow-hidden">
       <Navbar />
-      <ChannelsList initialChannels={userChannels} userId={userId} />
+      <ChannelsList initialChannels={userChannels} userId={userId} plan={currentPlan} />
     </div>
   )
 }

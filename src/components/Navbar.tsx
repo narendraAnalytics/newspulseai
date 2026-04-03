@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Show, SignUpButton, UserButton, useUser } from "@clerk/nextjs";
+import { Show, SignUpButton, UserButton, useAuth, useUser } from "@clerk/nextjs";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import "./navbar.css";
@@ -13,19 +13,55 @@ const NAV_LINKS = [
   { label: "CHANNELS", href: "/channels" },
   { label: "FEATURES",  href: "/features" },
   { label: "HOW IT WORKS", href: "#how-it-works" },
-  { label: "PRICING",   href: "#pricing" },
+  { label: "PRICING",   href: "/pricing" },
 ];
+
+const PLAN_BADGE: Record<string, {
+  label: string;
+  pill: string;
+  dot: string;
+  glow: string;
+}> = {
+  pro:  {
+    label: "PRO",
+    pill: "border-violet-400/50 text-violet-300",
+    dot:  "bg-violet-400",
+    glow: "0 0 10px 3px rgba(167,139,250,0.45)",
+  },
+  plus: {
+    label: "PLUS",
+    pill: "border-emerald-400/50 text-emerald-300",
+    dot:  "bg-emerald-400",
+    glow: "0 0 10px 3px rgba(52,211,153,0.45)",
+  },
+  free: {
+    label: "FREE",
+    pill: "border-amber-400/50 text-amber-400",
+    dot:  "bg-amber-400",
+    glow: "0 0 10px 3px rgba(251,191,36,0.45)",
+  },
+};
 
 export default function Navbar() {
   const { user } = useUser();
+  const { has, isSignedIn } = useAuth();
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const plan = isSignedIn
+    ? has?.({ plan: "pro" })  ? "pro"
+    : has?.({ plan: "plus" }) ? "plus"
+    : "free"
+    : null;
+
+  const badge = plan ? PLAN_BADGE[plan] : null;
 
   return (
     <>
       <nav className="fixed top-4 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-6">
-        {/* Logo */}
-        <div className="flex items-center">
+
+        {/* Logo + animated plan badge */}
+        <div className="flex items-center gap-3">
           <Link href="/">
             <Image
               src="/images/logo.png"
@@ -37,6 +73,40 @@ export default function Navbar() {
               priority
             />
           </Link>
+
+          <AnimatePresence>
+            {badge && (
+              <motion.span
+                key={plan}
+                initial={{ opacity: 0, scale: 0.6, x: -12 }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  x: 0,
+                  boxShadow: [
+                    "0 0 0px 0px rgba(0,0,0,0)",
+                    badge.glow,
+                    "0 0 0px 0px rgba(0,0,0,0)",
+                  ],
+                }}
+                exit={{ opacity: 0, scale: 0.6, x: -12 }}
+                transition={{
+                  opacity:    { type: "spring", stiffness: 400, damping: 25 },
+                  scale:      { type: "spring", stiffness: 400, damping: 25 },
+                  x:          { type: "spring", stiffness: 400, damping: 25 },
+                  boxShadow:  { duration: 2, repeat: Infinity, ease: "easeInOut" },
+                }}
+                className={`inline-flex items-center gap-1.5 rounded-full border bg-white/5 px-2.5 py-1 text-[10px] font-semibold tracking-widest font-sans cursor-default ${badge.pill}`}
+              >
+                {/* Pulsing dot */}
+                <span className="relative flex h-1.5 w-1.5 shrink-0">
+                  <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-70 ${badge.dot}`} />
+                  <span className={`relative inline-flex h-1.5 w-1.5 rounded-full ${badge.dot}`} />
+                </span>
+                {badge.label}
+              </motion.span>
+            )}
+          </AnimatePresence>
         </div>
 
         {/* Pill Nav — desktop only */}
@@ -64,7 +134,7 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Right side */}
+        {/* Right side — auth controls only */}
         <div className="flex items-center gap-2">
           <Show when="signed-out">
             <SignUpButton mode="modal">
@@ -75,7 +145,7 @@ export default function Navbar() {
             </SignUpButton>
           </Show>
           <Show when="signed-in">
-            <div className="hidden sm:flex items-center gap-3">
+            <div className="hidden sm:flex items-center gap-2.5">
               <span className="text-sm text-white/80 font-sans">
                 Welcome, {user?.firstName ?? user?.username ?? "User"}
               </span>

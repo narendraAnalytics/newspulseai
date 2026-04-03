@@ -4,7 +4,9 @@ export const users = pgTable('users', {
   clerkId:   text('clerk_id').primaryKey(),
   email:     text('email').notNull(),
   name:      text('name').notNull(),
-  createdAt: timestamp('created_at').defaultNow().notNull(),
+  plan:            text('plan').notNull().default('free'),
+  lastEmailSentAt: timestamp('last_email_sent_at'),
+  createdAt:       timestamp('created_at').defaultNow().notNull(),
 })
 
 export const channels = pgTable('channels', {

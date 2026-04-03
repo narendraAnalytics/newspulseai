@@ -35,6 +35,21 @@ export const dailyDigest = inngest.createFunction(
 
         logger.info(`[dailyDigest] User ${user.email} has ${userChannels.length} channel(s)`)
 
+        // Free plan: only 1 email per calendar month
+        const plan = (user.plan ?? 'free') as 'free' | 'plus' | 'pro'
+        if (plan === 'free') {
+          const now = new Date()
+          const lastSent = user.lastEmailSentAt ? new Date(user.lastEmailSentAt) : null
+          if (
+            lastSent &&
+            lastSent.getMonth() === now.getMonth() &&
+            lastSent.getFullYear() === now.getFullYear()
+          ) {
+            logger.info(`[dailyDigest] Free user ${user.email} already received email this month — skipping`)
+            return
+          }
+        }
+
         const publishedAfter = new Date(Date.now() - 25 * 60 * 60 * 1000)
 
         // Collect all newly inserted videos across all channels
@@ -111,10 +126,11 @@ export const dailyDigest = inngest.createFunction(
           })
         }
 
-        // 7. Send digest email
+        // 7. Send digest email (include upgrade CTA for free plan users)
         if (user.email) {
-          await sendDigest(user.email, user.name || 'there', digestItems)
-          logger.info(`[dailyDigest] Sent digest to ${user.email} with ${digestItems.length} video(s)`)
+          await sendDigest(user.email, user.name || 'there', digestItems, plan)
+          await db.update(users).set({ lastEmailSentAt: new Date() }).where(eq(users.clerkId, user.clerkId))
+          logger.info(`[dailyDigest] Sent digest to ${user.email} (${plan} plan) with ${digestItems.length} video(s)`)
         }
       })
     }

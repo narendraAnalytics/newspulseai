@@ -3,30 +3,33 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { X } from "lucide-react";
+import Link from "next/link";
 import type { SelectChannel } from "@/db/schema";
 
 interface Props {
   open: boolean;
   onClose: () => void;
   onAdded: (channel: SelectChannel) => void;
+  plan: 'free' | 'plus' | 'pro';
 }
 
-export default function AddChannelModal({ open, onClose, onAdded }: Props) {
+interface ModalError {
+  code?: string;
+  message: string;
+}
+
+export default function AddChannelModal({ open, onClose, onAdded, plan }: Props) {
   const [input, setInput] = useState("");
   const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState<ModalError | null>(null);
 
   function parseChannelId(raw: string): string {
-    // Accepts: https://youtube.com/@handle, https://youtube.com/@handle/videos,
-    //          https://youtube.com/channel/UCxxx, bare @handle, or bare UCxxx
     try {
       const url = new URL(raw);
       const parts = url.pathname.split("/").filter(Boolean);
-      // Find @handle segment (may have /videos /about etc after it)
       const handlePart = parts.find((p) => p.startsWith("@"));
       if (handlePart) return handlePart.replace(/^@/, "");
-      // /channel/UCxxx format
       const channelIdx = parts.indexOf("channel");
       if (channelIdx !== -1 && parts[channelIdx + 1]) return parts[channelIdx + 1];
       return parts[parts.length - 1].replace(/^@/, "");
@@ -37,9 +40,9 @@ export default function AddChannelModal({ open, onClose, onAdded }: Props) {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setError("");
+    setError(null);
     if (!input.trim() || !name.trim()) {
-      setError("Both fields are required.");
+      setError({ message: "Both fields are required." });
       return;
     }
     setLoading(true);
@@ -54,7 +57,11 @@ export default function AddChannelModal({ open, onClose, onAdded }: Props) {
       });
       if (!res.ok) {
         const data = await res.json();
-        setError(data.error ?? "Failed to add channel.");
+        if (data.code === "CHANNEL_LIMIT") {
+          setError({ code: "CHANNEL_LIMIT", message: data.error });
+        } else {
+          setError({ message: data.error ?? "Failed to add channel." });
+        }
         return;
       }
       const channel = await res.json();
@@ -63,7 +70,7 @@ export default function AddChannelModal({ open, onClose, onAdded }: Props) {
       setName("");
       onClose();
     } catch {
-      setError("Network error. Please try again.");
+      setError({ message: "Network error. Please try again." });
     } finally {
       setLoading(false);
     }
@@ -139,8 +146,33 @@ export default function AddChannelModal({ open, onClose, onAdded }: Props) {
                   />
                 </div>
 
+                {/* Error / Upgrade prompt */}
                 {error && (
-                  <p className="text-xs text-red-400 font-sans">{error}</p>
+                  error.code === "CHANNEL_LIMIT" ? (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="rounded-2xl border border-amber-400/30 bg-amber-400/5 p-4"
+                    >
+                      <p className="font-heading text-base tracking-wider text-amber-300 mb-1">
+                        CHANNEL LIMIT REACHED
+                      </p>
+                      <p className="text-xs text-white/50 font-sans mb-3 leading-relaxed">
+                        {plan === "free"
+                          ? "You've used all 2 channels on the Free plan. Upgrade to Plus for up to 10 channels, or go Pro for unlimited."
+                          : "You've used all 10 channels on the Plus plan. Upgrade to Pro for unlimited channels."}
+                      </p>
+                      <Link
+                        href="/pricing"
+                        onClick={onClose}
+                        className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-amber-400 to-orange-400 px-4 py-2 text-xs uppercase tracking-widest text-black font-semibold hover:opacity-90 transition-opacity"
+                      >
+                        View Pricing Plans ▶
+                      </Link>
+                    </motion.div>
+                  ) : (
+                    <p className="text-xs text-red-400 font-sans">{error.message}</p>
+                  )
                 )}
 
                 <button

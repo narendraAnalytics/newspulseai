@@ -20,13 +20,25 @@ export async function GET() {
 }
 
 export async function POST(req: NextRequest) {
-  const { userId } = await auth()
+  const { userId, has } = await auth()
   if (!userId) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   const body = await req.json()
   const parsed = AddChannelSchema.safeParse(body)
   if (!parsed.success) {
     return NextResponse.json({ error: parsed.error.flatten() }, { status: 400 })
+  }
+
+  // Enforce plan-based channel limits
+  const plan = has({ plan: 'pro' }) ? 'pro' : has({ plan: 'plus' }) ? 'plus' : 'free'
+  const LIMITS: Record<string, number> = { free: 2, plus: 10, pro: Infinity }
+  const limit = LIMITS[plan]
+  const existingCount = (await db.select().from(channels).where(eq(channels.clerkId, userId))).length
+  if (existingCount >= limit) {
+    return NextResponse.json(
+      { code: 'CHANNEL_LIMIT', plan, limit, error: `You've reached the ${plan} plan limit of ${limit} channel${limit === 1 ? '' : 's'}.` },
+      { status: 403 }
+    )
   }
 
   // Resolve @handle / URL to real UCxxx channel ID
@@ -40,7 +52,7 @@ export async function POST(req: NextRequest) {
   // Ensure user row exists (upsert)
   await db
     .insert(users)
-    .values({ clerkId: userId, email: '', name: '' })
+    .values({ clerkId: userId, email: '', name: '', plan })
     .onConflictDoNothing()
 
   const [row] = await db

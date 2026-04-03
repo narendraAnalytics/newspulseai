@@ -2,26 +2,24 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Trash2, PlayCircle, Plus } from "lucide-react";
+import { PlayCircle, Plus } from "lucide-react";
+import Link from "next/link";
 import type { SelectChannel } from "@/db/schema";
 import AddChannelModal from "./AddChannelModal";
 
 interface Props {
   initialChannels: SelectChannel[];
   userId: string;
+  plan: 'free' | 'plus' | 'pro';
 }
 
-export default function ChannelsList({ initialChannels }: Props) {
+export default function ChannelsList({ initialChannels, plan }: Props) {
   const [channelList, setChannelList] = useState<SelectChannel[]>(initialChannels);
   const [modalOpen, setModalOpen] = useState(false);
-  const [removingId, setRemovingId] = useState<number | null>(null);
 
-  async function handleRemove(id: number) {
-    setRemovingId(id);
-    await fetch(`/api/channels?id=${id}`, { method: "DELETE" });
-    setChannelList((prev) => prev.filter((c) => c.id !== id));
-    setRemovingId(null);
-  }
+  const LIMITS = { free: 2, plus: 10, pro: Infinity };
+  const limit = LIMITS[plan];
+  const atLimit = channelList.length >= limit;
 
   return (
     <>
@@ -70,8 +68,60 @@ export default function ChannelsList({ initialChannels }: Props) {
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
             style={{ originX: 0 }}
-            className="h-px bg-white/10 mb-10"
+            className="h-px bg-white/10 mb-8"
           />
+
+          {/* Plan status banner */}
+          <AnimatePresence>
+            {plan === 'free' && (
+              <motion.div
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ delay: 0.3 }}
+                className="mb-8 flex items-center gap-3 rounded-2xl border border-amber-400/30 bg-amber-400/5 px-5 py-3.5"
+              >
+                <span className="relative flex h-2 w-2 shrink-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-400" />
+                </span>
+                <span className="text-xs font-sans uppercase tracking-widest text-amber-300/80">
+                  Free Plan · {channelList.length}/{limit} channels used
+                </span>
+                <Link
+                  href="/pricing"
+                  className="ml-auto text-xs font-semibold text-amber-400 hover:text-amber-300 uppercase tracking-widest transition-colors font-sans shrink-0"
+                >
+                  Upgrade ▶
+                </Link>
+              </motion.div>
+            )}
+            {plan === 'plus' && (
+              <motion.div
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ delay: 0.3 }}
+                className="mb-8 flex items-center gap-3 rounded-2xl border border-emerald-400/25 bg-emerald-400/5 px-5 py-3.5"
+              >
+                <span className="relative flex h-2 w-2 shrink-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                </span>
+                <span className="text-xs font-sans uppercase tracking-widest text-emerald-300/80">
+                  Plus Plan · {channelList.length}/{limit} channels used
+                </span>
+                {atLimit && (
+                  <Link
+                    href="/pricing"
+                    className="ml-auto text-xs font-semibold text-emerald-400 hover:text-emerald-300 uppercase tracking-widest transition-colors font-sans shrink-0"
+                  >
+                    Go Pro ▶
+                  </Link>
+                )}
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* Empty state */}
           {channelList.length === 0 && (
@@ -111,27 +161,16 @@ export default function ChannelsList({ initialChannels }: Props) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ delay: i * 0.07, duration: 0.4, ease: "easeOut" }}
-                  className="group relative rounded-2xl border border-white/10 bg-white/3 p-5 hover:border-white/20 hover:bg-white/5 transition-colors"
+                  className="relative rounded-2xl border border-white/10 bg-white/3 p-5 hover:border-white/20 hover:bg-white/5 transition-colors"
                 >
-                  {/* YouTube icon accent */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
-                        <PlayCircle size={18} className="text-emerald-400" />
-                      </div>
-                      <span className="font-heading text-2xl tracking-wider text-white/20">
-                        #{i + 1}
-                      </span>
+                  {/* Icon + number */}
+                  <div className="flex items-center gap-2.5 mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                      <PlayCircle size={18} className="text-emerald-400" />
                     </div>
-                    <button
-                      type="button"
-                      aria-label="Remove channel"
-                      onClick={() => handleRemove(ch.id)}
-                      disabled={removingId === ch.id}
-                      className="opacity-0 group-hover:opacity-100 text-white/30 hover:text-red-400 transition-all duration-200 cursor-pointer disabled:opacity-30"
-                    >
-                      <Trash2 size={15} />
-                    </button>
+                    <span className="font-heading text-2xl tracking-wider text-white/20">
+                      #{i + 1}
+                    </span>
                   </div>
 
                   {/* Channel name */}
@@ -159,6 +198,7 @@ export default function ChannelsList({ initialChannels }: Props) {
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         onAdded={(ch) => setChannelList((prev) => [...prev, ch])}
+        plan={plan}
       />
     </>
   );

@@ -1,5 +1,16 @@
-video2 : https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1775190321/video2_v1xtgc.webm
+First when user loggedIn first time get the free tag or badge animated  so user know they are in the free plan.
+In free plan : 
+        Only 2 video channels after user tried to add other channel nice ui message . UI messages when user added channel 
+        For example user added 1 channel got the ui message your in free plan other 1 channel only added .
+        If user tried to add 3 channel nice ui message your in free plan upgrade to plusplan can add 10 yottube channels.
+        Also user added 2 channels and upgrade to plus or pro count starts form the 3 only 2 channels in free and starts
+        3 count from the plus or pro plan.
 
-video3 : https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1775190616/video3_rfeqor.webm
-
-video4 : https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1775190617/video4_iopw67.webm
+In plusplan :
+        Add upto 10 youtube channels (2 form free + 8 channels in plus) .Nice ui messages if needed . also tried to create
+        11 channel nice ui message plan to proplan.
+In proplan :
+        Add unlimited youtube channels
+Also i have the option bill annually .  For plusplan[$9 billedAnnuallyoff,$7 billedannuallon] , 
+                                        For proplan[$19 billedAnnuallyoff,$15 billedannuallon]
+                                        

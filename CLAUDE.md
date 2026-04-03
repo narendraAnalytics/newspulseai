@@ -63,14 +63,14 @@ npx tsc --noEmit  # Type-check without building
 - `channels/ChannelsList.tsx` — `"use client"`; Framer Motion animated grid + remove channel
 - `channels/AddChannelModal.tsx` — `"use client"`; parses `@handle`, full URLs, or bare IDs into channel ID via `resolveChannelId()`
 - `features/page.tsx` — server component; auth-protected marketing/features route
-- `features/FeaturesSlider.tsx` — `"use client"`; 7-card slider using GSAP sweep animations + Lenis smooth scroll; wheel/touch/keyboard navigation; assets in `public/features/`
+- `features/FeaturesSlider.tsx` — `"use client"`; 7-card slider using GSAP sweep animations + Lenis smooth scroll; wheel/touch/keyboard navigation; assets hosted on Cloudinary (not `public/features/`)
 - `sign-in/[[...sign-in]]/page.tsx` — Clerk `<SignIn />` component, centered on black background
 - `sign-up/[[...sign-up]]/page.tsx` — Clerk `<SignUp />` component, same layout
 
 **Components Layer (`src/components/`)**
 - `Navbar.tsx` — fixed glassmorphism pill nav; no state, no `"use client"`
 - `navbar.css` — `.nav-pill`, `.nav-cta` (backdrop-filter with `-webkit-` prefix for Safari)
-- `Hero.tsx` — `"use client"`; scroll-driven video switcher (4 videos in `public/videos/`), Framer Motion text animation, mute toggle
+- `Hero.tsx` — `"use client"`; scroll-driven video switcher (4 videos hosted on Cloudinary, not `public/videos/`), Framer Motion text animation, mute toggle
 - `hero.css` — `.hero-heading`, `.sidebar-thumb`, `.sidebar-thumb-active`, `.mute-btn`
 
 **DB Layer (`src/db/`)**
@@ -148,6 +148,16 @@ INNGEST_SIGNING_KEY=
 YOUTUBE_API_KEY=                     # Google Cloud YouTube Data API v3
 NEXT_PUBLIC_APP_URL=                 # App origin (fallback: https://newspulseai.vercel.app)
 ```
+
+---
+
+## Static Assets (Cloudinary)
+
+All feature images and hero videos are hosted on Cloudinary, not in `public/`. When adding new images/videos, use Cloudinary URLs directly in code.
+- Feature images: `src/app/features/FeaturesSlider.tsx` — FEATURES array
+- Hero videos: `src/components/Hero.tsx` — VIDEOS array
+- Format: `https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/...` or `.../video/upload/...`
+- `next.config.ts` already has `res.cloudinary.com` in `remotePatterns` (required for Next.js `<Image>`, not needed for `<video>`)
 
 ---
 
