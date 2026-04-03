@@ -25,7 +25,7 @@ const FEATURES = [
     description:
       "NewsPulseAI watches your channels around the clock. The moment a creator drops something new, the pipeline captures it — you never have to manually check again.",
     problem: "Missing uploads from creators you actually care about",
-    image: "/features/feature2.png",
+    image: "https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1775188292/feature2_clesq5.png",
     gradient: "from-cyan-400 to-blue-400",
     glow: "bg-cyan-500",
   },
@@ -36,7 +36,7 @@ const FEATURES = [
     description:
       "Google's Gemini AI watches each video and distills it into 3–4 factual sentences. Read the summary, decide if it's worth your hour, skip the rest.",
     problem: "Watching full videos just to know if they matter to you",
-    image: "/features/feature3.png",
+    image: "https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1775188557/feature3_tstqn6.png",
     gradient: "from-violet-400 to-emerald-400",
     glow: "bg-violet-500",
   },
@@ -47,7 +47,7 @@ const FEATURES = [
     description:
       "You choose exactly which channels to track. No recommendations, no trending, no autoplay traps — just the creators you deliberately chose, nothing more.",
     problem: "YouTube's algorithm hijacking your attention",
-    image: "/features/feature4.png",
+    image: "https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1775188563/feature4_qrbmyo.png",
     gradient: "from-emerald-400 to-teal-400",
     glow: "bg-teal-500",
   },
@@ -58,7 +58,7 @@ const FEATURES = [
     description:
       "Paste an @handle, a full YouTube URL, or a bare channel ID. NewsPulseAI resolves it instantly and starts monitoring — no setup wizard, no API keys, no friction.",
     problem: "Complex onboarding and friction when adding sources",
-    image: "/features/feature5.png",
+    image: "https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1775188564/feature5_qpimxg.png",
     gradient: "from-cyan-400 to-emerald-400",
     glow: "bg-cyan-400",
   },
@@ -69,7 +69,7 @@ const FEATURES = [
     description:
       "No new app to open. No dashboard to check. Your digest arrives in your real inbox — read it, click through to videos you want, archive the rest. Done.",
     problem: "Content scattered across multiple platforms and apps",
-    image: "/features/feature6.png",
+    image: "https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1775188566/feature6_itkima.png",
     gradient: "from-teal-400 to-cyan-400",
     glow: "bg-teal-400",
   },
@@ -80,7 +80,7 @@ const FEATURES = [
     description:
       "Powered by Next.js 16, Gemini AI, Inngest automation, Neon Postgres, and Resend — production-ready infrastructure running silently in the background.",
     problem: "Powerful infrastructure that works invisibly",
-    image: "/features/techstuff.png",
+    image: "https://res.cloudinary.com/dkqbzwicr/image/upload/q_auto/f_auto/v1775188570/techstuff_i1wv2d.png",
     gradient: "from-emerald-400 to-violet-400",
     glow: "bg-violet-400",
   },
