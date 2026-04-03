@@ -64,6 +64,7 @@ npx tsc --noEmit  # Type-check without building
 - `channels/AddChannelModal.tsx` — `"use client"`; parses `@handle`, full URLs, or bare IDs into channel ID via `resolveChannelId()`
 - `features/page.tsx` — server component; auth-protected marketing/features route
 - `features/FeaturesSlider.tsx` — `"use client"`; 7-card slider using GSAP sweep animations + Lenis smooth scroll; wheel/touch/keyboard navigation; assets hosted on Cloudinary (not `public/features/`)
+- `pricing/page.tsx` — auth-protected; renders Clerk `<PricingTable />` on a warm amber gradient background
 - `sign-in/[[...sign-in]]/page.tsx` — Clerk `<SignIn />` component, centered on black background
 - `sign-up/[[...sign-up]]/page.tsx` — Clerk `<SignUp />` component, same layout
 
@@ -75,19 +76,22 @@ npx tsc --noEmit  # Type-check without building
 
 **DB Layer (`src/db/`)**
 - `index.ts` — exports `db` (Drizzle + Neon HTTP driver); uses `loadEnvConfig` so it works outside Next.js (e.g. in migration scripts)
-- `schema.ts` — three tables: `users` (PK: `clerk_id`), `channels` (FK → users, cascade delete), `videos` (FK → channels, `youtube_video_id` UNIQUE for `onConflictDoNothing`)
+- `schema.ts` — three tables:
+  - `users` (PK: `clerk_id`, columns: `plan` (`'free'|'plus'|'pro'`, default `'free'`), `lastEmailSentAt` — used for free-plan monthly cap)
+  - `channels` (FK → users, cascade delete)
+  - `videos` (FK → channels, `youtube_video_id` UNIQUE for `onConflictDoNothing`)
 
 **Auth / Proxy (`src/proxy.ts`)**
 - Clerk middleware exported as `proxy` (Next.js 16 convention); protects all non-static routes
 
 **Inngest (`src/inngest/`)**
 - `client.ts` — single shared `Inngest` instance: `new Inngest({ id: 'newspulseai' })`
-- `functions.ts` — `dailyDigest`: cron `30 0 * * *` (12:30 AM UTC = 6:00 AM IST); fetches all users → channels → new YouTube videos → Gemini summaries → sends digest email
+- `functions.ts` — `dailyDigest`: cron `30 0 * * *` (12:30 AM UTC = 6:00 AM IST); fetches all users → channels → new YouTube videos → Gemini summaries → sends digest email; **free-plan users are capped at 1 email per calendar month** (checked via `lastEmailSentAt`)
 
 **Lib Layer (`src/lib/`)**
 - `youtube.ts` — `resolveChannelId(handle)` converts `@handle`/URL/bare ID to channel ID; `fetchNewVideos(channelId, publishedAfter)` queries YouTube Data API v3
 - `gemini.ts` — `summarizeVideos(videos)` batches up to 10 YouTube URLs per request to Gemini Flash; returns `Map<youtubeVideoId, summary>`
-- `email.tsx` — `DigestEmail` React Email template (dark theme, emerald/cyan accents); `sendDigest(to, name, items)` sends via Resend
+- `email.tsx` — `DigestEmail` React Email template (dark theme, emerald/cyan accents); `sendDigest(to, name, items, plan)` sends via Resend; includes upgrade CTA for `'free'` plan
 
 ---
 
@@ -114,9 +118,9 @@ const rows = await db.select().from(channels).where(eq(channels.clerkId, userId)
 **Inngest function (register in `api/inngest/route.ts` functions array):**
 ```typescript
 export const myFn = inngest.createFunction(
-  { id: 'my-fn' },
-  { cron: '0 6 * * *' },
-  async ({ step }) => {
+  { id: 'my-fn', name: 'My Function' },
+  { triggers: [{ cron: '0 6 * * *' }] },
+  async ({ step, logger }) => {
     const result = await step.run('step-name', async () => { /* heavy work */ })
   }
 )
@@ -125,7 +129,8 @@ export const myFn = inngest.createFunction(
 **Email (use the `sendDigest` helper):**
 ```typescript
 import { sendDigest } from '@/lib/email'
-await sendDigest(userEmail, userName, digestItems) // DigestItem: { channelName, title, summary, url }
+// plan: 'free' | 'plus' | 'pro' — free plan gets an upgrade CTA appended
+await sendDigest(userEmail, userName, digestItems, plan) // DigestItem: { channelName, title, summary, url }
 ```
 
 ---

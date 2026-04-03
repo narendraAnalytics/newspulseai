@@ -1,0 +1,19 @@
+[    3722ms] [LOG] %c  Dev by Thomas Aufresne — https://thomasaufresne.com   background-color: #000; color: #FFF; font-size:10px; padding:8px 10px 6px; border-radius:4px; @ https://mynrd.co.uk/_nuxt/a980539.js:1
+[  110427ms] NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
+    at https://mynrd.co.uk/_nuxt/a980539.js:2:19200
+[  110814ms] NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
+    at https://mynrd.co.uk/_nuxt/a980539.js:2:19200
+[  111004ms] NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
+    at https://mynrd.co.uk/_nuxt/a980539.js:2:19200
+[  111210ms] NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
+    at https://mynrd.co.uk/_nuxt/a980539.js:2:19200
+[  111240ms] NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
+    at https://mynrd.co.uk/_nuxt/a980539.js:2:19200
+[  111331ms] NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
+    at https://mynrd.co.uk/_nuxt/a980539.js:2:19200
+[  111339ms] NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
+    at https://mynrd.co.uk/_nuxt/a980539.js:2:19200
+[  111386ms] NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
+    at https://mynrd.co.uk/_nuxt/a980539.js:2:19200
+[  111402ms] NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
+    at https://mynrd.co.uk/_nuxt/a980539.js:2:19200
