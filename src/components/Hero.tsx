@@ -36,6 +36,40 @@ export default function Hero() {
   const [muted, setMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
   const scrollLockRef = useRef(false);
+  const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
+
+  function goNext() {
+    setActiveVideo(prev => Math.min(prev + 1, VIDEOS.length - 1));
+  }
+  function goPrev() {
+    setActiveVideo(prev => Math.max(prev - 1, 0));
+  }
+
+  function handleTouchStart(e: React.TouchEvent) {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  }
+
+  function handleTouchEnd(e: React.TouchEvent) {
+    if (scrollLockRef.current) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    const dy = e.changedTouches[0].clientY - touchStartY.current;
+
+    // Use whichever axis had more movement
+    if (Math.abs(dx) > Math.abs(dy)) {
+      // Horizontal swipe: left = next, right = prev
+      if (Math.abs(dx) < 40) return;
+      if (dx < 0) goNext(); else goPrev();
+    } else {
+      // Vertical swipe: up = next, down = prev
+      if (Math.abs(dy) < 40) return;
+      if (dy < 0) goNext(); else goPrev();
+    }
+
+    scrollLockRef.current = true;
+    setTimeout(() => { scrollLockRef.current = false; }, 600);
+  }
 
   useEffect(() => {
     const video = videoRef.current;
@@ -72,7 +106,11 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section
+      className="relative h-screen w-full overflow-hidden"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       {/* Background Video */}
       <video
         ref={videoRef}
@@ -144,15 +182,16 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Sidebar Thumbnail Navigation */}
-      <div className="absolute left-6 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-3 z-10">
+      {/* Sidebar Thumbnail Navigation — tablet (md) and desktop */}
+      <div className="absolute left-6 top-1/2 -translate-y-1/2 hidden md:flex flex-col gap-3 z-10">
         {VIDEOS.map((video, i) => (
-          <div
+          <button
             key={i}
-            className={`relative w-24 h-20 rounded-lg overflow-hidden transition-all duration-300 ${
+            onClick={() => setActiveVideo(i)}
+            className={`relative w-20 h-16 md:w-24 md:h-20 rounded-lg overflow-hidden transition-all duration-300 cursor-pointer ${
               activeVideo === i
                 ? "sidebar-thumb-active opacity-100 scale-105"
-                : "sidebar-thumb opacity-40"
+                : "sidebar-thumb opacity-40 hover:opacity-70"
             }`}
           >
             <div className={`absolute inset-0 bg-linear-to-b ${video.gradient}`} />
@@ -162,7 +201,7 @@ export default function Hero() {
                 {video.title}
               </span>
             </div>
-          </div>
+          </button>
         ))}
       </div>
 
@@ -182,13 +221,15 @@ export default function Hero() {
         )}
       </button>
 
-      {/* Bottom progress indicator */}
-      <div className="absolute bottom-8 left-6 lg:left-16 flex items-center gap-2">
+      {/* Bottom progress dots — tappable on mobile */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 md:left-6 md:translate-x-0 lg:left-16 flex items-center gap-3">
         {VIDEOS.map((_, i) => (
-          <div
+          <button
             key={i}
-            className={`transition-all duration-300 rounded-full ${
-              activeVideo === i ? "w-8 h-1 bg-white" : "w-1 h-1 bg-white/30"
+            onClick={() => setActiveVideo(i)}
+            aria-label={`Go to video ${i + 1}`}
+            className={`transition-all duration-300 rounded-full cursor-pointer ${
+              activeVideo === i ? "w-8 h-2 bg-white" : "w-2 h-2 bg-white/30 hover:bg-white/60"
             }`}
           />
         ))}

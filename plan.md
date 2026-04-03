@@ -1,3 +1,7 @@
+ Rule of thumb in real projects:
+  ▎ Write mobile-first for layout and typography. Use desktop overrides only for things that genuinely need more space (sidebars, wide
+  tables, multi-column grids).
+
 1. User adds a YouTube channel → saved to channels table in Neon                                                                            2. Inngest cron fires (6am UTC daily) → triggers the pipeline                                                                             
   3. Fetch new videos → YouTube Data API v3 checks each channel for videos published since last run → insert into videos table using          .onConflictDoNothing() (skips already-seen video)    
   4. Gemini summarises → for each new video, sends transcript/title to Gemini → stores summary back in videos.summary
