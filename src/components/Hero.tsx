@@ -12,19 +12,19 @@ const VIDEOS = [
     gradient: "from-blue-900 to-blue-600",
   },
   {
-    src: "/videos/video2.mp4",
+    src: "https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1775190321/video2_v1xtgc.webm",
     label: "02",
     title: "DIGESTS",
     gradient: "from-purple-900 to-purple-600",
   },
   {
-    src: "/videos/video3.mp4",
+    src: "https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1775190616/video3_rfeqor.webm",
     label: "03",
     title: "AI SUMMARIES",
     gradient: "from-emerald-900 to-emerald-600",
   },
   {
-    src: "/videos/video4.mp4",
+    src: "https://res.cloudinary.com/dkqbzwicr/video/upload/q_auto/f_auto/v1775190617/video4_iopw67.webm",
     label: "04",
     title: "INSIGHTS",
     gradient: "from-orange-900 to-orange-600",
