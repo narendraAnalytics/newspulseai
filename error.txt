@@ -1,0 +1,25 @@
+[
+  {
+    "name": "inngest/scheduled.timer",
+    "data": {
+      "cron": "30 0 * * *",
+      "scheduler": "cron-queue"
+    },
+    "ts": 1775262600000,
+    "v": "1"
+  }
+]
+
+error :
+
+Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent: [400 Bad Request] Request contains an invalid argument.
+    at iZ (/var/task/.next/server/chunks/[root-of-the-server]__0ng7aaa._.js:5:17495)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async iV (/var/task/.next/server/chunks/[root-of-the-server]__0ng7aaa._.js:5:17308)
+    at async i3 (/var/task/.next/server/chunks/[root-of-the-server]__0ng7aaa._.js:5:23020)
+    at async al (/var/task/.next/server/chunks/[root-of-the-server]__0ng7aaa._.js:12:117)
+    at async /var/task/.next/server/chunks/[root-of-the-server]__0ng7aaa._.js:16:36614
+    at async nS (/var/task/.next/server/chunks/[root-of-the-server]__0ng7aaa._.js:2:223003)
+    at async ib.tryExecuteStep (/var/task/.next/server/chunks/[root-of-the-server]__0ng7aaa._.js:4:32289)
+    at async steps-found (/var/task/.next/server/chunks/[root-of-the-server]__0ng7aaa._.js:4:30066)
+    at async ib._start (/var/task/.next/server/chunks/[root-of-the-server]__0ng7aaa._.js:4:24995)

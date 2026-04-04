@@ -10,7 +10,7 @@ export const dailyDigest = inngest.createFunction(
   {
     id: 'daily-digest',
     name: 'Daily News Digest',
-    triggers: [{ cron: '30 0 * * *' }], // 12:30 AM UTC = 6:00 AM IST daily
+    triggers: [{ cron: '45 3 * * *' }], // 3:45 AM UTC = 9:15 AM IST daily
   },
   async ({ step, logger }) => {
     // 1. Fetch all users
