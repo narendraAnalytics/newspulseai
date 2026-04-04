@@ -56,6 +56,9 @@ export default function Navbar() {
 
   const badge = plan ? PLAN_BADGE[plan] : null;
 
+  // About page has a light cream background — swap navbar to dark text
+  const isLight = pathname.startsWith("/about");
+
   return (
     <>
       <nav className="fixed top-4 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-6">
@@ -110,22 +113,32 @@ export default function Navbar() {
         </div>
 
         {/* Pill Nav — desktop only */}
-        <div className="nav-pill hidden md:flex items-center gap-1 rounded-full border border-white/15 px-3 py-2">
+        <div
+          className={`nav-pill hidden md:flex items-center gap-1 rounded-full border px-3 py-2 ${
+            isLight ? "border-[#1A1A1A]/15 bg-[#1A1A1A]/5" : "border-white/15"
+          }`}
+        >
           {NAV_LINKS.map((link) => {
             const isActive = link.href.startsWith("/") && pathname.startsWith(link.href);
             return (
               <Link
                 key={link.label}
                 href={link.href}
-                className={`relative px-4 py-1.5 text-xs font-sans uppercase tracking-widest rounded-full transition-colors duration-200 hover:bg-white/10 ${
-                  isActive ? "text-emerald-400" : "text-white/70 hover:text-white"
+                className={`relative px-4 py-1.5 text-xs font-sans uppercase tracking-widest rounded-full transition-colors duration-200 ${
+                  isLight
+                    ? isActive
+                      ? "text-emerald-600 hover:bg-[#1A1A1A]/5"
+                      : "text-[#1A1A1A]/60 hover:text-[#1A1A1A] hover:bg-[#1A1A1A]/5"
+                    : isActive
+                      ? "text-emerald-400 hover:bg-white/10"
+                      : "text-white/70 hover:text-white hover:bg-white/10"
                 }`}
               >
                 {link.label}
                 {isActive && (
                   <motion.span
                     layoutId="nav-indicator"
-                    className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-emerald-400"
+                    className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full ${isLight ? "bg-emerald-600" : "bg-emerald-400"}`}
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   />
                 )}
@@ -146,7 +159,7 @@ export default function Navbar() {
           </Show>
           <Show when="signed-in">
             <div className="hidden sm:flex items-center gap-2.5">
-              <span className="text-sm text-white/80 font-sans">
+              <span className={`text-sm font-sans ${isLight ? "text-[#1A1A1A]/70" : "text-white/80"}`}>
                 Welcome, {user?.firstName ?? user?.username ?? "User"}
               </span>
               <UserButton />
@@ -158,7 +171,7 @@ export default function Navbar() {
 
           {/* Hamburger — mobile only */}
           <button
-            className="md:hidden text-white/70 hover:text-white transition-colors p-1"
+            className={`md:hidden transition-colors p-1 ${isLight ? "text-[#1A1A1A]/60 hover:text-[#1A1A1A]" : "text-white/70 hover:text-white"}`}
             onClick={() => setMobileOpen((v) => !v)}
             aria-label="Toggle menu"
           >

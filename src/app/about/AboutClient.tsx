@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import Lottie from "lottie-react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Link from "next/link"
@@ -138,96 +137,21 @@ function RotatingBadge() {
   )
 }
 
-// ── Dev Illustration (SVG fallback) ────────────────────────────────────────────
-function DevIllustration() {
+// ── Animated Image ─────────────────────────────────────────────────────────────
+function AnimatedImage() {
   return (
-    <svg viewBox="0 0 420 380" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-      {/* Desk surface */}
-      <rect x="40" y="290" width="340" height="14" rx="7" fill="#E8E3DC" />
-      <rect x="80" y="304" width="12" height="55" rx="4" fill="#D5CEC6" />
-      <rect x="328" y="304" width="12" height="55" rx="4" fill="#D5CEC6" />
-
-      {/* Monitor stand */}
-      <rect x="196" y="242" width="28" height="50" rx="4" fill="#D5CEC6" />
-      <rect x="166" y="288" width="88" height="8" rx="4" fill="#D5CEC6" />
-
-      {/* Monitor frame */}
-      <rect x="92" y="102" width="236" height="148" rx="12" fill="#F5F0E8" stroke="#1A1A1A" strokeWidth="2" />
-      <rect x="102" y="112" width="216" height="128" rx="8" fill="#FAF7F2" />
-
-      {/* Code lines on monitor — dark, readable on cream */}
-      <rect x="118" y="130" width="64" height="5" rx="2.5" fill="#059669" opacity="0.85" />
-      <rect x="118" y="144" width="110" height="5" rx="2.5" fill="#0d9488" opacity="0.6" />
-      <rect x="118" y="158" width="44" height="5" rx="2.5" fill="#7c3aed" opacity="0.65" />
-      <rect x="118" y="172" width="90" height="5" rx="2.5" fill="#059669" opacity="0.5" />
-      <rect x="118" y="186" width="130" height="5" rx="2.5" fill="#0d9488" opacity="0.7" />
-      <rect x="118" y="200" width="72" height="5" rx="2.5" fill="#059669" opacity="0.45" />
-      <rect x="118" y="214" width="100" height="5" rx="2.5" fill="#7c3aed" opacity="0.55" />
-
-      {/* Cursor blink */}
-      <rect x="118" y="228" width="10" height="5" rx="1.5" fill="#059669" opacity="0.8">
-        <animate attributeName="opacity" values="0.8;0.1;0.8" dur="1.2s" repeatCount="indefinite" />
-      </rect>
-
-      {/* Person head */}
-      <circle cx="210" cy="75" r="26" fill="#F5F0E8" stroke="#1A1A1A" strokeWidth="2" />
-      {/* Eyes */}
-      <circle cx="203" cy="70" r="3" fill="#1A1A1A" opacity="0.7" />
-      <circle cx="217" cy="70" r="3" fill="#1A1A1A" opacity="0.7" />
-      {/* Smile */}
-      <path d="M 200 80 Q 210 88 220 80" stroke="#1A1A1A" strokeWidth="1.8" strokeLinecap="round" opacity="0.65" />
-      {/* Hair */}
-      <path d="M186,66 Q188,50 210,48 Q232,50 234,66" fill="#1A1A1A" opacity="0.18" />
-
-      {/* Torso */}
-      <path d="M182,102 Q186,93 210,90 Q234,93 238,102 L248,132 L172,132 Z"
-        fill="#E8E3DC" stroke="#1A1A1A" strokeWidth="1.5" opacity="0.8" />
-
-      {/* Chair seat */}
-      <rect x="176" y="264" width="68" height="10" rx="5" fill="#D5CEC6" stroke="#1A1A1A" strokeWidth="1" opacity="0.7" />
-      <rect x="206" y="274" width="8" height="18" rx="3" fill="#C8C0B8" />
-
-      {/* Coffee mug */}
-      <rect x="342" y="268" width="28" height="24" rx="5" fill="#FAF7F2" stroke="#1A1A1A" strokeWidth="1.8" opacity="0.7" />
-      <path d="M370,274 Q380,278 370,284" stroke="#1A1A1A" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.4" />
-      {/* Steam */}
-      <path d="M350,264 Q353,256 350,250" stroke="#1A1A1A" strokeWidth="1.2" strokeLinecap="round" opacity="0.3">
-        <animate attributeName="opacity" values="0.3;0.08;0.3" dur="2s" repeatCount="indefinite" />
-      </path>
-      <path d="M358,261 Q361,253 358,247" stroke="#059669" strokeWidth="1.2" strokeLinecap="round" opacity="0.25">
-        <animate attributeName="opacity" values="0.25;0.06;0.25" dur="2.5s" repeatCount="indefinite" />
-      </path>
-
-      {/* Floating email envelope */}
-      <g style={{ animation: "float-email 3s ease-in-out infinite" }}>
-        <rect x="308" y="40" width="50" height="36" rx="6" fill="#FAF7F2" stroke="#1A1A1A" strokeWidth="1.8" opacity="0.75" />
-        <path d="M308,44 L333,62 L358,44" stroke="#1A1A1A" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.6" />
-      </g>
-
-      {/* Floating AI chip */}
-      <g style={{ animation: "float-chip 3.5s ease-in-out infinite 0.8s" }}>
-        <rect x="54" y="48" width="44" height="44" rx="9" fill="#FAF7F2" stroke="#1A1A1A" strokeWidth="1.8" opacity="0.7" />
-        <rect x="64" y="62" width="24" height="16" rx="3" fill="#E8E3DC" stroke="#1A1A1A" strokeWidth="1" opacity="0.8" />
-        <rect x="68" y="66" width="7" height="7" rx="1.5" fill="#059669" opacity="0.7" />
-        <rect x="78" y="66" width="7" height="7" rx="1.5" fill="#0d9488" opacity="0.6" />
-        {/* Pins top */}
-        <rect x="64" y="55" width="4" height="7" rx="1" fill="#1A1A1A" opacity="0.35" />
-        <rect x="72" y="55" width="4" height="7" rx="1" fill="#1A1A1A" opacity="0.35" />
-        <rect x="80" y="55" width="4" height="7" rx="1" fill="#1A1A1A" opacity="0.35" />
-        {/* Pins bottom */}
-        <rect x="64" y="80" width="4" height="7" rx="1" fill="#1A1A1A" opacity="0.35" />
-        <rect x="72" y="80" width="4" height="7" rx="1" fill="#1A1A1A" opacity="0.35" />
-        <rect x="80" y="80" width="4" height="7" rx="1" fill="#1A1A1A" opacity="0.35" />
-      </g>
-    </svg>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/image.png"
+      alt="Narendra sitting at his desk"
+      className="w-full h-full object-contain"
+    />
   )
 }
 
 // ── Main Component ─────────────────────────────────────────────────────────────
 
 export default function AboutClient() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [lottieData, setLottieData] = useState<any>(null)
   const [openStack, setOpenStack] = useState<string | null>(null)
 
   const heroTextRef  = useRef<HTMLDivElement>(null)
@@ -236,22 +160,6 @@ export default function AboutClient() {
   const stackRef     = useRef<HTMLElement>(null)
   const stepsRef     = useRef<HTMLElement>(null)
   const ctaRef       = useRef<HTMLElement>(null)
-
-  // ── Load Lottie from CDN ────────────────────────────────────────────────────
-  useEffect(() => {
-    const URLS = [
-      "https://lottie.host/4db68bbd-31f6-4cd8-84eb-189de081159a/KSQqeWWJTG.json",
-      "https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json",
-    ]
-    const tryNext = (idx: number) => {
-      if (idx >= URLS.length) return
-      fetch(URLS[idx])
-        .then(r => { if (!r.ok) throw new Error(); return r.json() })
-        .then(d => setLottieData(d))
-        .catch(() => tryNext(idx + 1))
-    }
-    tryNext(0)
-  }, [])
 
   // ── Lenis smooth scroll ─────────────────────────────────────────────────────
   useEffect(() => {
@@ -360,8 +268,6 @@ export default function AboutClient() {
       <style>{`
         @keyframes about-spin    { from { transform: rotate(0deg); }  to { transform: rotate(360deg); } }
         @keyframes about-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-        @keyframes float-email   { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-10px); } }
-        @keyframes float-chip    { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(10px);  } }
         .about-marquee-track     { animation: about-marquee 28s linear infinite; display:flex; width:max-content; }
       `}</style>
 
@@ -376,8 +282,8 @@ export default function AboutClient() {
               About / Creator
             </span>
 
-            <h1 data-hero className="font-heading text-[3.2rem] sm:text-[4rem] md:text-[5rem] lg:text-[5.5rem] xl:text-[6rem] leading-[0.95] tracking-wide text-[#1A1A1A]">
-              Hey, I&apos;m
+            <h1 data-hero className="font-heading text-[3.2rem] sm:text-[4rem] md:text-[5rem] lg:text-[5.5rem] xl:text-[6rem] leading-[0.95] tracking-wide">
+              <span className="bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">Hey, I&apos;m</span>
               <br />
               <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
                 Narendra.
@@ -403,6 +309,28 @@ export default function AboutClient() {
               >
                 How it works <span>↓</span>
               </a>
+
+              {/* LinkedIn */}
+              <motion.a
+                href="https://www.linkedin.com/in/nk-analytics"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Connect on LinkedIn"
+                className="relative flex items-center justify-center w-10 h-10 rounded-full bg-[#0A66C2] text-white shadow-md hover:scale-110 transition-transform duration-200"
+                animate={{ scale: [1, 1.12, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", repeatDelay: 1.5 }}
+              >
+                {/* Pulse ring */}
+                <motion.span
+                  className="absolute inset-0 rounded-full bg-[#0A66C2]"
+                  animate={{ scale: [1, 1.55], opacity: [0.45, 0] }}
+                  transition={{ duration: 1.8, repeat: Infinity, ease: "easeOut", repeatDelay: 1.7 }}
+                />
+                {/* LinkedIn "in" icon */}
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 relative z-10" aria-hidden>
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </motion.a>
             </div>
 
             {/* Mini stats row */}
@@ -413,7 +341,7 @@ export default function AboutClient() {
                 { val: "Free",   sub: "To get started" },
               ].map((s, i) => (
                 <div key={i} className="flex flex-col">
-                  <span className="font-heading text-[1.9rem] tracking-wide text-[#1A1A1A] leading-none">
+                  <span className="font-heading text-[1.9rem] tracking-wide text-orange-500 leading-none">
                     {s.val}
                   </span>
                   <span className="text-[9px] uppercase tracking-[0.22em] text-[#6B6B6B] font-sans mt-1.5">
@@ -432,11 +360,7 @@ export default function AboutClient() {
               transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
               className="relative w-full max-w-[480px] aspect-square"
             >
-              {lottieData ? (
-                <Lottie animationData={lottieData} loop className="w-full h-full" />
-              ) : (
-                <DevIllustration />
-              )}
+              <AnimatedImage />
             </motion.div>
 
             {/* Rotating circular badge */}
@@ -448,14 +372,14 @@ export default function AboutClient() {
             <motion.div
               animate={{ y: [0, -9, 0] }}
               transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-10 -left-4 md:-left-10 bg-white border border-[rgba(26,26,26,0.15)] rounded-xl px-3.5 py-2 text-[10px] font-sans uppercase tracking-wider text-[#1A1A1A] shadow-sm"
+              className="absolute top-10 -left-4 md:-left-10 bg-white border border-[rgba(26,26,26,0.15)] rounded-xl px-3.5 py-2 text-[10px] font-sans uppercase tracking-wider text-emerald-600 shadow-sm"
             >
               ✦ AI Summaries
             </motion.div>
             <motion.div
               animate={{ y: [0, 9, 0] }}
               transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-              className="absolute bottom-16 -right-4 md:-right-10 bg-white border border-[rgba(26,26,26,0.15)] rounded-xl px-3.5 py-2 text-[10px] font-sans uppercase tracking-wider text-[#1A1A1A] shadow-sm"
+              className="absolute bottom-16 -right-4 md:-right-10 bg-white border border-[rgba(26,26,26,0.15)] rounded-xl px-3.5 py-2 text-[10px] font-sans uppercase tracking-wider text-violet-600 shadow-sm"
             >
               ✦ 6 AM Digest
             </motion.div>
@@ -497,12 +421,12 @@ export default function AboutClient() {
           <p data-reveal className="text-[10px] uppercase tracking-[0.3em] text-emerald-600 font-sans">
             The Story
           </p>
-          <h2 data-reveal className="font-heading text-[2.6rem] sm:text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[5rem] leading-[1.02] tracking-wide text-[#1A1A1A]">
-            I was drowning in YouTube.
+          <h2 data-reveal className="font-heading text-[2.6rem] sm:text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[5rem] leading-[1.02] tracking-wide">
+            <span className="bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">I was drowning in YouTube.</span>
             <br />
-            <span className="text-[#1A1A1A]/30">So I built a robot</span>
+            <span className="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">So I built a robot</span>
             <br />
-            to read it for me.
+            <span className="bg-gradient-to-r from-violet-500 to-purple-400 bg-clip-text text-transparent">to read it for me.</span>
           </h2>
           <p data-reveal className="text-[#6B6B6B] font-sans text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
             NewsPulseAI watches the channels you choose, runs every new upload
@@ -521,7 +445,7 @@ export default function AboutClient() {
               <div className="flex items-end justify-center gap-0.5">
                 <span
                   data-count={s.value}
-                  className="font-heading text-5xl md:text-6xl text-[#1A1A1A] tabular-nums leading-none"
+                  className="font-heading text-5xl md:text-6xl text-teal-600 tabular-nums leading-none"
                 >
                   0
                 </span>
@@ -545,7 +469,7 @@ export default function AboutClient() {
               <p className="text-[10px] uppercase tracking-[0.3em] text-emerald-600 font-sans mb-4">
                 Tech Stack
               </p>
-              <h2 className="font-heading text-[2.4rem] md:text-5xl lg:text-[3.5rem] tracking-wide leading-tight text-[#1A1A1A]">
+              <h2 className="font-heading text-[2.4rem] md:text-5xl lg:text-[3.5rem] tracking-wide leading-tight bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">
                 What powers<br className="hidden sm:block" /> the machine
               </h2>
             </div>
@@ -565,7 +489,7 @@ export default function AboutClient() {
                     <span className="font-heading text-3xl sm:text-4xl text-[#1A1A1A]/10 group-hover:text-emerald-600/25 transition-colors duration-300 w-14 shrink-0">
                       {item.num}
                     </span>
-                    <span className="font-heading text-[1.5rem] sm:text-3xl md:text-[2rem] tracking-wide text-[#1A1A1A] group-hover:text-emerald-700 transition-colors duration-300">
+                    <span className="font-heading text-[1.5rem] sm:text-3xl md:text-[2rem] tracking-wide text-orange-500 group-hover:text-emerald-600 transition-colors duration-300">
                       {item.name}
                     </span>
                   </div>
@@ -609,7 +533,7 @@ export default function AboutClient() {
             <p className="text-[10px] uppercase tracking-[0.3em] text-emerald-600 font-sans mb-4">
               How It Works
             </p>
-            <h2 className="font-heading text-[2.4rem] md:text-5xl lg:text-[3.5rem] tracking-wide leading-tight text-[#1A1A1A]">
+            <h2 className="font-heading text-[2.4rem] md:text-5xl lg:text-[3.5rem] tracking-wide leading-tight bg-gradient-to-r from-violet-500 to-purple-400 bg-clip-text text-transparent">
               Three steps to never
               <br />
               miss a video again
@@ -630,7 +554,7 @@ export default function AboutClient() {
 
                 <div className="text-4xl mb-7">{step.icon}</div>
 
-                <h3 className="font-heading text-[1.6rem] md:text-[1.85rem] tracking-wide text-[#1A1A1A] mb-4 group-hover:text-emerald-700 transition-colors duration-300">
+                <h3 className="font-heading text-[1.6rem] md:text-[1.85rem] tracking-wide text-violet-500 mb-4 group-hover:text-emerald-600 transition-colors duration-300">
                   {step.title}
                 </h3>
                 <p className="text-[#6B6B6B] font-sans text-sm leading-relaxed">
@@ -656,14 +580,14 @@ export default function AboutClient() {
       {/* Dark section — like mynrd.co.uk's "Let's work together" */}
       <section
         ref={ctaRef}
-        className="py-44 px-5 sm:px-8 md:px-16 bg-[#1A1A1A] relative overflow-hidden"
+        className="py-44 px-5 sm:px-8 md:px-16 bg-gradient-to-br from-emerald-900 via-teal-900 to-emerald-950 relative overflow-hidden"
       >
         {/* Subtle top torn paper into dark */}
         <div className="absolute top-0 left-0 right-0 pointer-events-none" style={{ lineHeight: 0 }}>
           <svg
             viewBox="0 0 1440 70"
             preserveAspectRatio="none"
-            style={{ display: "block", width: "100%", height: "70px", background: "#1A1A1A" }}
+            style={{ display: "block", width: "100%", height: "70px", background: "#064e3b" }}
           >
             <path
               d="M0,0 L0,40 Q80,70 160,38 Q240,10 320,42 Q400,68 480,36 Q560,8 640,38 Q720,65 800,35 Q880,8 960,36 Q1040,62 1120,34 Q1200,10 1280,38 L1360,34 L1440,30 L1440,0 Z"
